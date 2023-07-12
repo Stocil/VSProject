@@ -443,19 +443,21 @@ body {
   padding-top: 3.9375em;
   padding-bottom: 4.0625em;
   background-image: url(../images/Rectangle\ 12.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   margin-bottom: 6.25em;
 }
 
 .metaverse_text {
   color: #F6F4F5;
-  margin: 0 34em 17em 34.8em;
+  margin: 0 55% 17em 45%;
   text-shadow: 0px 4px 4px rgba(188, 16, 216, 100%);
   text-align: center;
 }
 
 .metaverse_inner img {
-  margin-left: 35.9375em;
-  margin-right: 35.9375em;
+  margin: 0 50%;
 }
 
 .accessories_title {
@@ -479,22 +481,16 @@ body {
   margin-bottom: 6.25em;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-left: 2px solid transparent;
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-  border-image: linear-gradient(#BC10D8, #5000FA);
-  border-image-slice: 1;
 }
 
 .accessories_inner_item {
-  border-right: 2px solid transparent;
+  border: 1px solid transparent;
   border-image: linear-gradient(#BC10D8, #5000FA);
   border-image-slice: 1;
   padding: 20px 20px 18px;
 }
 
 .accessories_inner_item_name-title {
-  margin-top: 10px;
   margin-bottom: 10px;
   font-size: 24px;
   height: 56px;
@@ -502,6 +498,8 @@ body {
 
 .accessories_inner_item-subtext {
   margin-bottom: 42px;
+  line-height: 1.14;
+  height: 36px;
 }
 
 .accessories_inner_item_price {
@@ -807,7 +805,26 @@ body {
     margin-bottom: 0px;
   }
 
-  /* --------------------- 6 section ---------------------------------- */
+  /* --------------------- 7 section ---------------------------------- */
+
+  .accessories_title {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .accessories_text {
+    text-align: center;
+  }
+
+  .accessories_inner {
+    grid-template-columns: repeat(2, 340px);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+    gap: 20px
+  }
+
+  /* --------------------- 8 section ---------------------------------- */
+
 }
 
 @media (max-width: 740px) {
@@ -867,7 +884,6 @@ body {
 
   .cable_subtext {
     max-width: 300px;
-    /* font-size: 15px; */
   }
 
   .in_box_sec-2 {
@@ -875,7 +891,25 @@ body {
     flex-direction: column;
   }
 
-  /* --------------------- 6 section ---------------------------------- */
+  /* --------------------- 7 section ---------------------------------- */
+
+  .accessories_inner {
+    grid-template-columns: repeat(2, 250px);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+    gap: 20px
+  }
+
+  .accessories_text {
+    font-size: 30px;
+  }
+
+  .accessories_inner_buy_btn {
+    padding: 5px 1px;
+  }
+
+  /* --------------------- 8 section ---------------------------------- */
+
 }
 
 @media (max-width: 635px) {
@@ -945,6 +979,23 @@ body {
   }
 
   /* --------------------- 6 section ---------------------------------- */
+
+  .metaverse_text {
+    margin: 0 60% 17em 40%;
+  }
+
+  /* --------------------- 7 section ---------------------------------- */
+
+  .accessories_inner {
+    grid-template-columns: 350px;
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .accessories_text {
+    font-size: 25px;
+  }
+
+  /* --------------------- 8 section ---------------------------------- */
 
 }
 
@@ -1056,7 +1107,14 @@ body {
     margin: 5px 0;
   }
 
-  /* --------------------- 6 section ---------------------------------- */
+  /* --------------------- 7 section ---------------------------------- */
+
+  .accessories_inner {
+    grid-template-columns: 300px;
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  /* --------------------- 8 section ---------------------------------- */
 
 }
 
@@ -1114,5 +1172,11 @@ body {
   }
 
   /* ---------------------- 6 section --------------------------------- */
+
+  .metaverse_text {
+    margin: 0 70% 17em 30%;
+  }
+
+  /* ---------------------- 8 section --------------------------------- */
 
 }

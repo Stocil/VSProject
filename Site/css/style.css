@@ -1,0 +1,983 @@
+@font-face {
+  font-family: "helvetica", sans-serif;
+  src: url(../fonts/helvetica.woff2);
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "helvetica-bold", sans-serif;
+  src: url(../fonts/helvetica-bold.woff2);
+  font-style: normal;
+  font-weight: 700;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: "helvetica", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #5C5C5E;
+}
+
+.header {
+  border-bottom: 1px solid #CACAD6;
+}
+
+.container {
+  max-width: 1220px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.header_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.header_nav-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.top {
+  min-height: calc(100vh - 81px);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 25%);
+  background-image: url(../images/Rectangle\ 2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  margin-bottom: 100px;
+}
+
+.title {
+  padding-top: 9%;
+  font-size: 96px;
+  margin-bottom: 10px;
+}
+
+.title_text {
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+.title_subtext {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.button_buy {
+  border: 1px solid transparent;
+  border-image: linear-gradient(#BC10D8, #5000FA);
+  border-image-slice: 1;
+  border-right: 1px solid #CACAD6;
+  margin-top: 50px;
+  margin-bottom: 6px;
+  width: 300px;
+  height: 60px;
+  background: linear-gradient(#BC10D8, #5000FA);
+  color: #F6F4F5;
+}
+
+.button_price {
+  border: 1px solid transparent;
+  border-image: linear-gradient(#BC10D8, #5000FA);
+  border-image-slice: 1;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  width: 300px;
+  height: 60px;
+  color: #5C5C5E;
+  background-color: rgba(0, 0, 0, 0%);
+}
+
+.features_titles {
+  max-width: 630px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.features_title {
+  font-size: 16px;
+  font-weight: 400;
+  color: #5C5C5E;
+}
+
+.features_text {
+  background-image: linear-gradient(#BC10D8, #5000FA);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 36px;
+  text-transform: uppercase;
+  max-width: 330px;
+  text-align: left;
+  margin-bottom: 20px;
+  line-height: 1.14;
+}
+
+.features_windows {
+  display: flex;
+  justify-content: space-between;
+  max-height: 300px;
+}
+
+.features_list {
+  font-size: 16px;
+  font-family: "helvetica-bold", sans-serif;
+  font-weight: 700;
+  white-space: nowrap;
+  line-height: 18px;
+  margin-right: 9.5%;
+}
+
+.features_list-item {
+  margin-bottom: 20px;
+}
+
+.active {
+  color: #070707
+}
+
+.features_content_box {
+  margin-left: 40px;
+}
+
+.features_graphics_subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.features_graphics_text {
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 40px;
+}
+
+.features_abs {
+  position: relative;
+}
+
+.hueta {
+  position: absolute;
+  top: 70px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  height: 50px;
+  font-size: 13px;
+  color: #F6F4F5;
+  justify-content: center;
+  align-items: center;
+}
+
+.features_comment_subvideos {
+  white-space: nowrap;
+
+}
+
+.img2_abs {
+  height: 144px;
+}
+
+.games_title {
+  font-size: 16px;
+  font-weight: 400;
+  color: #5C5C5E;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+.games_inner {
+  margin-bottom: 9.5625em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.games_text {
+  background-image: linear-gradient(#BC10D8, #5000FA);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 36px;
+  text-transform: uppercase;
+  line-height: 1.14;
+  margin-bottom: 10px;
+}
+
+.games_subtext {
+  line-height: 1.13;
+  color: #5C5C5E;
+  margin-bottom: 30px;
+}
+
+
+.games_link_under_text {
+  background-image: linear-gradient(#BC10D8, #5000FA);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.625em 3.125em;
+  border: 2px solid transparent;
+  border-image: linear-gradient(#BC10D8, #5000FA);
+  border-image-slice: 1;
+}
+
+.game_blade_sorcery {
+  padding: 20px 16px 22px 20px;
+  border: 2px solid transparent;
+  border-image: linear-gradient(#BC10D8, #5000FA);
+  border-image-slice: 1;
+}
+
+.game_pupulation_one {
+  padding: 20px 15.5px 22px 20.5px;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(#BC10D8, #5000FA);
+  border-image-slice: 1;
+}
+
+.game_supernatural {
+  padding: 20px 16px 22px 20.5px;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(#BC10D8, #5000FA);
+  border-image-slice: 1;
+}
+
+.blade_sorcery_text {
+  line-height: 1.13;
+  margin-bottom: 31px;
+}
+
+.pupulation_one_text {
+  line-height: 1.13;
+  margin-bottom: 48px;
+}
+
+.supernatural_text {
+  line-height: 1.13;
+  margin-bottom: 1.875em;
+}
+
+.blade_sorcery_title {
+  font-size: 22px;
+  font-weight: 400;
+  max-width: 265px;
+  color: #070707;
+  margin-bottom: 10px;
+}
+
+.pupulation_one_title {
+  font-size: 23px;
+  font-weight: 400;
+  max-width: 200px;
+  color: #070707;
+  margin-bottom: 10px;
+}
+
+.supernatural_title {
+  font-size: 23px;
+  font-weight: 400;
+  color: #070707;
+  margin-bottom: 10px;
+}
+
+.blade_sorcery_link,
+.pupulation_one_link,
+.supernatural_link {
+  background-image: linear-gradient(#BC10D8, #5000FA);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.oculus_bg {
+  margin-bottom: 6.8125em;
+  padding: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.oculus_title {
+  background-image: linear-gradient(#BC10D8, #5000FA);
+  opacity: 10%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 400px;
+  font-weight: 700;
+  line-height: 484px;
+  margin-bottom: 0.075em;
+  position: absolute;
+  z-index: -1;
+  animation: line-text 6s linear 1s infinite;
+}
+
+.bg_inner img {
+  margin-bottom: 1.875em;
+}
+
+.buy_btn {
+  cursor: pointer;
+  border: none;
+  padding: 1px;
+  background: linear-gradient(#BC10D8, #5000FA);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.buy_btn_text {
+  color: #F6F4F5;
+  font-size: 16px;
+  padding: 1.25em 6.875em;
+}
+
+.buy_btn_price {
+  font-size: 16px;
+  background-color: #F6F4F5;
+  padding: 1.25em 6.5625em;
+}
+
+.bg_inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+
+@keyframes line-text {
+  from {
+    transform: translateX(-115%);
+    transform-origin: left center;
+  }
+
+  to {
+    transform: translateX(115%);
+    transform-origin: right center;
+  }
+}
+
+.in_the_box_inner {
+  margin-bottom: 6.25em;
+  display: grid;
+  grid-template-columns: 580px 280px 280px;
+  grid-template-rows: repeat(2, 248px);
+  gap: 30px;
+}
+
+.in_the_box_title {
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 3.125em;
+}
+
+.included_text {
+  background-image: linear-gradient(#BC10D8, #5000FA);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 36px;
+  text-transform: uppercase;
+  line-height: 1.14;
+  margin-bottom: 5.5em;
+}
+
+.in_box_first {
+  grid-row: 1/3;
+}
+
+.controllers_subtext {
+  margin-bottom: 1.9375em;
+}
+
+.cable_subtext {
+  margin-top: 1px;
+}
+
+.metaverse_inner {
+  padding-top: 3.9375em;
+  padding-bottom: 4.0625em;
+  background-image: url(../images/Rectangle\ 12.jpg);
+  margin-bottom: 6.25em;
+}
+
+.metaverse_text {
+  color: #F6F4F5;
+  margin: 0 34em 17em 34.8em;
+  text-shadow: 0px 4px 4px rgba(188, 16, 216, 100%);
+  text-align: center;
+}
+
+.metaverse_inner img {
+  margin-left: 35.9375em;
+  margin-right: 35.9375em;
+}
+
+.accessories_title {
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 1.875em;
+}
+
+.accessories_text {
+  background-image: linear-gradient(#BC10D8, #5000FA);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 36px;
+  text-transform: uppercase;
+  line-height: 1.14;
+  margin-bottom: 30px;
+}
+
+.accessories_inner {
+  margin-bottom: 6.25em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-left: 2px solid transparent;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(#BC10D8, #5000FA);
+  border-image-slice: 1;
+}
+
+.accessories_inner_item {
+  border-right: 2px solid transparent;
+  border-image: linear-gradient(#BC10D8, #5000FA);
+  border-image-slice: 1;
+  padding: 20px 20px 18px;
+}
+
+.accessories_inner_item_name-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  height: 56px;
+}
+
+.accessories_inner_item-subtext {
+  margin-bottom: 42px;
+}
+
+.accessories_inner_item_price {
+  margin-bottom: 20px;
+  color: #070707;
+  font-weight: 700;
+}
+
+.accessories_inner_buy_btn {
+  font-weight: 700;
+  background-image: linear-gradient(#BC10D8, #5000FA);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-image: linear-gradient(#BC10D8, #5000FA) 1;
+  padding: 6px 91px;
+  width: 100%;
+}
+
+.contacts_title {
+  font-size: 24px;
+  color: #070707;
+  font-weight: 400;
+  margin-bottom: 9px;
+}
+
+.contacts_inner {
+  margin-bottom: 6.25em;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding-right: 18px;
+  border-right: 1px solid #CACAD6;
+}
+
+.contacts_form {
+  flex-basis: 600px;
+}
+
+.form {
+  border-bottom: 1px solid #CACAD6;
+}
+
+.form_input {
+  border: none;
+  width: 90%;
+  padding: 22px 70px 22px 0px;
+}
+
+.form_input::placeholder {
+  font-family: 'Helvetica';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #CACAD6;
+}
+
+.form_btn {
+  border: none;
+  cursor: pointer;
+  background-color: #CACAD6;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: #5C5C5E;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.contacts_text-1 {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.10;
+}
+
+.contacts_text-2 {
+  font-size: 13px;
+  line-height: 1.10;
+}
+
+.contacts_text-3 {
+  font-size: 13px;
+  line-height: 1.10;
+}
+
+.footer {
+  border-top: 2px solid #CACAD6;
+  border-bottom: 2px solid #CACAD6;
+  margin-bottom: 44px;
+}
+
+.footer_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer_nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer_nav_logo {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin: 30px auto 30px 119px;
+}
+
+.footer_nav_media_link img {
+  margin-left: 17px;
+}
+
+/* ------------------------------------------- Adaptive ---------------------------------- */
+
+@media (max-width: 1200px) {
+
+  /* --------------------- 1 section ---------------------------------- */
+
+  .top {
+    text-align: center;
+  }
+
+  .buy_btn {
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  /* --------------------- 2 section ---------------------------------- */
+
+  .product_features_section {
+    text-align: center;
+  }
+
+  .features_titles {
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .features_title {
+    margin-bottom: 10px;
+  }
+
+  .features_windows {
+    flex-direction: column;
+    max-height: none;
+  }
+
+  .features_text {
+    max-width: none;
+  }
+
+  .features_list {
+    columns: 2;
+    margin-right: 0;
+  }
+
+  .features_windows img {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .features_content_box {
+    margin: 10px 0 0;
+  }
+
+  .features_graphics_text {
+    margin: 0 auto 10px;
+    max-width: 55%;
+  }
+
+  .features_content_box img {
+    width: auto;
+    height: auto;
+  }
+
+  .hueta {
+    left: 40%
+  }
+
+  /* ---------------------- 3 section --------------------------------- */
+
+  .games_inner {
+    grid-template-columns: repeat(2, 340px);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .games_title {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .games_text {
+    font-size: 50px;
+  }
+
+  .games_subtext {
+    font-size: 20px;
+  }
+
+  .games_link_under_text {
+    font-size: 20px;
+  }
+
+  .game_blade_sorcery {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+  }
+
+  .blade_sorcery_title {
+    margin: 5px auto;
+  }
+
+  .blade_sorcery_text {
+    margin-bottom: 2em;
+  }
+
+  .game_pupulation_one {
+    border-left: 2px solid transparent;
+    border-image: linear(#BC10D8, #5000FA) 1;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+  }
+
+  .pupulation_one_title {
+    margin: 5px auto;
+  }
+
+  .pupulation_one_text {
+    margin-bottom: 3.2em;
+  }
+
+  .game_supernatural {
+    border-left: 2px solid transparent;
+    border-image: linear(#BC10D8, #5000FA) 1;
+    border-top: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+  }
+
+  .supernatural_title {
+    margin: 5px auto;
+  }
+
+  .supernatural_text {
+    margin-bottom: 2em;
+  }
+
+  /* --------------------- 4 section ---------------------------------- */
+
+}
+
+@media (max-width: 740px) {
+
+  /* --------------------- 1 section ---------------------------------- */
+
+  .title {
+    font-size: 70px;
+  }
+
+  .title_text {
+    font-size: 30px;
+  }
+
+  /* --------------------- 2 section ---------------------------------- */
+
+  .features_text {
+    max-width: 55%;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  /* ---------------------- 3 section --------------------------------- */
+
+  .games_title {
+    font-size: 16px;
+  }
+
+  .games_inner {
+    grid-template-columns: repeat(2, 250px);
+  }
+
+  .games_text {
+    font-size: 36px;
+  }
+
+  .games_subtext {
+    font-size: 16px;
+  }
+
+  .games_link_under_text {
+    font-size: 16px;
+  }
+
+  /* ---------------------- 4 section --------------------------------- */
+}
+
+@media (max-width: 635px) {
+
+  /* --------------------- 1 section ---------------------------------- */
+
+  .buy_btn_text {
+    padding: 20px 50px;
+  }
+
+  .buy_btn_price {
+    padding: 20px 50px
+  }
+
+  /* --------------------- 2 section ---------------------------------- */
+
+  .features_text {
+    font-size: 30px;
+  }
+
+  .features_graphics_text {
+    font-size: 14px;
+  }
+
+  .features_list {
+    font-size: 14px;
+  }
+
+  .features_windows img {
+    width: 80%
+  }
+
+  .features_content_box img {
+    width: auto;
+    height: auto;
+  }
+
+  .hueta {
+    left: 30%
+  }
+
+  /* ---------------------- 3 section --------------------------------- */
+
+  .games_title {
+    font-size: 20px;
+  }
+
+  .games_inner {
+    grid-template-columns: 350px;
+    grid-template-rows: 250px repeat(3, 1fr);
+  }
+
+  /* ---------------------- 4 section --------------------------------- */
+
+}
+
+@media (max-width: 460px) {
+
+  /* --------------------- 1 section ---------------------------------- */
+
+  .title {
+    font-size: 50px;
+  }
+
+  .title_text {
+    font-size: 20px;
+  }
+
+  .title_subtext {
+    margin-bottom: 15px;
+  }
+
+  .buy_btn {
+    flex-direction: column;
+  }
+
+  .buy_btn_text {
+    padding: 20px 70px;
+  }
+
+  .buy_btn_price {
+    padding: 20px 70px
+  }
+
+  /* --------------------- 2 section ---------------------------------- */
+
+  .features_text {
+    font-size: 24px;
+  }
+
+  .features_graphics_subtitle {
+    font-size: 20px;
+  }
+
+  .features_graphics_text {
+    font-size: 12px;
+  }
+
+  .features_content_box img {
+    width: 70%;
+  }
+
+  .hueta {
+    left: 25%;
+    top: 40%
+  }
+
+  /* ---------------------- 3 section --------------------------------- */
+
+  .games_title {
+    font-size: 16px;
+  }
+
+  .games_inner {
+    grid-template-columns: 300px;
+    grid-template-rows: 250px repeat(3, 1fr);
+  }
+
+  .games_text {
+    font-size: 30px;
+  }
+
+  /* ---------------------- 4 section --------------------------------- */
+
+}
+
+@media (max-width: 340px) {
+
+  /* --------------------- 1 section ---------------------------------- */
+
+  .title {
+    font-size: 36px;
+  }
+
+  .title_text {
+    font-size: 16px;
+  }
+
+  .title_subtext {
+    font-size: 10px;
+  }
+
+  .buy_btn_text {
+    padding: 10px 75px;
+  }
+
+  .buy_btn_price {
+    padding: 10px 75px;
+  }
+
+  .features_title {
+    font-size: 12px;
+  }
+
+  /* --------------------- 2 section ---------------------------------- */
+
+  .features_text {
+    font-size: 18px;
+  }
+
+  .features_list {
+    font-size: 11px;
+  }
+
+  .features_graphics_subtitle {
+    font-size: 16px;
+  }
+
+  .features_graphics_text {
+    font-size: 10px;
+  }
+
+  /* ---------------------- 3 section --------------------------------- */
+
+  .games_inner {
+    grid-template-columns: 280px;
+    grid-template-rows: 250px repeat(3, 1fr);
+  }
+
+  /* ---------------------- 4 section --------------------------------- */
+
+}

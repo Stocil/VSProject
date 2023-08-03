@@ -29,6 +29,19 @@ body {
   color: #826f8c;
 }
 
+.container {
+  max-width: 1188px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.subtext {
+  color: #446381;
+  font-size: 23px;
+  line-height: 1.04348;
+  margin-bottom: 15px;
+}
+
 .button {
   font-family: "Josefin Sans", sans-serif;
   cursor: pointer;
@@ -47,10 +60,13 @@ body {
   line-height: 1.33;
 }
 
-.container {
-  max-width: 1188px;
-  padding: 0 10px;
-  margin: 0 auto;
+.title {
+  margin-bottom: 26px;
+  font-size: 68px;
+  font-weight: 700;
+  max-width: 470px;
+  line-height: 1.103;
+  color: #eb8382;
 }
 
 .header {
@@ -65,7 +81,6 @@ body {
   &__nav {
     display: flex;
     line-height: 1.33;
-    margin-right: 10px;
   }
 
   &__list {
@@ -102,16 +117,12 @@ body {
 }
 
 .main-page {
-  &__text {
-    max-width: 518px;
+  &__subtext {
+    margin-top: 139px;
   }
 
-  &__subtext {
-    color: #446381;
-    font-size: 23px;
-    line-height: 1.04348;
-    margin-top: 139px;
-    margin-bottom: 15px;
+  &__text {
+    max-width: 518px;
   }
 
   &__text {
@@ -128,29 +139,17 @@ body {
     bottom: 70px;
     left: 250px;
 
-    animation-name: plus-roll;
-    animation-duration: 9s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
+    animation: plus-roll 9s linear 0s infinite;
   }
 
   &__character {
     position: absolute;
     top: 54px;
-    left: 507px;
+    left: 43.5%;
 
     width: 735.489px;
     height: 617px;
   }
-}
-.title {
-  margin-bottom: 36px;
-  font-size: 68px;
-  font-weight: 700;
-  max-width: 470px;
-  line-height: 1.103;
-  color: #eb8382;
 }
 
 @keyframes plus-roll {
@@ -159,5 +158,77 @@ body {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.vr-glasses {
+  background-image: url(../images/about-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 65px;
+
+    padding-top: 165px;
+    padding-bottom: 187px;
+  }
+
+  &__images {
+    position: relative;
+  }
+
+  &__content {
+  }
+
+  &__text {
+    max-width: 518px;
+    margin-bottom: 29px;
+  }
+
+  &__button {
+    min-width: 208px;
+  }
+}
+
+.vr-images {
+  &__men {
+    position: absolute;
+    top: -60px;
+  }
+
+  &__screen {
+    position: absolute;
+    right: 35px;
+    top: -78px;
+
+    animation: screen-rotate 3s linear 0s infinite;
+  }
+
+  &__vr {
+    position: absolute;
+    bottom: 0px;
+    right: 20%;
+  }
+
+  &__kerfin {
+    position: absolute;
+    right: 0px;
+    bottom: 10%;
+  }
+}
+
+@keyframes screen-rotate {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }

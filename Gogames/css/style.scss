@@ -64,7 +64,6 @@ body {
   margin-bottom: 26px;
   font-size: 68px;
   font-weight: 700;
-  max-width: 470px;
   line-height: 1.103;
   color: #eb8382;
 }
@@ -117,15 +116,16 @@ body {
 }
 
 .main-page {
+  &__title {
+    max-width: 471px;
+  }
+
   &__subtext {
     margin-top: 139px;
   }
 
   &__text {
     max-width: 518px;
-  }
-
-  &__text {
     margin-bottom: 36px;
   }
 
@@ -174,14 +174,18 @@ body {
     column-gap: 65px;
 
     padding-top: 165px;
+  }
+
+  &__content {
     padding-bottom: 187px;
+
+    background-image: url(../images/vr.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
   }
 
   &__images {
     position: relative;
-  }
-
-  &__content {
   }
 
   &__text {
@@ -191,6 +195,7 @@ body {
 
   &__button {
     min-width: 208px;
+    z-index: 10;
   }
 }
 
@@ -227,6 +232,130 @@ body {
   }
   50% {
     transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.about {
+  &__consoles {
+    background-image: url(../images/consoles-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.consoles {
+  &__inner {
+    padding-top: 114px;
+    padding-bottom: 156px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 95px;
+  }
+
+  &__title {
+    margin-top: 30px;
+    max-width: 500px;
+  }
+
+  &__button {
+    margin-top: 29px;
+    min-width: 207px;
+  }
+
+  &__images {
+    position: relative;
+    &_static {
+      position: relative;
+    }
+  }
+}
+
+.static {
+  &__shadow {
+    position: absolute;
+  }
+
+  &__clouds {
+    position: absolute;
+    transform: translateY(20%);
+  }
+
+  &__leaf-left {
+    position: absolute;
+    left: 0;
+  }
+
+  &__leaf-right {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.animated {
+  &__gamepad-with-men {
+    position: absolute;
+    z-index: 1;
+
+    // top: 52%;
+    top: 45%;
+    left: 0;
+
+    animation: move_gamepad 3s linear 0s infinite;
+  }
+
+  &__men-on-gamepad {
+    position: absolute;
+    left: 5%;
+    bottom: 79%;
+  }
+
+  &__men-aside-gamepad {
+    position: absolute;
+
+    left: 80%;
+    bottom: 0%;
+  }
+
+  &__cog-big {
+    position: absolute;
+    z-index: 1;
+
+    left: calc(51% + 70px);
+
+    animation: cogRoll 6s linear 0s infinite;
+  }
+
+  &__cog-small {
+    position: absolute;
+    z-index: 1;
+
+    top: 20%;
+    left: 51%;
+
+    animation: cogRoll 6s linear 0s infinite;
+  }
+}
+
+@keyframes cogRoll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes move_gamepad {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
   }
   100% {
     transform: translateY(0px);

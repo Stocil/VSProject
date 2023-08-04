@@ -66,7 +66,6 @@ body {
   margin-bottom: 26px;
   font-size: 68px;
   font-weight: 700;
-  max-width: 470px;
   line-height: 1.103;
   color: #eb8382;
 }
@@ -124,13 +123,14 @@ body {
   position: relative;
 }
 
+.main-page__title {
+  max-width: 471px;
+}
 .main-page__subtext {
   margin-top: 139px;
 }
 .main-page__text {
   max-width: 518px;
-}
-.main-page__text {
   margin-bottom: 36px;
 }
 .main-page__button {
@@ -187,7 +187,12 @@ body {
      -moz-column-gap: 65px;
           column-gap: 65px;
   padding-top: 165px;
+}
+.vr-glasses__content {
   padding-bottom: 187px;
+  background-image: url(../images/vr.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 .vr-glasses__images {
   position: relative;
@@ -198,6 +203,7 @@ body {
 }
 .vr-glasses__button {
   min-width: 208px;
+  z-index: 10;
 }
 
 .vr-images__men {
@@ -245,6 +251,138 @@ body {
   50% {
     -webkit-transform: translateY(-10px);
             transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+.about__consoles {
+  background-image: url(../images/consoles-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.consoles__inner {
+  padding-top: 114px;
+  padding-bottom: 156px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 95px;
+     -moz-column-gap: 95px;
+          column-gap: 95px;
+}
+.consoles__title {
+  margin-top: 30px;
+  max-width: 500px;
+}
+.consoles__button {
+  margin-top: 29px;
+  min-width: 207px;
+}
+.consoles__images {
+  position: relative;
+}
+.consoles__images_static {
+  position: relative;
+}
+
+.static__shadow {
+  position: absolute;
+}
+.static__clouds {
+  position: absolute;
+  -webkit-transform: translateY(20%);
+      -ms-transform: translateY(20%);
+          transform: translateY(20%);
+}
+.static__leaf-left {
+  position: absolute;
+  left: 0;
+}
+.static__leaf-right {
+  position: absolute;
+  right: 0;
+}
+
+.animated__gamepad-with-men {
+  position: absolute;
+  z-index: 1;
+  top: 45%;
+  left: 0;
+  -webkit-animation: move_gamepad 3s linear 0s infinite;
+          animation: move_gamepad 3s linear 0s infinite;
+}
+.animated__men-on-gamepad {
+  position: absolute;
+  left: 5%;
+  bottom: 79%;
+}
+.animated__men-aside-gamepad {
+  position: absolute;
+  left: 80%;
+  bottom: 0%;
+}
+.animated__cog-big {
+  position: absolute;
+  z-index: 1;
+  left: calc(51% + 70px);
+  -webkit-animation: cogRoll 6s linear 0s infinite;
+          animation: cogRoll 6s linear 0s infinite;
+}
+.animated__cog-small {
+  position: absolute;
+  z-index: 1;
+  top: 20%;
+  left: 51%;
+  -webkit-animation: cogRoll 6s linear 0s infinite;
+          animation: cogRoll 6s linear 0s infinite;
+}
+
+@-webkit-keyframes cogRoll {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@keyframes cogRoll {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+@-webkit-keyframes move_gamepad {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+@keyframes move_gamepad {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
   }
   100% {
     -webkit-transform: translateY(0px);

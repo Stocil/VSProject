@@ -60,6 +60,13 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: 1.33;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  background: linear-gradient(137deg, #4499d9 100%, #7367be 0%);
+  -webkit-box-shadow: 2px 2px 7px #826f8c;
+          box-shadow: 2px 2px 7px #826f8c;
 }
 
 .title {
@@ -106,6 +113,26 @@ body {
   margin-right: 42px;
 }
 
+.item__link::after {
+  display: block;
+  content: "";
+  height: 2px;
+  width: 0px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#4499d9), color-stop(#4499d9), to(#7367be));
+  background-image: linear-gradient(to right, #4499d9, #4499d9, #7367be);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.item__link:hover::after {
+  width: 100%;
+}
+
+.logo__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .main_page {
   background-image: url(../images/hero-bg.jpg);
   background-position: top;
@@ -145,13 +172,107 @@ body {
           animation: plus-roll 9s linear 0s infinite;
 }
 .main-page__character {
-  position: absolute;
-  top: 54px;
-  left: 43.5%;
+  position: relative;
   width: 735.489px;
   height: 617px;
+  top: 54px;
+  left: 0;
 }
 
+.character__hole {
+  position: absolute;
+  top: 22%;
+  left: 5%;
+}
+.character__character {
+  position: absolute;
+  z-index: 1;
+  top: 3.5%;
+  -webkit-animation: boy_pops-up 1s linear 0s 1;
+          animation: boy_pops-up 1s linear 0s 1;
+}
+.character__joy {
+  position: absolute;
+  opacity: 0;
+  top: 16%;
+  left: 15%;
+  -webkit-animation: joy_pops-up 1s linear 1.5s 1 forwards;
+          animation: joy_pops-up 1s linear 1.5s 1 forwards;
+}
+.character__box-1 {
+  position: absolute;
+  top: 0;
+  right: 70%;
+  z-index: 2;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+.character__box-1:hover {
+  -webkit-transform: scale3d(1.2, 1.2, 1.2);
+          transform: scale3d(1.2, 1.2, 1.2);
+}
+.character__box-2 {
+  position: absolute;
+  z-index: 2;
+  top: 83%;
+  left: 69%;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+.character__box-2:hover {
+  -webkit-transform: scale3d(1.2, 1.2, 1.2);
+          transform: scale3d(1.2, 1.2, 1.2);
+}
+
+@-webkit-keyframes boy_pops-up {
+  0% {
+    -webkit-transform: translateY(102px);
+            transform: translateY(102px);
+    opacity: 0.28;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes boy_pops-up {
+  0% {
+    -webkit-transform: translateY(102px);
+            transform: translateY(102px);
+    opacity: 0.28;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes joy_pops-up {
+  0% {
+    -webkit-transform: scale3d(0.1, 0.1, 0.1);
+            transform: scale3d(0.1, 0.1, 0.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes joy_pops-up {
+  0% {
+    -webkit-transform: scale3d(0.1, 0.1, 0.1);
+            transform: scale3d(0.1, 0.1, 0.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
 @-webkit-keyframes plus-roll {
   from {
     -webkit-transform: rotate(0);
@@ -162,7 +283,6 @@ body {
             transform: rotate(360deg);
   }
 }
-
 @keyframes plus-roll {
   from {
     -webkit-transform: rotate(0);
@@ -171,6 +291,26 @@ body {
   to {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes box_size-increase {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1.5, 1.5, 1.5);
+            transform: scale3d(1.5, 1.5, 1.5);
+  }
+}
+@keyframes box_size-increase {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1.5, 1.5, 1.5);
+            transform: scale3d(1.5, 1.5, 1.5);
   }
 }
 .vr-glasses {
@@ -283,6 +423,7 @@ body {
 }
 .consoles__images {
   position: relative;
+  bottom: 12%;
 }
 .consoles__images_static {
   position: relative;
@@ -321,7 +462,7 @@ body {
 }
 .animated__men-aside-gamepad {
   position: absolute;
-  left: 80%;
+  left: 77%;
   bottom: 0%;
 }
 .animated__cog-big {

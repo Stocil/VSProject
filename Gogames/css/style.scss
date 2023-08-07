@@ -1,3 +1,14 @@
+@mixin media-icon($padding, $display) {
+  padding: $padding;
+
+  display: $display;
+}
+
+%media-default-parameters {
+  background-color: rgba(252, 216, 203, 1);
+  border-radius: 20px;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -598,4 +609,120 @@ body {
 
 .footer {
   background-color: #fee9dc;
+  &__inner {
+    padding: 25px 0 19px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    max-width: 238.78px;
+    max-height: 65px;
+  }
+
+  &__copyright {
+    font-size: 16px;
+  }
+
+  &__media {
+    margin-left: 70px;
+
+    display: flex;
+    gap: 18px;
+  }
+}
+
+.media {
+  &__facebook {
+    @extend %media-default-parameters;
+  }
+
+  &__twitter {
+    @extend %media-default-parameters;
+  }
+
+  &__instagramm {
+    @extend %media-default-parameters;
+  }
+}
+
+.facebook {
+  &__link {
+    // padding || display
+    @include media-icon(10px 14px 10px 14px, flex);
+
+    &__white {
+      @include media-icon(10px 14px 10px 14px, none);
+    }
+  }
+}
+.twitter {
+  &__link {
+    @include media-icon(11px 11px 11px 9px, flex);
+
+    &__white {
+      @include media-icon(11px 11px 11px 9px, none);
+    }
+  }
+}
+.instagramm {
+  &__link {
+    @include media-icon(10px, flex);
+
+    &__white {
+      @include media-icon(10px, none);
+    }
+  }
+}
+
+.media {
+  &__facebook {
+    transition: background-color 0.3s linear;
+
+    &:hover {
+      background-color: rgba(68, 99, 129, 1);
+
+      .facebook__link {
+        display: none;
+
+        &__white {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  &__twitter {
+    transition: background-color 0.3s linear;
+
+    &:hover {
+      background-color: rgba(68, 99, 129, 1);
+
+      .twitter__link {
+        display: none;
+
+        &__white {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  &__instagramm {
+    transition: background-color 0.3s linear;
+
+    &:hover {
+      background-color: rgba(68, 99, 129, 1);
+
+      .instagramm__link {
+        display: none;
+
+        &__white {
+          display: flex;
+        }
+      }
+    }
+  }
 }

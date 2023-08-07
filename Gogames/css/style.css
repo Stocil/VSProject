@@ -1,3 +1,8 @@
+.media__instagramm, .media__twitter, .media__facebook {
+  background-color: rgb(252, 216, 203);
+  border-radius: 20px;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -634,4 +639,109 @@ body {
 
 .footer {
   background-color: #fee9dc;
+}
+.footer__inner {
+  padding: 25px 0 19px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer__logo {
+  max-width: 238.78px;
+  max-height: 65px;
+}
+.footer__copyright {
+  font-size: 16px;
+}
+.footer__media {
+  margin-left: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 18px;
+}
+
+.facebook__link {
+  padding: 10px 14px 10px 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.facebook__link__white {
+  padding: 10px 14px 10px 14px;
+  display: none;
+}
+
+.twitter__link {
+  padding: 11px 11px 11px 9px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.twitter__link__white {
+  padding: 11px 11px 11px 9px;
+  display: none;
+}
+
+.instagramm__link {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.instagramm__link__white {
+  padding: 10px;
+  display: none;
+}
+
+.media__facebook {
+  -webkit-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+}
+.media__facebook:hover {
+  background-color: rgb(68, 99, 129);
+}
+.media__facebook:hover .facebook__link {
+  display: none;
+}
+.media__facebook:hover .facebook__link__white {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.media__twitter {
+  -webkit-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+}
+.media__twitter:hover {
+  background-color: rgb(68, 99, 129);
+}
+.media__twitter:hover .twitter__link {
+  display: none;
+}
+.media__twitter:hover .twitter__link__white {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.media__instagramm {
+  -webkit-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+}
+.media__instagramm:hover {
+  background-color: rgb(68, 99, 129);
+}
+.media__instagramm:hover .instagramm__link {
+  display: none;
+}
+.media__instagramm:hover .instagramm__link__white {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }

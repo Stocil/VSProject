@@ -756,6 +756,9 @@ body {
         -ms-transform: scale(0.75);
             transform: scale(0.75);
   }
+  .vr-images__men {
+    top: 30px;
+  }
 }
 @media (max-width: 1000px) {
   .title {
@@ -774,6 +777,13 @@ body {
   }
   .main-page__subtext {
     margin-top: 0px;
+  }
+  .vr-images__screen {
+    height: 40%;
+    top: 45px;
+  }
+  .vr-images__men {
+    top: 100px;
   }
 }
 @media (max-width: 800px) {
@@ -804,6 +814,40 @@ body {
     right: 10%;
     left: auto;
   }
+  .vr-glasses__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .vr-glasses__content {
+    padding-bottom: 500px;
+    margin: auto;
+    text-align: center;
+    max-width: 600px;
+    background-size: 30%;
+    background-position: center right 10%;
+    background-position-y: 37%;
+  }
+  .vr-glasses__images {
+    top: 150px;
+  }
+  .vr-images__screen {
+    height: auto;
+    top: 265px;
+    left: 45%;
+    width: 30%;
+  }
+  .vr-images__men {
+    top: 230px;
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+    left: 15%;
+  }
 }
 @media (max-width: 600px) {
   .title {
@@ -816,6 +860,34 @@ body {
   }
   .main-page__text {
     font-size: 16px;
+  }
+  .vr-glasses__text {
+    max-width: none;
+    font-size: 16px;
+  }
+  .vr-glasses__content {
+    max-width: 518px;
+    padding-bottom: 450px;
+    background-position: center right 3%;
+    background-position-y: 35%;
+  }
+  .vr-glasses__images {
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+    top: 170px;
+  }
+  .vr-images__men {
+    left: 5%;
+  }
+  .vr-images__screen {
+    top: 280px;
+  }
+  .vr-images__kerfin {
+    -webkit-transform: scaleY(0.7);
+        -ms-transform: scaleY(0.7);
+            transform: scaleY(0.7);
+    bottom: 30%;
   }
 }
 @media (max-width: 500px) {
@@ -834,5 +906,11 @@ body {
   .main-page__plus-img {
     top: 35%;
     height: 40px;
+  }
+  .vr-glasses__content {
+    padding-bottom: 350px;
+  }
+  .vr-glasses__images {
+    top: 200px;
   }
 }

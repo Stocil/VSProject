@@ -737,6 +737,10 @@ body {
   .main-page__character {
     transform: scale(0.75);
   }
+
+  .vr-images__men {
+    top: 30px;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -761,6 +765,17 @@ body {
 
     &__subtext {
       margin-top: 0px;
+    }
+  }
+
+  .vr-images {
+    &__screen {
+      height: 40%;
+      top: 45px;
+    }
+
+    &__men {
+      top: 100px;
     }
   }
 }
@@ -790,6 +805,44 @@ body {
       left: auto;
     }
   }
+
+  .vr-glasses {
+    &__inner {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__content {
+      padding-bottom: 500px;
+      margin: auto;
+
+      text-align: center;
+      max-width: 600px;
+
+      background-size: 30%;
+      background-position: center right 10%;
+      background-position-y: 37%;
+    }
+
+    &__images {
+      top: 150px;
+    }
+  }
+
+  .vr-images {
+    &__screen {
+      height: auto;
+      top: 265px;
+      left: 45%;
+      width: 30%;
+    }
+
+    &__men {
+      top: 230px;
+      transform: scale(0.8);
+      left: 15%;
+    }
+  }
 }
 
 @media (max-width: 600px) {
@@ -807,6 +860,41 @@ body {
 
     &__text {
       font-size: 16px;
+    }
+  }
+
+  .vr-glasses {
+    &__text {
+      max-width: none;
+      font-size: 16px;
+    }
+
+    &__content {
+      max-width: 518px;
+      padding-bottom: 450px;
+
+      background-position: center right 3%;
+      background-position-y: 35%;
+    }
+
+    &__images {
+      transform: scale(0.8);
+      top: 170px;
+    }
+  }
+
+  .vr-images {
+    &__men {
+      left: 5%;
+    }
+
+    &__screen {
+      top: 280px;
+    }
+
+    &__kerfin {
+      transform: scaleY(0.7);
+      bottom: 30%;
     }
   }
 }
@@ -836,5 +924,13 @@ body {
 
       height: 40px;
     }
+  }
+
+  .vr-glasses__content {
+    padding-bottom: 350px;
+  }
+
+  .vr-glasses__images {
+    top: 200px;
   }
 }

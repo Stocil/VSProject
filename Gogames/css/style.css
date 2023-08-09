@@ -177,6 +177,9 @@ body {
           animation: plus-roll 9s linear 0s infinite;
 }
 .main-page__character {
+  -webkit-transform: scale(0.98);
+      -ms-transform: scale(0.98);
+          transform: scale(0.98);
   position: relative;
   width: 735.489px;
   height: 617px;
@@ -432,6 +435,9 @@ body {
 }
 .consoles__images_static {
   position: relative;
+}
+.consoles__images-tablet {
+  display: none;
 }
 
 .static__shadow {
@@ -759,8 +765,16 @@ body {
   .vr-images__men {
     top: 30px;
   }
+  .consoles__images {
+    -webkit-transform: scale(0.94);
+        -ms-transform: scale(0.94);
+            transform: scale(0.94);
+  }
 }
 @media (max-width: 1000px) {
+  .container {
+    max-width: 900px;
+  }
   .title {
     font-size: 55px;
   }
@@ -785,8 +799,17 @@ body {
   .vr-images__men {
     top: 100px;
   }
+  .consoles__images {
+    display: none;
+  }
+  .consoles__images-tablet {
+    display: block;
+  }
 }
 @media (max-width: 800px) {
+  .container {
+    max-width: 600px;
+  }
   .title {
     font-size: 60px;
   }
@@ -824,10 +847,9 @@ body {
             flex-direction: column;
   }
   .vr-glasses__content {
-    padding-bottom: 500px;
+    padding-bottom: 550px;
     margin: auto;
     text-align: center;
-    max-width: 600px;
     background-size: 30%;
     background-position: center right 10%;
     background-position-y: 37%;
@@ -848,8 +870,24 @@ body {
             transform: scale(0.8);
     left: 15%;
   }
+  .consoles__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .consoles__title {
+    max-width: none;
+  }
 }
 @media (max-width: 600px) {
+  .container {
+    max-width: 525px;
+  }
   .title {
     font-size: 50px;
   }
@@ -866,7 +904,6 @@ body {
     font-size: 16px;
   }
   .vr-glasses__content {
-    max-width: 518px;
     padding-bottom: 450px;
     background-position: center right 3%;
     background-position-y: 35%;
@@ -889,6 +926,11 @@ body {
             transform: scaleY(0.7);
     bottom: 30%;
   }
+  .consoles__images-tablet {
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+  }
 }
 @media (max-width: 500px) {
   .title {
@@ -898,8 +940,15 @@ body {
     top: 40%;
     height: 60px;
   }
+  .consoles__text {
+    font-size: 16px;
+  }
 }
 @media (max-width: 400px) {
+  .button {
+    min-width: 160px;
+    font-size: 16px;
+  }
   .title {
     font-size: 42px;
   }
@@ -912,5 +961,8 @@ body {
   }
   .vr-glasses__images {
     top: 200px;
+  }
+  .consoles__inner {
+    padding-bottom: 50px;
   }
 }

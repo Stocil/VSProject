@@ -563,6 +563,14 @@ body {
      -moz-column-gap: 40px;
           column-gap: 40px;
 }
+.pricing__flex {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
 .pricing__item-1, .pricing__item-3 {
   background: rgb(251, 218, 207);
   color: #446381;
@@ -770,6 +778,14 @@ body {
         -ms-transform: scale(0.94);
             transform: scale(0.94);
   }
+  .pricing__item {
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+  }
+  .pricing__item:hover {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+            transform: scale3d(1.05, 1.05, 1.05);
+  }
 }
 @media (max-width: 1000px) {
   .container {
@@ -792,6 +808,9 @@ body {
   .main-page__subtext {
     margin-top: 0px;
   }
+  .main-page__button {
+    margin-bottom: 50px;
+  }
   .vr-images__screen {
     height: 40%;
     top: 45px;
@@ -799,11 +818,33 @@ body {
   .vr-images__men {
     top: 100px;
   }
+  .vr-glasses__inner {
+    padding-top: 100px;
+  }
   .consoles__images {
     display: none;
   }
   .consoles__images-tablet {
     display: block;
+  }
+  .pricing__flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .pricing__grid {
+    display: none;
+  }
+  .pricing__item-first-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .pricing__item-3 {
+    -ms-flex-item-align: center;
+        align-self: center;
+    width: 500px;
+    margin: 0 auto;
   }
 }
 @media (max-width: 800px) {
@@ -868,7 +909,7 @@ body {
     -webkit-transform: scale(0.8);
         -ms-transform: scale(0.8);
             transform: scale(0.8);
-    left: 15%;
+    left: 12%;
   }
   .consoles__inner {
     display: -webkit-box;
@@ -882,6 +923,26 @@ body {
   }
   .consoles__title {
     max-width: none;
+  }
+  .pricing__flex {
+    display: none;
+  }
+  .pricing__grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .pricing__item-3 {
+    width: auto;
+    -ms-flex-item-align: unset;
+        align-self: unset;
+    margin: unset;
   }
 }
 @media (max-width: 600px) {
@@ -942,6 +1003,15 @@ body {
   }
   .consoles__text {
     font-size: 16px;
+  }
+  .pricing__item {
+    max-width: 300px;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+  .pricing__item-3 {
+    -ms-flex-item-align: center;
+        align-self: center;
   }
 }
 @media (max-width: 400px) {

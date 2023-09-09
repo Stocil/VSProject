@@ -3,6 +3,8 @@ const burgerButton = body.querySelector(".header__menu-btn");
 const burgerNav = body.querySelector(".header_nav-bottom");
 const burgerLines = body.querySelectorAll(".header__menu-line");
 
+const closeClick = new CustomEvent("click");
+
 burgerButton.addEventListener("click", burgerMenuActive);
 
 function burgerMenuActive(event) {
@@ -22,14 +24,12 @@ function clickOutOfNavigation(event) {
   if (event.target.closest(".header_nav-list")) return;
   if (event.target.closest(".header__menu-btn") === burgerButton) return;
 
-  body.classList.toggle("scroll-lock");
-  burgerNav.classList.toggle("active");
+  burgerButton.dispatchEvent(closeClick);
 }
 
 function exitKey(event) {
   if (!burgerNav.classList.contains("active")) return;
   if (event.code !== "Escape") return;
 
-  body.classList.toggle("scroll-lock");
-  burgerNav.classList.toggle("active");
+  burgerButton.dispatchEvent(closeClick);
 }

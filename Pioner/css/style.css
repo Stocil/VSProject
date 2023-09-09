@@ -459,6 +459,11 @@ body {
   .news_inner_list_item_text {
     font-size: 16px;
   }
+
+  .footer_nav_inner_content {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -504,6 +509,10 @@ body {
     justify-content: center;
   }
 
+  .footer_nav_inner_lists {
+    flex-direction: column;
+    gap: 27px;
+  }
 }
 
 @media (max-width: 450px) {

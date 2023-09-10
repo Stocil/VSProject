@@ -48,6 +48,10 @@ body {
   top: 0px;
 }
 
+.scrollH-lock {
+  overflow-x: hidden;
+}
+
 .container {
   max-width: 1188px;
   padding: 0 10px;
@@ -1275,5 +1279,41 @@ body {
 
   .consoles__inner {
     padding-bottom: 50px;
+  }
+}
+
+.fadeInLeft {
+  opacity: 0;
+  transform: translateX(-10%);
+  transition: all 1s ease-in-out;
+
+  &-show {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+  }
+}
+
+.fadeInRight {
+  opacity: 0;
+  transform: translateX(10%);
+  transition: all 1s ease-in-out;
+
+  &-show {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+  }
+}
+
+.fadeInDown {
+  opacity: 0;
+  transform: translateY(10%);
+  transition: all 1s ease-in-out;
+
+  &-show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1s ease-in-out;
   }
 }

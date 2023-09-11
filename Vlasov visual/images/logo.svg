@@ -1,0 +1,32 @@
+<svg
+          preserveAspectRatio="xMidYMid meet"
+          data-bbox="197 288 660 424.09"
+          viewBox="197 288 660 424.09"
+          xmlns="http://www.w3.org/2000/svg"
+          data-type="color"
+          role="img"
+          aria-label="Дизайн проект, Визуализации, Власов Визуал"
+        >
+          <g>
+            <path
+              fill="#b21a19"
+              d="m560.48 422.47-65.51 144.81L377.74 288h127.57l55.17 134.47z"
+              data-color="1"
+            ></path>
+            <path
+              fill="#303030"
+              d="m406 464-63.77 152.28L197 288h127.57L406 464z"
+              data-color="2"
+            ></path>
+            <path
+              fill="#323232"
+              d="M557.03 288h113.78L493.59 711.67l-119.3.42L557.03 288z"
+              data-color="3"
+            ></path>
+            <path
+              fill="#b21a19"
+              d="M743.22 288H857L679.78 711.67l-119.3.42L743.22 288z"
+              data-color="1"
+            ></path>
+          </g>
+        </svg>

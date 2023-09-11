@@ -6,8 +6,95 @@
     <title>Gogames</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@400;700&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <header class="header">
+      <div class="header__inner">
+        <a href="#" class="header__link">
+          <img src="images/logo.svg" alt="" class="header__logo" />
+        </a>
+
+        <nav class="header__navigation">
+          <ul class="header__list">
+            <a href="#" class="header__link">
+              <li class="header__list-item">Главная</li>
+            </a>
+            <a href="#" class="header__link">
+              <li class="header__list-item">Работы</li>
+            </a>
+            <a href="#" class="header__link">
+              <li class="header__list-item">Контакты</li>
+            </a>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="welcome">
+        <div class="welcome__inner">
+          <h1 class="welcome__title title"><b>V</b>lasov <b>V</b>isual</h1>
+
+          <div class="welcome__gallery">
+            <div class="gallery__hide-box">
+              <img
+                src="images/welcome-gallery-1.gif"
+                alt="gallery image"
+                class="gallery__image"
+              />
+            </div>
+
+            <div class="gallery__hide-box gallery__image__top">
+              <img
+                src="images/welcome-gallery-2.gif"
+                alt="gallery image"
+                class="gallery__image"
+              />
+            </div>
+
+            <div class="gallery__hide-box">
+              <img
+                src="images/welcome-gallery-3.gif"
+                alt="gallery image"
+                class="gallery__image"
+              />
+            </div>
+          </div>
+          <a href="#about-us" class="welcome__anchor-link">
+            <button class="welcome__anchor">🡣</button>
+          </a>
+        </div>
+      </section>
+
+      <section id="about-us" class="about-us">
+        <div class="about-us__inner">
+          <div class="about-us__description">
+            <p class="about-us__description-text">
+              Дизайн студия "W" - это творческая команда, которая превращает
+              ваши идеи в визуальное искусство. Мы специализируемся на
+              разработке уникального дизайна, и визуализации, c помощью ИИ и
+              опытных специалистов, создавая пространства, которые оставляют
+              след в сердцах и умах. Наша миссия - вдохновлять и удивлять, даря
+              каждому проекту неповторимую эстетику. Приглашаем вас отправиться
+              вместе с нами в в мир креатива и искусственного интеллекта.
+              Доверьте свой дизайн "W" и сделайте ваш бренд неповторимым.
+            </p>
+          </div>
+
+          <a href="" class="about-us__button-link">
+            <button class="about-us__button button">Связаться</button>
+          </a>
+        </div>
+      </section>
+    </main>
+
     <script src="js/main.js"></script>
   </body>
 </html>

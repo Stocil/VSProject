@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -290,6 +291,32 @@ body {
 .photo-slider__images {
   width: 250px;
   height: 335px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.photo-slider__images:hover {
+  -webkit-filter: opacity(50%);
+          filter: opacity(50%);
+}
+.photo-slider__item {
+  background-color: black;
+  position: relative;
+}
+.photo-slider__item:hover::after {
+  content: "♡";
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 10px);
+  opacity: 1;
+}
+.photo-slider__item.like:hover::after {
+  content: "❤";
+  color: red;
+  font-size: 20px;
+  top: calc(50% - 20px);
+  left: calc(50% - 10px);
 }
 
 .slider__button {

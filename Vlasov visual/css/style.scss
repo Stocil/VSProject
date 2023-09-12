@@ -275,6 +275,38 @@ body {
   &__images {
     width: 250px;
     height: 335px;
+    object-fit: cover;
+
+    &:hover {
+      filter: opacity(50%);
+    }
+  }
+
+  &__item {
+    background-color: black;
+    position: relative;
+
+    &:hover::after {
+      content: "\2661";
+      color: white;
+
+      font-size: 30px;
+
+      position: absolute;
+      top: calc(50% - 20px);
+      left: calc(50% - 10px);
+      opacity: 1;
+    }
+
+    &.like:hover::after {
+      content: "\2764";
+      color: red;
+
+      font-size: 20px;
+
+      top: calc(50% - 20px);
+      left: calc(50% - 10px);
+    }
   }
 }
 

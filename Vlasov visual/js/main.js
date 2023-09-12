@@ -101,5 +101,30 @@ function topSliderScrollRight(event) {
 
   topSliderMove();
 }
+
+// Hover
+
+photoSliderInner.addEventListener("pointerover", showHeart);
+photoSliderInner.addEventListener("pointerout", hideHeart);
+photoSliderInner.addEventListener("click", likeHeart);
+
+function showHeart(event) {
+  if (!event.target.classList.contains("photo-slider__item")) return;
+
+  event.target.firstElementChild.style.filter = "opacity(50%)";
+}
+
+function hideHeart(event) {
+  if (!event.target.classList.contains("photo-slider__item")) return;
+
+  event.target.firstElementChild.style.filter = "";
+}
+
+function likeHeart(event) {
+  if (!event.target.classList.contains("photo-slider__item")) return;
+
+  event.target.classList.toggle("like");
+}
+
 // Final slider setting
 // -10 300ms

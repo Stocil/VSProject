@@ -143,8 +143,8 @@ body {
   -webkit-transform: translateY(110%);
       -ms-transform: translateY(110%);
           transform: translateY(110%);
-  -webkit-animation: galleryShow 1.5s ease-in-out 1.5s 1 forwards;
-          animation: galleryShow 1.5s ease-in-out 1.5s 1 forwards;
+  -webkit-animation: galleryShow 1.5s ease-in-out 1s 1 forwards;
+          animation: galleryShow 1.5s ease-in-out 1s 1 forwards;
 }
 .gallery__image__top {
   -webkit-transform: translateY(-35px);
@@ -233,4 +233,104 @@ body {
   background-color: #dbdbdb;
   border: 1px solid #dbdbdb;
   color: #1a1919;
+}
+
+.works__inner {
+  margin-top: 110px;
+}
+.works__title {
+  font-size: 42px;
+  line-height: 55px;
+  font-weight: 400;
+  text-align: center;
+}
+.works__subtitles {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.works__slogan {
+  font-weight: 700;
+}
+.works__slogan-description {
+  max-width: 320px;
+}
+.works__gif-slider {
+  margin-top: 70px;
+}
+
+.photo-slider__inner {
+  margin-top: 70px;
+  margin: 70px auto 80px auto;
+  position: relative;
+  overflow: hidden;
+  width: 98vw;
+  padding: 0 10px;
+}
+.photo-slider__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+  will-change: transform;
+}
+.photo-slider__images {
+  width: 250px;
+  height: 335px;
+}
+
+.slider__button {
+  cursor: pointer;
+  position: absolute;
+  left: 10px;
+  top: calc(50% - 35px);
+  width: 30px;
+  height: 70px;
+}
+.slider__button-line:nth-child(1) {
+  content: "";
+  position: absolute;
+  top: 23px;
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  -webkit-transform: rotate(315deg);
+      -ms-transform: rotate(315deg);
+          transform: rotate(315deg);
+}
+.slider__button-line:nth-child(2) {
+  content: "";
+  position: absolute;
+  bottom: 23px;
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.right-btn {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  left: calc(100% - 30px);
+  top: calc(50% - 35px);
+}
+
+.left-btn {
+  z-index: 1;
 }

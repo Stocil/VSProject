@@ -1,46 +1,105 @@
 const body = document.body;
+const photoSliderInner = body.querySelector(".photo-slider__inner");
+const photoSliderList = body.querySelector(".photo-slider__list");
 
-const options = {
-  threshold: 0,
-};
+const photoSliderGap = 12;
+const photoSliderImageWidth = 251;
 
-const reveal = function (entries, scrollObserver) {
-  entries.forEach((entry) => {
-    let side = wichSide(entry.target);
+const photoSliderLeftButton = body.querySelector(".left-btn");
+const photoSliderRightButton = body.querySelector(".right-btn");
 
-    if (entry.isIntersecting) {
-      entry.target.classList.remove(side);
-      entry.target.classList.add(side + "-show");
-    } else {
-      entry.target.classList.remove(side + "-show");
-      entry.target.classList.add(side);
-    }
-  });
-};
+const photoSliderListWidth = Math.round(
+  photoSliderList.childElementCount * photoSliderImageWidth +
+    (photoSliderList.childElementCount - 1) * photoSliderGap -
+    photoSliderList.getBoundingClientRect().left
+);
 
-const scrollObserver = new IntersectionObserver(reveal, options);
+photoSliderList.style.width = photoSliderListWidth + "px";
 
-const hidedElements = body.querySelectorAll(".fadeIn");
-const hidedElementsDown = body.querySelectorAll(".fadeInDown");
+let topTranslate = 0;
+let isTopScroll = true;
+let topInterval = setInterval(topSliderMove, 100);
 
-hidedElements.forEach((element) => {
-  scrollObserver.observe(element);
-});
+photoSliderInner.addEventListener("pointerout", topSliderScroll);
+photoSliderInner.addEventListener("pointerover", topSliderStop);
 
-hidedElementsDown.forEach((element) => {
-  scrollObserver.observe(element);
-});
+window.addEventListener("resize", checkSliderRightSide);
 
-function wichSide(element) {
-  if (
-    element.classList.contains("fadeIn") ||
-    element.classList.contains("fadeIn-show")
-  )
-    return "fadeIn";
+photoSliderLeftButton.addEventListener("click", topSliderScrollLeft);
+photoSliderRightButton.addEventListener("click", topSliderScrollRight);
 
-  if (
-    element.classList.contains("fadeInDown") ||
-    element.classList.contains("fadeInDown-show")
-  )
-    return "fadeInDown";
+// Сontinue scrolling after the slider stops, if slider is not over
+function topSliderScroll(event) {
+  if (topSliderIsOver()) return;
+
+  isTopScroll = true;
+
+  topInterval = setInterval(topSliderMove, 100);
 }
+
+// Move slider, if slider is not over
+function topSliderMove() {
+  if (topSliderIsOver()) topSliderStop();
+
+  topTranslate -= 10;
+  photoSliderList.style.transform = `translateX(${topTranslate}px)`;
+}
+
+// Stop slider scroll
+function topSliderStop(event) {
+  isTopScroll = false;
+
+  clearInterval(topInterval);
+}
+
+// Over check || if the current scroll + width of the visible area is greater than
+// the maximum length of the slider, then slider is over
+function topSliderIsOver() {
+  if (-topTranslate + photoSliderInner.offsetWidth >= photoSliderListWidth) {
+    photoSliderRightButton.style.opacity = "0";
+    return true;
+  } else {
+    photoSliderRightButton.style.opacity = "1";
+    return false;
+  }
+}
+
+// Pressing the slider to the right side, when changing the width of the window
+function checkSliderRightSide(event) {
+  topSliderMove();
+  if (
+    photoSliderInner.offsetWidth -
+      photoSliderList.getBoundingClientRect().right >
+    photoSliderList.getBoundingClientRect().right - photoSliderInner.offsetWidth
+  ) {
+    topTranslate -=
+      photoSliderList.getBoundingClientRect().right -
+      photoSliderInner.offsetWidth;
+  }
+}
+
+function topSliderScrollLeft(event) {
+  if (topTranslate + 252 > 0) {
+    topTranslate = 0;
+  } else {
+    topTranslate += 252;
+  }
+
+  topSliderMove();
+}
+
+// Limitation of slider buttons
+function topSliderScrollRight(event) {
+  if (
+    -topTranslate + photoSliderInner.offsetWidth + 252 >
+    photoSliderListWidth
+  ) {
+    topTranslate = -photoSliderListWidth + photoSliderInner.offsetWidth;
+  } else {
+    topTranslate -= 252;
+  }
+
+  topSliderMove();
+}
+// Final slider setting
+// -10 300ms

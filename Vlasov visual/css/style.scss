@@ -1,3 +1,8 @@
+$primary-color-dark: #1a1919;
+$primary-color-light: #dbdbdb;
+$font-stack-main: "Open Sans", sans-serif;
+$font-stack-add: montserrat, sans-serif;
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -25,12 +30,16 @@ img {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: $font-stack-main;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5em;
-  color: #dbdbdb;
-  background-color: #1a1919;
+  color: $primary-color-light;
+  background-color: $primary-color-dark;
+}
+
+.scroll-lock {
+  overflow: hidden;
 }
 
 .button {
@@ -57,7 +66,7 @@ body {
 
   &__inner {
     padding: 0 60px;
-    background-color: rgba($color: #1a1919, $alpha: 0.7);
+    background-color: rgba($color: $primary-color-dark, $alpha: 0.7);
     box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.2);
 
     display: flex;
@@ -97,14 +106,18 @@ body {
   }
 
   &__title {
+    opacity: 0;
+
     font-weight: 400;
     font-size: 60px;
     line-height: 60px;
-    font-family: montserrat, sans-serif;
+    font-family: $font-stack-add;
     text-shadow: rgba(10, 189, 240, 0.298039) 3px 3px 0px,
       rgba(254, 1, 1, 0.298039) -3px -3px 0px;
 
     text-align: center;
+
+    animation: titleShow 1.5s ease-in-out 2s 1 forwards;
   }
 
   &__gallery {
@@ -123,11 +136,11 @@ body {
     padding: 10px 15px;
 
     background-color: transparent;
-    border: 1px solid #dbdbdb;
+    border: 1px solid $primary-color-light;
     border-radius: 50%;
 
-    font-size: 40px;
-    color: #dbdbdb;
+    font-size: 30px;
+    color: $primary-color-light;
   }
 }
 
@@ -159,6 +172,16 @@ body {
   }
 }
 
+@keyframes titleShow {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .about-us {
   margin-top: 50px;
   padding-bottom: 55px;
@@ -177,9 +200,9 @@ body {
     width: 980px;
     height: 440px;
 
-    color: #dbdbdb;
+    color: $primary-color-light;
     font-size: 30px;
-    font-family: montserrat, sans-serif;
+    font-family: $font-stack-add;
     line-height: 42px;
 
     background-color: rgba($color: #ffffff, $alpha: 0.3);
@@ -189,17 +212,17 @@ body {
     &:hover {
       background-color: rgba($color: #ffffff, $alpha: 1);
       border-radius: 30px;
-      color: #1a1919;
+      color: $primary-color-dark;
     }
   }
 
   &__button {
     padding: 10px 20px;
 
-    font-family: montserrat, sans-serif;
+    font-family: $font-stack-add;
     font-size: 25px;
     line-height: 35px;
-    color: #dbdbdb;
+    color: $primary-color-light;
 
     border: 1px solid black;
     border-radius: 40px;
@@ -207,9 +230,9 @@ body {
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      background-color: #dbdbdb;
-      border: 1px solid #dbdbdb;
-      color: #1a1919;
+      background-color: $primary-color-light;
+      border: 1px solid $primary-color-light;
+      color: $primary-color-dark;
     }
   }
 }
@@ -248,9 +271,9 @@ body {
   }
 }
 
-// Photo-Slider
+// Slider
 
-.photo-slider {
+.slider {
   &__inner {
     margin-top: 70px;
     margin: 70px auto 80px auto;
@@ -268,14 +291,17 @@ body {
 
     transform: translateX(0);
 
-    transition: transform 0.1s linear;
+    transition: transform 0.3s linear;
     will-change: transform;
   }
 
   &__images {
     width: 250px;
     height: 335px;
+
     object-fit: cover;
+
+    user-select: none;
 
     &:hover {
       filter: opacity(50%);
@@ -283,6 +309,8 @@ body {
   }
 
   &__item {
+    height: 335px;
+
     background-color: black;
     position: relative;
 
@@ -293,7 +321,7 @@ body {
       font-size: 30px;
 
       position: absolute;
-      top: calc(50% - 20px);
+      top: calc(50% - 12px);
       left: calc(50% - 10px);
       opacity: 1;
     }
@@ -304,47 +332,46 @@ body {
 
       font-size: 20px;
 
-      top: calc(50% - 20px);
+      top: calc(50% - 12px);
       left: calc(50% - 10px);
     }
   }
-}
 
-.slider__button {
-  cursor: pointer;
+  &__button {
+    cursor: pointer;
 
-  position: absolute;
-  left: 10px;
-  top: calc(50% - 35px);
-
-  width: 30px;
-  height: 70px;
-
-  &-line:nth-child(1) {
-    content: "";
     position: absolute;
-    top: 23px;
+    left: 10px;
+    top: calc(50% - 35px);
 
     width: 30px;
-    height: 4px;
+    height: 70px;
 
-    background-color: black;
+    &-line:nth-child(1) {
+      content: "";
+      position: absolute;
+      top: 23px;
 
-    // transform: rotate(45deg);
-    transform: rotate(315deg);
-  }
+      width: 30px;
+      height: 4px;
 
-  &-line:nth-child(2) {
-    content: "";
-    position: absolute;
-    bottom: 23px;
+      background-color: black;
 
-    width: 30px;
-    height: 4px;
+      transform: rotate(315deg);
+    }
 
-    background-color: black;
+    &-line:nth-child(2) {
+      content: "";
+      position: absolute;
+      bottom: 23px;
 
-    transform: rotate(45deg);
+      width: 30px;
+      height: 4px;
+
+      background-color: black;
+
+      transform: rotate(45deg);
+    }
   }
 }
 
@@ -356,4 +383,99 @@ body {
 
 .left-btn {
   z-index: 1;
+}
+
+.full-screen {
+  z-index: 1;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 1;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $primary-color-dark;
+
+  transition: opacity 1s ease-in-out;
+  will-change: opacity;
+
+  &__image {
+    opacity: 1;
+    max-width: 512px;
+    max-height: 512px;
+
+    transition: opacity 0.3s ease-in-out;
+    will-change: opacity;
+
+    &__hide {
+      opacity: 0;
+      max-width: 0px;
+      max-height: 0px;
+    }
+  }
+
+  &__hide {
+    top: 50%;
+    left: 50%;
+
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__close-button {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+
+    opacity: 1;
+
+    transition: opacity 0.3s ease-in-out, width 0.1s ease-in-out 0.3s,
+      height 0.1s ease-in-out 0.3s;
+    will-change: opacity;
+
+    &__hide {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &__button-line:nth-child(1) {
+    content: "";
+
+    width: 40px;
+    height: 2px;
+    transform: rotate(45deg);
+
+    background-color: $primary-color-light;
+
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__button-line:nth-child(2) {
+    content: "";
+
+    width: 40px;
+    height: 2px;
+
+    background-color: $primary-color-light;
+    position: absolute;
+
+    transform: rotate(315deg);
+    transition: all 0.3s ease-in-out;
+  }
 }

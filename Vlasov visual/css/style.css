@@ -407,9 +407,9 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: #1a1919;
-  -webkit-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
-  will-change: opacity;
+  -webkit-transition: all 0.7s ease-in-out 0.3s;
+  transition: all 0.7s ease-in-out 0.3s;
+  will-change: opacity, left;
 }
 .full-screen__image {
   opacity: 1;
@@ -421,20 +421,16 @@ body {
 }
 .full-screen__image__hide {
   opacity: 0;
-  max-width: 0px;
-  max-height: 0px;
 }
 .full-screen__hide {
-  top: 50%;
-  left: 50%;
+  left: -110%;
   opacity: 0;
-  width: 0;
-  height: 0;
 }
 .full-screen__close-button {
   position: absolute;
   right: 10%;
   top: 10%;
+  opacity: 1;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -447,15 +443,12 @@ body {
           justify-content: center;
   width: 40px;
   height: 40px;
-  opacity: 1;
-  -webkit-transition: opacity 0.3s ease-in-out, width 0.1s ease-in-out 0.3s, height 0.1s ease-in-out 0.3s;
-  transition: opacity 0.3s ease-in-out, width 0.1s ease-in-out 0.3s, height 0.1s ease-in-out 0.3s;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   will-change: opacity;
 }
 .full-screen__close-button__hide {
   opacity: 0;
-  width: 0;
-  height: 0;
 }
 .full-screen__button-line:nth-child(1) {
   content: "";
@@ -480,4 +473,39 @@ body {
           transform: rotate(315deg);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+.full-screen__heart-button {
+  cursor: pointer;
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  opacity: 1;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.full-screen__heart-button__hide {
+  opacity: 0;
+}
+.full-screen__heart-button.liked::after {
+  content: "❤";
+  color: red;
+  font-size: 30px;
+}
+.full-screen__heart-button::after {
+  content: "♡";
+  color: white;
+  font-size: 40px;
+  position: absolute;
+  opacity: 1;
 }

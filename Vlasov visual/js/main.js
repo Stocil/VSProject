@@ -231,6 +231,7 @@ function hideHeart(event) {
 function likeHeart(event) {
   if (!event.target.classList.contains("slider__item")) return;
 
+  event.target.firstElementChild.classList.toggle("liked");
   event.target.classList.toggle("like");
 }
 
@@ -239,24 +240,58 @@ const worksInner = body.querySelector(".works__inner");
 const fullScreenBox = body.querySelector(".full-screen");
 const fullScreenImage = body.querySelector(".full-screen__image");
 const fullScreenCloseButton = body.querySelector(".full-screen__close-button");
+const fullScreenHeartButton = body.querySelector(".full-screen__heart-button");
 
 worksInner.addEventListener("click", fullScreen);
 fullScreenCloseButton.addEventListener("click", closeFullScreen);
+fullScreenHeartButton.addEventListener("click", addToLiked);
 
+// Stop and start scroll sliders
+fullScreenBox.addEventListener("pointerover", function (event) {
+  topSliderStop();
+  botSliderStop();
+});
+
+fullScreenBox.addEventListener("pointerout", function (event) {
+  topSliderScroll();
+  botSliderScroll();
+});
+
+// Full-screen open
 function fullScreen(event) {
   if (!event.target.classList.contains("slider__images")) return;
+
+  if (event.target.classList.contains("liked")) {
+    makeHeartRed();
+  } else {
+    fullScreenHeartButton.classList.remove("liked");
+  }
 
   fullScreenImage.src = event.target.src;
   closeFullScreen();
 }
 
 function closeFullScreen(elem) {
-  setTimeout(() => fullScreenBox.classList.toggle("full-screen__hide"), 300);
-  setTimeout(
-    () => fullScreenImage.classList.toggle("full-screen__image__hide"),
-    300
-  );
+  body.classList.toggle("scroll-lock");
+  fullScreenBox.classList.toggle("full-screen__hide");
+  fullScreenImage.classList.toggle("full-screen__image__hide");
   fullScreenCloseButton.classList.toggle("full-screen__close-button__hide");
+  fullScreenHeartButton.classList.toggle("full-screen__heart-button__hide");
+}
+
+function addToLiked() {
+  fullScreenHeartButton.classList.toggle("liked");
+
+  body.querySelectorAll(".slider__images").forEach((img) => {
+    if (img.src == fullScreenImage.src) {
+      img.closest(".slider__item").classList.toggle("like");
+      img.classList.toggle("liked");
+    }
+  });
+}
+
+function makeHeartRed() {
+  fullScreenHeartButton.classList.add("liked");
 }
 
 // Final slider setting

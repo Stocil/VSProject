@@ -401,8 +401,8 @@ body {
 
   background-color: $primary-color-dark;
 
-  transition: opacity 1s ease-in-out;
-  will-change: opacity;
+  transition: all 0.7s ease-in-out 0.3s;
+  will-change: opacity, left;
 
   &__image {
     opacity: 1;
@@ -414,42 +414,34 @@ body {
 
     &__hide {
       opacity: 0;
-      max-width: 0px;
-      max-height: 0px;
     }
   }
 
   &__hide {
-    top: 50%;
-    left: 50%;
-
+    left: -110%;
     opacity: 0;
-    width: 0;
-    height: 0;
   }
 
   &__close-button {
     position: absolute;
     right: 10%;
     top: 10%;
+    opacity: 1;
 
     cursor: pointer;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     width: 40px;
     height: 40px;
 
-    opacity: 1;
-
-    transition: opacity 0.3s ease-in-out, width 0.1s ease-in-out 0.3s,
-      height 0.1s ease-in-out 0.3s;
+    transition: opacity 0.3s ease-in-out;
     will-change: opacity;
 
     &__hide {
       opacity: 0;
-      width: 0;
-      height: 0;
     }
   }
 
@@ -477,5 +469,45 @@ body {
 
     transform: rotate(315deg);
     transition: all 0.3s ease-in-out;
+  }
+
+  &__heart-button {
+    cursor: pointer;
+    position: absolute;
+    top: 10%;
+    left: 15%;
+
+    opacity: 1;
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: opacity 0.3s ease-in-out;
+
+    &__hide {
+      opacity: 0;
+    }
+
+    &.liked::after {
+      content: "\2764";
+      color: red;
+
+      font-size: 30px;
+    }
+
+    &::after {
+      content: "\2661";
+      color: white;
+
+      font-size: 40px;
+
+      position: absolute;
+      // top: 40px;
+      // left: 140px;
+      opacity: 1;
+    }
   }
 }

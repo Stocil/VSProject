@@ -235,12 +235,14 @@ function likeHeart(event) {
   event.target.classList.toggle("like");
 }
 
-// Full screen
+// Full screen -------
+
 const worksInner = body.querySelector(".works__inner");
 const fullScreenBox = body.querySelector(".full-screen");
 const fullScreenImage = body.querySelector(".full-screen__image");
 const fullScreenCloseButton = body.querySelector(".full-screen__close-button");
 const fullScreenHeartButton = body.querySelector(".full-screen__heart-button");
+let currentImage;
 
 worksInner.addEventListener("click", fullScreen);
 fullScreenCloseButton.addEventListener("click", closeFullScreen);
@@ -267,12 +269,16 @@ function fullScreen(event) {
     fullScreenHeartButton.classList.remove("liked");
   }
 
+  event.target.removeEventListener("click", fullScreen);
+
   fullScreenImage.src = event.target.src;
+  currentImage = event.target;
   closeFullScreen();
 }
 
 function closeFullScreen(elem) {
-  body.classList.toggle("scroll-lock");
+  // body.classList.toggle("scroll-lock"); // Mb add
+
   fullScreenBox.classList.toggle("full-screen__hide");
   fullScreenImage.classList.toggle("full-screen__image__hide");
   fullScreenCloseButton.classList.toggle("full-screen__close-button__hide");
@@ -292,6 +298,134 @@ function addToLiked() {
 
 function makeHeartRed() {
   fullScreenHeartButton.classList.add("liked");
+}
+
+// Full-sreen left/right button
+
+const fullScreenLeftButton = body.querySelector(
+  ".slider__button.full-screen__button.left-btn"
+);
+
+const fullScreenRightButton = body.querySelector(
+  ".slider__button.full-screen__button.right-btn"
+);
+
+fullScreenLeftButton.addEventListener("click", fullScreenScrollLeft);
+fullScreenRightButton.addEventListener("click", fullScreenScrollRight);
+
+let rightButtonCooldown = false;
+let leftButtonCooldown = false;
+
+function fullScreenScrollLeft(event) {
+  if (leftButtonCooldown) return;
+
+  isRightEnd();
+  isLeftEnd();
+
+  leftButtonCooldown = true;
+  leftCooldownRefresh();
+
+  const click = new CustomEvent("click", function (event) {});
+
+  closeFullScreen();
+
+  if (!currentImage.closest(".slider__item").previousElementSibling) return;
+
+  // Sroll background slider
+  scrollBackgroundSliderLeft();
+
+  currentImage
+    .closest(".slider__item")
+    .previousElementSibling.firstElementChild.addEventListener(
+      "click",
+      fullScreen
+    );
+
+  setTimeout(
+    () =>
+      currentImage
+        .closest(".slider__item")
+        .previousElementSibling.firstElementChild.dispatchEvent(click),
+    200
+  );
+}
+function fullScreenScrollRight(event) {
+  if (rightButtonCooldown) return;
+
+  rightButtonCooldown = true;
+  rightCooldownRefresh();
+
+  const click = new CustomEvent("click", function (event) {});
+
+  closeFullScreen();
+
+  if (!currentImage.closest(".slider__item").nextElementSibling) return;
+  isRightEnd();
+  isLeftEnd();
+
+  // Sroll background slider
+  scrollBackgroundSliderRight();
+
+  currentImage
+    .closest(".slider__item")
+    .nextElementSibling.firstElementChild.addEventListener("click", fullScreen);
+
+  setTimeout(
+    () =>
+      currentImage
+        .closest(".slider__item")
+        .nextElementSibling.firstElementChild.dispatchEvent(click),
+    200
+  );
+}
+
+function leftCooldownRefresh() {
+  setTimeout(() => (leftButtonCooldown = false), 200);
+}
+
+function rightCooldownRefresh() {
+  setTimeout(() => (rightButtonCooldown = false), 200);
+}
+
+function isLeftEnd() {
+  if (!currentImage.closest(".slider__item").previousElementSibling) return;
+
+  // if (
+  //   !currentImage.closest(".slider__item").previousElementSibling
+  //     .previousElementSibling
+  // ) {
+  //   fullScreenLeftButton.style.display = "none";
+  // } else {
+  //   fullScreenLeftButton.style.display = "block";
+  // }
+}
+
+function isRightEnd() {
+  if (!currentImage.closest(".slider__item").nextElementSibling) return;
+
+  // if (
+  //   !currentImage.closest(".slider__item").nextElementSibling.nextElementSibling
+  // ) {
+  //   fullScreenRightButton.style.display = "none";
+  // } else {
+  //   fullScreenRightButton.style.display = "block";
+  // }
+}
+
+function scrollBackgroundSliderLeft() {
+  if (currentImage.classList.contains("photo-slider__images")) {
+    topSliderScrollLeft();
+  } else {
+    botSliderScrollLeft();
+  }
+}
+
+function scrollBackgroundSliderRight() {
+  if (currentImage.classList.contains("photo-slider__images")) {
+    topSliderScrollRight();
+  } else {
+    botSliderScrollRight();
+  }
 }
 
 // Final slider setting

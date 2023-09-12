@@ -381,7 +381,7 @@ body {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
-  left: calc(100% - 30px);
+  left: calc(100% - 60px);
   top: calc(50% - 35px);
 }
 

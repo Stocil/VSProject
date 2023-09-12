@@ -377,7 +377,7 @@ body {
 
 .right-btn {
   transform: rotate(180deg);
-  left: calc(100% - 30px);
+  left: calc(100% - 60px);
   top: calc(50% - 35px);
 }
 
@@ -505,8 +505,6 @@ body {
       font-size: 40px;
 
       position: absolute;
-      // top: 40px;
-      // left: 140px;
       opacity: 1;
     }
   }

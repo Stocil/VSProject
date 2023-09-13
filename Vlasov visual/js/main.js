@@ -312,6 +312,8 @@ function fullScreen(event) {
     fullScreenHeartButton.classList.remove("liked");
   }
 
+  body.addEventListener("keydown", scrollOnArrow);
+
   event.target.removeEventListener("click", fullScreen);
 
   fullScreenImage.src = event.target.src;
@@ -320,8 +322,6 @@ function fullScreen(event) {
 }
 
 function closeFullScreen(elem) {
-  // body.classList.toggle("scroll-lock"); // Mb add
-
   fullScreenBox.classList.toggle("full-screen__hide");
   fullScreenImage.classList.toggle("full-screen__image__hide");
   fullScreenCloseButton.classList.toggle("full-screen__close-button__hide");
@@ -355,6 +355,20 @@ const fullScreenRightButton = body.querySelector(
 
 fullScreenLeftButton.addEventListener("click", fullScreenScrollLeft);
 fullScreenRightButton.addEventListener("click", fullScreenScrollRight);
+
+// Scroll on left/right arrow
+function scrollOnArrow(event) {
+  if (fullScreenBox.classList.contains("full-screen__hide")) return;
+  if (event.code !== "ArrowLeft" && event.code !== "ArrowRight") return;
+
+  let arrowClick = new CustomEvent("click");
+
+  if (event.code === "ArrowLeft") {
+    fullScreenLeftButton.dispatchEvent(arrowClick);
+  } else {
+    fullScreenRightButton.dispatchEvent(arrowClick);
+  }
+}
 
 let rightButtonCooldown = false;
 let leftButtonCooldown = false;

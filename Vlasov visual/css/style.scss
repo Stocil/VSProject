@@ -40,6 +40,13 @@ body {
 
 .scroll-lock {
   overflow: hidden;
+
+  padding-right: 17px;
+  top: 0px;
+}
+
+.scroll-lock {
+  overflow: hidden;
 }
 
 .button {
@@ -90,6 +97,45 @@ body {
     transition: color 0.3s ease-in-out;
     &:hover {
       color: rgb(17, 103, 120);
+    }
+  }
+
+  &__menu-btn {
+    cursor: pointer;
+    display: none;
+
+    width: 50px;
+    height: 40px;
+
+    color: $primary-color-light;
+    position: relative;
+
+    transition: color 0.3s ease-in-out;
+  }
+
+  &__menu-line {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    content: "";
+
+    transform: translateX(0);
+
+    margin: 0 auto;
+
+    width: 40px;
+    height: 3px;
+
+    background-color: currentColor;
+
+    transition: transform 0.3s ease-in-out;
+
+    &:nth-child(2) {
+      top: 15px;
+    }
+
+    &:nth-child(3) {
+      top: 25px;
     }
   }
 }
@@ -517,21 +563,29 @@ body {
 
 .feedback {
   &__inner {
-    margin-top: 160px;
+    margin-top: 190px;
+    margin-bottom: 50px;
     padding: 0 95px;
 
     display: flex;
+    position: relative;
   }
 
   &__form {
-    margin-left: 200px;
+    margin: 0 auto;
     margin-bottom: 70px;
 
     font-family: $font-stack-add;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 390px);
     gap: 40px;
+  }
+
+  &__subtitle {
+    position: absolute;
+    left: 80px;
+    bottom: 105%;
   }
 }
 
@@ -648,4 +702,371 @@ body {
 #project-location-check {
   margin-bottom: 20px;
   font-size: 20px;
+}
+
+.arrow__hide {
+  z-index: 0;
+}
+
+// Adaptive
+
+@media (max-width: 1100px) {
+  .about-us {
+    &__inner {
+      padding: 0 40px;
+    }
+
+    &__description {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  .project-location-check__inner {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1000px) {
+  .welcome__inner {
+    padding: 120px 60px 25px 60px;
+  }
+
+  .feedback__form {
+    grid-template-columns: repeat(2, 330px);
+  }
+}
+
+@media (max-width: 850px) {
+  .about-us {
+    &__description {
+      background-color: white;
+      border-radius: 10px;
+
+      &:hover {
+        background-color: white;
+        border-radius: 10px;
+      }
+    }
+
+    &__description-text {
+      color: $primary-color-dark;
+      font-size: 25px;
+    }
+  }
+
+  .feedback {
+    &__form {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__inner {
+      padding: 0 60px;
+    }
+  }
+
+  .header {
+    &__navigation {
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      position: fixed;
+      top: 0px;
+      right: 0px;
+
+      width: 50%;
+      height: 100%;
+      padding: 130px 30px 130px 110px;
+
+      color: $primary-color-dark;
+      font-size: 30px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+
+      transform: translateX(100%);
+      transition: transform 0.7s cubic-bezier(0.7, 0, 0.2, 1),
+        border-radius 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    &__list {
+      flex-direction: column;
+      text-align: left;
+      gap: 50px;
+      margin: 0;
+
+      transform: translate(0);
+      transition: transform 1.5s cubic-bezier(0.7, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    &__menu-btn {
+      display: block;
+
+      z-index: 1;
+    }
+  }
+
+  .active {
+    transform: translateX(0);
+    border-radius: 0;
+    box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+  .menu {
+    &__line-1 {
+      transform: translateY(10px) rotate(45deg);
+    }
+
+    &__line-2 {
+      transform: scale(0);
+    }
+
+    &__line-3 {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+
+    &__list {
+      transform: translateX(-40px);
+    }
+
+    &__active {
+      color: $primary-color-dark;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .about-us__description-text {
+    font-size: 20px;
+    line-height: 35px;
+  }
+
+  .works {
+    &__subtitles {
+      padding: 0 40px;
+    }
+
+    &__inner {
+      margin-top: 80px;
+    }
+  }
+
+  .slider__inner {
+    width: 90vw;
+  }
+
+  .right-btn {
+    left: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 710px) {
+  .project-location-check__inner {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .form__group {
+    justify-content: end;
+  }
+}
+
+@media (max-width: 600px) {
+  .welcome {
+    &__inner {
+      height: auto;
+    }
+
+    &__gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+  }
+
+  .gallery {
+    &__image__top {
+      transform: none;
+    }
+
+    &__hide-box:nth-child(3) {
+      grid-column: 1/3;
+      margin: 0 auto;
+    }
+  }
+
+  .about-us__description-text {
+    font-size: 18px;
+  }
+
+  .works {
+    &__subtitles {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  .feedback {
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    &__form {
+      margin: 0;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__subtitle {
+      text-align: center;
+      position: unset;
+    }
+  }
+
+  .form {
+    &__title {
+      text-align: center;
+    }
+
+    &__group-check {
+      height: 50px;
+      display: flex;
+      align-items: center;
+    }
+
+    &__check {
+      height: 26px;
+      width: 25px;
+      margin-left: 10px;
+    }
+  }
+
+  .header__navigation {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-us {
+    &__description {
+      background-color: transparent;
+      border-radius: none;
+      margin: 60px auto;
+      margin-top: 20px;
+
+      &:hover {
+        background-color: transparent;
+        border-radius: none;
+      }
+    }
+
+    &__description-text {
+      color: $primary-color-light;
+      font-size: 16px;
+      line-height: 30px;
+
+      text-align: center;
+    }
+
+    &__button {
+      color: $primary-color-dark;
+      background-color: $primary-color-light;
+    }
+  }
+
+  .works {
+    &__subtitles {
+      text-align: center;
+    }
+
+    &__title {
+      font-size: 36px;
+    }
+  }
+
+  .feedback__inner {
+    padding: 0 40px;
+  }
+
+  .header__logo {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  .welcome {
+    &__inner {
+      padding: 120px 20px 20px 20px;
+    }
+
+    &__gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  .gallery {
+    &__hide-box {
+      grid-column: 1/3;
+      margin: 0;
+      display: flex;
+    }
+
+    &__image:nth-child(1) {
+      object-position: left;
+    }
+  }
+
+  .about-us {
+    margin-top: 0;
+    padding-bottom: 0;
+
+    &__description-text {
+      font-size: 14px;
+      line-height: 25px;
+    }
+
+    &__inner {
+      padding: 0px 25px;
+    }
+
+    &__button {
+      font-size: 18px;
+    }
+  }
+
+  .slider__inner {
+    width: 85vw;
+  }
+
+  .full-screen__hide {
+    left: -140%;
+  }
+
+  .feedback__inner {
+    padding: 0 25px;
+  }
+
+  .form__submit {
+    margin: 0 auto;
+  }
+
+  .header__inner {
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 335px) {
+  .form__check {
+    margin: 0;
+  }
 }

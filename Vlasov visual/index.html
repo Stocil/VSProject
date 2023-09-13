@@ -99,7 +99,7 @@
           <h2 class="works__title"><b>Р</b>аботы</h2>
 
           <div class="works__subtitles">
-            <p class="works__slogan">W - не просто визуал</p>
+            <p class="works__slogan subtitle">W - не просто визуал</p>
             <p class="works__slogan-description">
               Создание дизайн проектов и проектов реконструкции. Оформление
               чертежей.
@@ -448,6 +448,132 @@
             <span class="slider__button-line"></span>
             <span class="slider__button-line"></span>
           </div>
+        </div>
+      </section>
+
+      <section class="feedback">
+        <div class="feedback__inner">
+          <h3 class="feedback__subtitle subtitle">W — свяжитесь с нами</h3>
+
+          <form class="feedback__form">
+            <h3 class="form__title">Заявка</h3>
+
+            <div class="form__group">
+              <label class="form__label" for="company">Компания</label>
+              <input
+                placeholder="Компания"
+                type="text"
+                class="form__input"
+                id="company"
+              />
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="name">Имя</label>
+              <input
+                placeholder="Имя"
+                type="text"
+                class="form__input"
+                id="name"
+              />
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="surname">Фамилия</label>
+              <input
+                placeholder="Фамилия"
+                type="text"
+                class="form__input"
+                id="surname"
+              />
+            </div>
+
+            <div class="form__group">
+              <label
+                class="form__label"
+                for="email"
+                required
+                aria-required="true"
+                >Email адрес</label
+              >
+              <input
+                placeholder="Email"
+                type="email"
+                class="form__input"
+                id="email"
+              />
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="project-name"
+                >Название проекта</label
+              >
+              <input
+                placeholder="Название проекта"
+                type="text"
+                class="form__input"
+                id="project-name"
+              />
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="project-location"
+                >Местоположение проекта</label
+              >
+              <input
+                placeholder="Местоположение проекта"
+                type="text"
+                class="form__input"
+                id="project-location"
+              />
+            </div>
+
+            <div class="form__group project-location-check">
+              <label class="form__label" id="project-location-check"
+                >Местоположение проекта</label
+              >
+              <div class="project-location-check__inner">
+                <div class="form__group form__group-check">
+                  <label class="form__label form__check-label"
+                    >Фотоснимки</label
+                  >
+                  <input type="checkbox" class="form__check" />
+                </div>
+
+                <div class="form__group form__group-check">
+                  <label class="form__label form__check-label">Анимация</label>
+                  <input type="checkbox" class="form__check" />
+                </div>
+
+                <div class="form__group form__group-check">
+                  <label class="form__label form__check-label"
+                    >3D в реальном времени</label
+                  >
+                  <input type="checkbox" class="form__check" />
+                </div>
+
+                <div class="form__group form__group-check">
+                  <label class="form__label form__check-label">VR</label>
+                  <input type="checkbox" class="form__check" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form__group form__group-date">
+              <label class="form__label" for="deadline">Крайний срок</label>
+              <input type="date" class="form__input form__date" id="deadline" />
+            </div>
+
+            <div class="form__group form__group-textarea">
+              <label class="form__label">Примечание</label>
+              <textarea
+                class="form__textarea"
+                placeholder="Примечание"
+              ></textarea>
+            </div>
+
+            <input class="form__submit" type="submit" />
+          </form>
         </div>
       </section>
     </main>

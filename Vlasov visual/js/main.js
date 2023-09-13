@@ -4,6 +4,8 @@ const body = document.body;
 const photoSliderInner = body.querySelector(".photo-slider__inner");
 const photoSliderList = body.querySelector(".photo-slider__list");
 
+let topSliderReversedDirection = false;
+
 const photoSliderGap = 12;
 const photoSliderImageWidth = 251;
 
@@ -47,7 +49,9 @@ function topSliderScroll(event) {
 function topSliderMove() {
   if (topSliderIsOver()) topSliderStop();
 
-  topTranslate -= 10;
+  if (topSliderReversedDirection) topTranslate += 10;
+  else topTranslate -= 10;
+
   photoSliderList.style.transform = `translateX(${topTranslate}px)`;
 }
 
@@ -60,14 +64,33 @@ function topSliderStop(event) {
 
 // Over check || if the current scroll + width of the visible area is greater than
 // the maximum length of the slider, then slider is over
+
+// Infiity scroll
 function topSliderIsOver() {
-  if (-topTranslate + photoSliderInner.offsetWidth >= photoSliderListWidth) {
-    photoSliderRightButton.style.opacity = "0";
-    return true;
-  } else {
-    photoSliderRightButton.style.opacity = "1";
-    return false;
+  if (topSliderReversedDirection) {
+    if (topTranslate >= 0) {
+      topSliderReversedDirection = false;
+      return false;
+    } else {
+      return false;
+    }
+  } else if (!topSliderReversedDirection) {
+    if (-topTranslate + photoSliderInner.offsetWidth >= photoSliderListWidth) {
+      topSliderReversedDirection = true;
+      return false;
+    } else {
+      return false;
+    }
   }
+
+  // Not infiity scroll
+  // if (-topTranslate + photoSliderInner.offsetWidth >= photoSliderListWidth) {
+  //   photoSliderRightButton.style.opacity = "0";
+  //   return true;
+  // } else {
+  //   photoSliderRightButton.style.opacity = "1";
+  //   return false;
+  // }
 }
 
 // Pressing the slider to the right side, when changing the width of the window
@@ -109,6 +132,7 @@ function topSliderScrollRight(event) {
 }
 
 // Bottom slider
+let botSliderReversedDirection = false;
 
 const gifSliderInner = body.querySelector(".gif-slider__inner");
 const gifSliderList = body.querySelector(".gif-slider__list");
@@ -154,7 +178,8 @@ function botSliderScroll(event) {
 function botSliderMove() {
   if (botSliderIsOver()) botSliderStop();
 
-  botTranslate -= 10;
+  if (botSliderReversedDirection) botTranslate += 10;
+  else botTranslate -= 10;
   gifSliderList.style.transform = `translateX(${botTranslate}px)`;
 }
 
@@ -166,13 +191,31 @@ function botSliderStop(event) {
 }
 
 function botSliderIsOver() {
-  if (-botTranslate + gifSliderInner.offsetWidth >= gifSliderListWidth) {
-    gifSliderRightButton.style.opacity = "0";
-    return true;
-  } else {
-    gifSliderRightButton.style.opacity = "1";
-    return false;
+  if (botSliderReversedDirection) {
+    if (botTranslate >= 0) {
+      botSliderReversedDirection = false;
+      return false;
+    } else {
+      return false;
+    }
+  } else if (!botSliderReversedDirection) {
+    if (-botTranslate + gifSliderInner.offsetWidth >= gifSliderListWidth) {
+      botSliderReversedDirection = true;
+      return false;
+    } else {
+      return false;
+    }
   }
+
+  // Not infinity
+
+  // if (-botTranslate + gifSliderInner.offsetWidth >= gifSliderListWidth) {
+  //   gifSliderRightButton.style.opacity = "0";
+  //   return true;
+  // } else {
+  //   gifSliderRightButton.style.opacity = "1";
+  //   return false;
+  // }
 }
 
 function botCheckSliderRightSide(event) {
@@ -389,27 +432,10 @@ function rightCooldownRefresh() {
 
 function isLeftEnd() {
   if (!currentImage.closest(".slider__item").previousElementSibling) return;
-
-  // if (
-  //   !currentImage.closest(".slider__item").previousElementSibling
-  //     .previousElementSibling
-  // ) {
-  //   fullScreenLeftButton.style.display = "none";
-  // } else {
-  //   fullScreenLeftButton.style.display = "block";
-  // }
 }
 
 function isRightEnd() {
   if (!currentImage.closest(".slider__item").nextElementSibling) return;
-
-  // if (
-  //   !currentImage.closest(".slider__item").nextElementSibling.nextElementSibling
-  // ) {
-  //   fullScreenRightButton.style.display = "none";
-  // } else {
-  //   fullScreenRightButton.style.display = "block";
-  // }
 }
 
 function scrollBackgroundSliderLeft() {

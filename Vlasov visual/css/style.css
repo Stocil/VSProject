@@ -169,6 +169,9 @@ body {
 }
 .welcome__anchor {
   cursor: pointer;
+  position: relative;
+  width: 63px;
+  height: 63px;
   margin: 0 auto;
   padding: 10px 15px;
   background-color: transparent;
@@ -176,6 +179,23 @@ body {
   border-radius: 50%;
   font-size: 30px;
   color: #dbdbdb;
+}
+.welcome__anchor-line {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 2px;
+  background-color: #dbdbdb;
+  -webkit-transform: translateX(-27px) rotate(215deg);
+      -ms-transform: translateX(-27px) rotate(215deg);
+          transform: translateX(-27px) rotate(215deg);
+}
+.welcome__anchor-line:nth-child(2) {
+  -webkit-transform: translateX(-3px) rotate(145deg);
+      -ms-transform: translateX(-3px) rotate(145deg);
+          transform: translateX(-3px) rotate(145deg);
 }
 
 .gallery__image {
@@ -376,10 +396,10 @@ body {
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
           transform: translateX(0);
-  -webkit-transition: -webkit-transform 0.3s linear;
-  transition: -webkit-transform 0.3s linear;
-  transition: transform 0.3s linear;
-  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+  -webkit-transition: -webkit-transform 1s linear;
+  transition: -webkit-transform 1s linear;
+  transition: transform 1s linear;
+  transition: transform 1s linear, -webkit-transform 1s linear;
   will-change: transform;
 }
 .slider__images {
@@ -475,8 +495,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   opacity: 1;
-  width: 100vw;
-  height: 100vh;
   background-color: #1a1919;
   -webkit-transition: all 0.7s ease-in-out 0.3s;
   transition: all 0.7s ease-in-out 0.3s;
@@ -998,9 +1016,9 @@ body {
   }
   .gallery__hide-box.fadeInRight {
     opacity: 0;
-    -webkit-transform: translateX(15%);
-        -ms-transform: translateX(15%);
-            transform: translateX(15%);
+    -webkit-transform: translateX(10%);
+        -ms-transform: translateX(10%);
+            transform: translateX(10%);
     -webkit-transition: all 1.3s ease-in-out;
     transition: all 1.3s ease-in-out;
   }

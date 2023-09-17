@@ -26,7 +26,7 @@ photoSliderList.style.width = photoSliderListWidth + "px";
 
 let topTranslate = 0;
 let isTopScroll = true;
-let topInterval = setInterval(topSliderMove, 300);
+let topInterval = setInterval(topSliderMove, 1000);
 
 photoSliderInner.addEventListener("pointerout", topSliderScroll);
 photoSliderInner.addEventListener("pointerover", topSliderStop);
@@ -42,15 +42,15 @@ function topSliderScroll(event) {
 
   isTopScroll = true;
 
-  topInterval = setInterval(topSliderMove, 300);
+  topInterval = setInterval(topSliderMove, 1000);
 }
 
 // Move slider, if slider is not over
 function topSliderMove() {
   if (topSliderIsOver()) topSliderStop();
 
-  if (topSliderReversedDirection) topTranslate += 10;
-  else topTranslate -= 10;
+  if (topSliderReversedDirection) topTranslate += 30;
+  else topTranslate -= 30;
 
   photoSliderList.style.transform = `translateX(${topTranslate}px)`;
 }
@@ -155,7 +155,7 @@ gifSliderList.style.width = gifSliderListWidth + "px";
 
 let botTranslate = 0;
 let isBotScroll = true;
-let botInterval = setInterval(botSliderMove, 300);
+let botInterval = setInterval(botSliderMove, 1000);
 
 gifSliderInner.addEventListener("pointerout", botSliderScroll);
 gifSliderInner.addEventListener("pointerover", botSliderStop);
@@ -171,15 +171,15 @@ function botSliderScroll(event) {
 
   isBotScroll = true;
 
-  botInterval = setInterval(botSliderMove, 300);
+  botInterval = setInterval(botSliderMove, 1000);
 }
 
 // Move slider, if slider is not over
 function botSliderMove() {
   if (botSliderIsOver()) botSliderStop();
 
-  if (botSliderReversedDirection) botTranslate += 10;
-  else botTranslate -= 10;
+  if (botSliderReversedDirection) botTranslate += 30;
+  else botTranslate -= 30;
   gifSliderList.style.transform = `translateX(${botTranslate}px)`;
 }
 
@@ -305,6 +305,12 @@ fullScreenBox.addEventListener("pointerout", function (event) {
 // Full-screen open
 function fullScreen(event) {
   if (!event.target.classList.contains("slider__images")) return;
+
+  const fullScreenWidth = document.documentElement.clientWidth + "px";
+  const fullScreenHeight = document.documentElement.clientHeight + "px";
+
+  fullScreenBox.style.width = fullScreenWidth;
+  fullScreenBox.style.height = fullScreenHeight;
 
   if (event.target.classList.contains("liked")) {
     makeHeartRed();
@@ -589,3 +595,5 @@ function wichSide(element) {
   )
     return "fadeInCenter";
 }
+
+// Fix

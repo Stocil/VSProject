@@ -177,6 +177,10 @@ body {
 
   &__anchor {
     cursor: pointer;
+    position: relative;
+
+    width: 63px;
+    height: 63px;
 
     margin: 0 auto;
     padding: 10px 15px;
@@ -187,6 +191,24 @@ body {
 
     font-size: 30px;
     color: $primary-color-light;
+
+    &-line {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: 30px;
+      height: 2px;
+
+      background-color: $primary-color-light;
+
+      transform: translateX(-27px) rotate(215deg);
+    }
+
+    &-line:nth-child(2) {
+      transform: translateX(-3px) rotate(145deg);
+    }
   }
 }
 
@@ -370,7 +392,7 @@ body {
 
     transform: translateX(0);
 
-    transition: transform 0.3s linear;
+    transition: transform 1s linear;
     will-change: transform;
   }
 
@@ -475,8 +497,9 @@ body {
   align-items: center;
 
   opacity: 1;
-  width: 100vw;
-  height: 100vh;
+
+  // width: 100vw;
+  // height: 100vh;
 
   background-color: $primary-color-dark;
 
@@ -1001,7 +1024,7 @@ body {
 
       &.fadeInRight {
         opacity: 0;
-        transform: translateX(15%);
+        transform: translateX(10%);
         transition: all 1.3s ease-in-out;
 
         &-show {

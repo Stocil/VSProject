@@ -306,12 +306,6 @@ fullScreenBox.addEventListener("pointerout", function (event) {
 function fullScreen(event) {
   if (!event.target.classList.contains("slider__images")) return;
 
-  const fullScreenWidth = document.documentElement.clientWidth + "px";
-  const fullScreenHeight = document.documentElement.clientHeight + "px";
-
-  fullScreenBox.style.width = fullScreenWidth;
-  fullScreenBox.style.height = fullScreenHeight;
-
   if (event.target.classList.contains("liked")) {
     makeHeartRed();
   } else {
@@ -325,9 +319,16 @@ function fullScreen(event) {
   fullScreenImage.src = event.target.src;
   currentImage = event.target;
   closeFullScreen();
+
+  const fullScreenWidth = document.documentElement.clientWidth + "px";
+  const fullScreenHeight = document.documentElement.clientHeight + "px";
+
+  fullScreenBox.style.width = fullScreenWidth;
+  fullScreenBox.style.height = fullScreenHeight;
 }
 
 function closeFullScreen(elem) {
+  body.classList.toggle("scroll-lock");
   fullScreenBox.classList.toggle("full-screen__hide");
   fullScreenImage.classList.toggle("full-screen__image__hide");
   fullScreenCloseButton.classList.toggle("full-screen__close-button__hide");

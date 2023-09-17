@@ -937,6 +937,7 @@ body {
   }
   .scroll-lock {
     padding-right: 0px;
+    overflow: hidden;
   }
 }
 @media (max-width: 750px) {

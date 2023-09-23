@@ -13,6 +13,11 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@400;700&family=Playfair+Display&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <header class="header">
@@ -176,35 +181,56 @@
               <p class="games__subtitle">Большой выбор настольных игр</p>
             </div>
 
-            <div class="slider__inner games__slider__inner">
-              <ul class="slider__list games__slider__list">
+            <div class="slider__inner games__slider__inner swiper">
+              <ul class="slider__list games__slider__list swiper-wrapper">
                 <li
-                  class="slider__item games__slider__item"
+                  class="slider__item games__slider__item swiper-slide"
                   style="background: url('images/games-big-1.jpg')"
                 >
                   <a href="#" class="slider__link games__slider__link"></a>
                 </li>
 
                 <li
-                  class="slider__item games__slider__item active"
+                  class="slider__item games__slider__item swiper-slide active"
                   style="background: url('images/games-big-2.jpg')"
                 >
                   <a href="#" class="slider__link games__slider__link"></a>
                 </li>
 
                 <li
-                  class="slider__item games__slider__item"
+                  class="slider__item games__slider__item swiper-slide"
                   style="background: url('images/games-big-3.jpg')"
                 >
                   <a href="#" class="slider__link games__slider__link"></a>
                 </li>
                 <li
-                  class="slider__item games__slider__item"
+                  class="slider__item games__slider__item swiper-slide"
                   style="background: url('images/games-big-4.jpg')"
                 >
                   <a href="#" class="slider__link games__slider__link"></a>
                 </li>
+
+                <li
+                  class="slider__item games__slider__item swiper-slide"
+                  style="background: url('images/games-big-1.jpg')"
+                >
+                  <a href="#" class="slider__link games__slider__link"></a>
+                </li>
+
+                <li
+                  class="slider__item games__slider__item swiper-slide"
+                  style="background: url('images/games-big-2.jpg')"
+                >
+                  <a href="#" class="slider__link games__slider__link"></a>
+                </li>
               </ul>
+
+              <div
+                class="slider__button games__slider__button swiper-button-prev"
+              ></div>
+              <div
+                class="slider__button games__slider__button swiper-button-next"
+              ></div>
 
               <!-- <div class="slider__button games__slider__button left-btn">
                 <span class="slider__button-line"></span>
@@ -221,6 +247,7 @@
       </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

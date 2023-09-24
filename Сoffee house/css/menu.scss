@@ -118,6 +118,21 @@ $font-stack-add: montserrat, sans-serif;
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 50%;
       }
+
+      // Cup shadow
+      &.shelf__cup:nth-child(1)::after {
+        bottom: 5%;
+      }
+
+      &.shelf__cup:nth-child(2)::after {
+        bottom: 5%;
+      }
+      &.shelf__cup:nth-child(3)::after {
+        bottom: 0%;
+      }
+      &.shelf__cup:nth-child(4)::after {
+        bottom: 10%;
+      }
     }
 
     &__image {
@@ -156,6 +171,11 @@ $font-stack-add: montserrat, sans-serif;
         font-family: $font-stack-add;
         color: rgb(173 108 83);
       }
+    }
+
+    // Для чашек свои классы
+    &__cup {
+      padding-top: 175px;
     }
   }
 }

@@ -105,6 +105,18 @@
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
 }
+.menu__shelf__shadow.shelf__cup:nth-child(1)::after {
+  bottom: 5%;
+}
+.menu__shelf__shadow.shelf__cup:nth-child(2)::after {
+  bottom: 5%;
+}
+.menu__shelf__shadow.shelf__cup:nth-child(3)::after {
+  bottom: 0%;
+}
+.menu__shelf__shadow.shelf__cup:nth-child(4)::after {
+  bottom: 10%;
+}
 .menu__shelf__image {
   position: relative;
   z-index: 1;
@@ -134,6 +146,9 @@
   font-weight: bold;
   font-family: montserrat, sans-serif;
   color: rgb(173, 108, 83);
+}
+.menu__shelf__cup {
+  padding-top: 175px;
 }
 
 .hide {

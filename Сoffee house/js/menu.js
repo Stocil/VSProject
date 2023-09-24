@@ -4,7 +4,7 @@ const menuSelect = body.querySelector(".menu__type__list");
 const menuBox = body.querySelector(".menu__type__box");
 
 const coffeeShelf = body.querySelector(".menu__shelf__coffee");
-const teaShelf = body.querySelector(".menu__shelf__tea");
+const teaShelf = body.querySelector(".menu__shelf__cup");
 
 menuSelect.addEventListener("click", changeMenuType);
 

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee house</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@400;700&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <a href="index.html" class="header__link">
+          <img src="images/logo.jpg" alt="logo" class="header__logo" />
+        </a>
+
+        <nav class="header__navigation">
+          <ul class="header__list">
+            <a href="index.html" class="header__link">
+              <li class="header__list-item">Главная</li>
+            </a>
+            <a href="menu.html" class="header__link">
+              <li class="header__list-item">Меню</li>
+            </a>
+            <a href="games.html" class="header__link">
+              <li class="header__list-item">Игры</li>
+            </a>
+          </ul>
+        </nav>
+
+        <div class="header__menu-btn">
+          <span class="header__menu-line"></span>
+          <span class="header__menu-line"></span>
+          <span class="header__menu-line"></span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="menu">
+        <div class="container">
+          <div class="menu__inner">
+            <h2 class="menu__title title">Меню</h2>
+
+            <div class="menu__type__list">
+              <div class="menu__type__item">
+                <img
+                  class="menu__type__image"
+                  src="images/menu-coffee.png"
+                  alt="menu icon"
+                  id="coffe"
+                />
+              </div>
+
+              <div class="menu__type__item">
+                <img
+                  class="menu__type__image"
+                  src="images/menu-dessert.png"
+                  alt="menu icon"
+                  id="dessert"
+                />
+              </div>
+
+              <div class="menu__type__box"></div>
+            </div>
+
+            <div class="menu__content">
+              <div class="menu__shelf menu__shelf__coffee">
+                <div class="menu__shelf__photos">
+                  <div class="menu__shelf__shadow">
+                    <img
+                      class="menu__shelf__image"
+                      src="images/coffee-1.png"
+                      alt="cup image"
+                    />
+                  </div>
+
+                  <div class="menu__shelf__shadow">
+                    <img
+                      class="menu__shelf__image"
+                      src="images/coffee-2.png"
+                      alt="cup image"
+                    />
+                  </div>
+
+                  <div class="menu__shelf__shadow">
+                    <img
+                      class="menu__shelf__image"
+                      src="images/coffee-3.png"
+                      alt="cup image"
+                    />
+                  </div>
+
+                  <div class="menu__shelf__shadow">
+                    <img
+                      class="menu__shelf__image"
+                      src="images/coffee-4.png"
+                      alt="cup image"
+                    />
+                  </div>
+                </div>
+
+                <div class="menu__shelf__prices">
+                  <div class="menu__shelf__prices-box">
+                    <h3 class="menu__shelf__prices-title">Американо</h3>
+                    <!-- <p class="menu__shelf__prices-text">
+                      Кофейный напиток итальянской кухни на основе эспрессо с
+                      добавлением в него подогретого до 65 градусов вспененного
+                      молока.
+                    </p> -->
+
+                    <p class="menu__shelf__prices-price">200 ₽</p>
+                  </div>
+
+                  <div class="menu__shelf__prices-box">
+                    <h3 class="menu__shelf__prices-title">Латте</h3>
+                    <p class="menu__shelf__prices-price">150 ₽</p>
+                  </div>
+
+                  <div class="menu__shelf__prices-box">
+                    <h3 class="menu__shelf__prices-title">Капучино</h3>
+                    <p class="menu__shelf__prices-price">170 ₽</p>
+                  </div>
+
+                  <div class="menu__shelf__prices-box">
+                    <h3 class="menu__shelf__prices-title">Лунго</h3>
+                    <p class="menu__shelf__prices-price">130 ₽</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2 Shelf -->
+
+              <div class="menu__shelf menu__shelf__tea hide">
+                <div class="menu__shelf__photos">
+                  <div class="menu__shelf__shadow">
+                    <img
+                      class="menu__shelf__image"
+                      src="images/cup-1.png"
+                      alt="cup image"
+                    />
+                  </div>
+
+                  <div class="menu__shelf__shadow">
+                    <img
+                      class="menu__shelf__image"
+                      src="images/cup-2.png"
+                      alt="cup image"
+                    />
+                  </div>
+
+                  <div class="menu__shelf__shadow">
+                    <img
+                      class="menu__shelf__image"
+                      src="images/cup-3.png"
+                      alt="cup image"
+                    />
+                  </div>
+
+                  <div class="menu__shelf__shadow">
+                    <img
+                      class="menu__shelf__image"
+                      src="images/cup-4.png"
+                      alt="cup image"
+                    />
+                  </div>
+                </div>
+
+                <div class="menu__shelf__prices">
+                  <div class="menu__shelf__prices-box">
+                    <h3 class="menu__shelf__prices-title">Черный чай</h3>
+                    <!-- <p class="menu__shelf__prices-text">
+                      Кофейный напиток итальянской кухни на основе эспрессо с
+                      добавлением в него подогретого до 65 градусов вспененного
+                      молока.
+                    </p> -->
+
+                    <p class="menu__shelf__prices-price">130 ₽</p>
+                  </div>
+
+                  <div class="menu__shelf__prices-box">
+                    <h3 class="menu__shelf__prices-title">Зеленый чай</h3>
+                    <p class="menu__shelf__prices-price">150 ₽</p>
+                  </div>
+
+                  <div class="menu__shelf__prices-box">
+                    <h3 class="menu__shelf__prices-title">Белый чай</h3>
+                    <p class="menu__shelf__prices-price">180 ₽</p>
+                  </div>
+
+                  <div class="menu__shelf__prices-box">
+                    <h3 class="menu__shelf__prices-title">Улун</h3>
+                    <p class="menu__shelf__prices-price">200 ₽</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/menu.js"></script>
+  </body>
+</html>

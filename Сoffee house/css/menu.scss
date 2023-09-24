@@ -1,0 +1,165 @@
+$primary-color-dark: #1a1919;
+$primary-color-light: #dbdbdb;
+$font-stack-main: "Open Sans", sans-serif;
+$font-stack-add: montserrat, sans-serif;
+
+.menu {
+  &__inner {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__type {
+    &__list {
+      position: absolute;
+      top: 20%;
+      right: 10%;
+
+      display: flex;
+      gap: 40px;
+
+      color: $primary-color-dark;
+
+      padding: 10px;
+
+      border-radius: 15px;
+      background-color: $primary-color-light;
+    }
+
+    &__item {
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+
+      width: 70px;
+      height: 70px;
+    }
+
+    &__item:nth-child(1)::after {
+      content: "Кофе";
+
+      position: absolute;
+      left: 10px;
+      top: 90px;
+      font-size: 16px;
+      color: $primary-color-light;
+    }
+
+    &__item:nth-child(2)::after {
+      content: "Десерт";
+
+      position: absolute;
+      right: 10px;
+      top: 90px;
+      font-size: 16px;
+      color: $primary-color-light;
+    }
+
+    &__box {
+      width: 75px;
+      height: 80px;
+
+      position: absolute;
+      top: 5px;
+
+      background-color: white;
+      border-radius: 15px;
+
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  &__content {
+    margin-top: 150px;
+  }
+
+  &__shelf {
+    position: relative;
+
+    width: 1600px;
+    height: 750px;
+
+    padding-top: 150px;
+    padding-left: 21%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+    background-image: url("..//images/shelf.png");
+
+    transition: opacity 0.7s ease-in-out;
+
+    &__photos {
+      display: flex;
+      gap: 40px;
+    }
+
+    &__shadow {
+      // width: 218px;
+      // height: 370px;
+
+      position: relative;
+      &::after {
+        position: absolute;
+        bottom: 0%;
+        left: 12%;
+
+        content: "";
+        display: block;
+
+        width: 160px;
+        height: 50px;
+
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+      }
+    }
+
+    &__image {
+      position: relative;
+      z-index: 1;
+      // width: 218px;
+      // height: 339px;
+    }
+
+    &__prices {
+      display: flex;
+      gap: 40px;
+
+      &-box {
+        padding-left: 15px;
+        width: 218px;
+        height: 100px;
+
+        text-align: center;
+      }
+
+      &-title {
+        font-size: 30px;
+      }
+
+      &-text {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+
+      &-price {
+        margin-top: 30px;
+
+        font-size: 35px;
+        font-weight: bold;
+        font-family: $font-stack-add;
+        color: rgb(173 108 83);
+      }
+    }
+  }
+}
+
+.hide {
+  display: none;
+}

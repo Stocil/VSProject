@@ -389,6 +389,7 @@ body {
   height: 60px;
   background-color: #dbdbdb;
   border-radius: 50%;
+  color: #1a1919;
 }
 
 .games__slider__button.swiper-button-prev {
@@ -396,4 +397,5 @@ body {
   height: 60px;
   background-color: #dbdbdb;
   border-radius: 50%;
+  color: #1a1919;
 }

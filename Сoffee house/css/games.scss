@@ -1,0 +1,62 @@
+$primary-color-dark: #1a1919;
+$primary-color-light: #dbdbdb;
+$font-stack-main: "Open Sans", sans-serif;
+$font-stack-add: montserrat, sans-serif;
+
+.game-info {
+  &__inner {
+    margin-top: 150px;
+  }
+
+  &__main {
+    margin-top: 50px;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    text-align: start;
+  }
+
+  &__subtitle {
+    margin-top: 15px;
+  }
+
+  &__image {
+    border-radius: 25px;
+    margin-right: 150px;
+  }
+
+  &__description {
+    &__title {
+      margin-top: 100px;
+    }
+
+    &__text {
+      margin-top: 15px;
+    }
+
+    &__subtitle {
+      margin-top: 15px;
+    }
+
+    &__button {
+      margin-top: 20px;
+    }
+  }
+
+  &__slider {
+    &__inner {
+      border-radius: 50%;
+      width: 300px;
+      height: 515px;
+    }
+
+    &__image {
+      width: 300px;
+      height: 515px;
+      border-radius: 40px;
+    }
+  }
+}

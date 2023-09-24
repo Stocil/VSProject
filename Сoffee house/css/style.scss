@@ -435,13 +435,19 @@ body {
 .games__slider__button.swiper-button-next {
   width: 60px;
   height: 60px;
+
   background-color: $primary-color-light;
   border-radius: 50%;
+
+  color: $primary-color-dark;
 }
 
 .games__slider__button.swiper-button-prev {
   width: 60px;
   height: 60px;
+
   background-color: $primary-color-light;
   border-radius: 50%;
+
+  color: $primary-color-dark;
 }

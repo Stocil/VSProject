@@ -191,7 +191,7 @@ body {
       transform: rotate(340deg);
       filter: opacity(0.7);
 
-      animation: donut 2s ease-in-out 0s 1 forwards;
+      animation: donut 3.4s ease-in-out 0s 1 forwards;
     }
 
     &:nth-child(2) {
@@ -222,7 +222,7 @@ body {
       right: 3%;
       transform: rotate(350deg);
 
-      animation: grain 0.7s ease-in-out 1.5s 1 forwards;
+      animation: grain 0.7s ease-in-out 3s 1 forwards;
     }
   }
 
@@ -235,6 +235,18 @@ body {
 @keyframes donut {
   0% {
     transform: translateX(-150%) rotate(0deg);
+  }
+
+  40% {
+    transform: translateX(20%) rotate(390deg);
+  }
+
+  65% {
+    transform: translateX(-10%) rotate(340deg);
+  }
+
+  85% {
+    transform: translateX(5%) rotate(370deg);
   }
 
   100% {

@@ -179,7 +179,7 @@ body {
 
     text-align: center;
 
-    animation: titleShow 1.5s ease-in-out 2s 1 forwards;
+    animation: titleShow 1.5s ease-in-out 3s 1 forwards;
   }
 
   &__image {
@@ -190,34 +190,129 @@ body {
       left: 10%;
       transform: rotate(340deg);
       filter: opacity(0.7);
+
+      animation: donut 2s ease-in-out 0s 1 forwards;
     }
 
     &:nth-child(2) {
-      top: 20%;
+      top: 25%;
       right: 10%;
       transform: rotate(350deg);
+
+      animation: coffee 1.3s ease-in-out 0s 1 forwards;
     }
     &:nth-child(3) {
       top: 60%;
       left: 15%;
       transform: rotate(350deg);
+
+      animation: bone-2 3s ease-in-out 0s 1 forwards;
     }
     &:nth-child(4) {
       top: 50%;
       left: 10%;
       transform: rotate(350deg);
+
+      animation: bone-1 3s ease-in-out 0s 1 forwards;
     }
     &:nth-child(5) {
+      opacity: 0;
       z-index: -1;
       top: 15%;
       right: 3%;
       transform: rotate(350deg);
+
+      animation: grain 0.7s ease-in-out 1.5s 1 forwards;
     }
   }
 
   &__buttons {
     display: flex;
     gap: 30px;
+  }
+}
+
+@keyframes donut {
+  0% {
+    transform: translateX(-150%) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(0%) rotate(360deg);
+  }
+}
+
+@keyframes coffee {
+  0% {
+    transform: translateY(-200%) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(0%) rotate(350deg);
+  }
+}
+
+@keyframes grain {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bone-1 {
+  0% {
+    transform: translateY(-200%) translateX(-100%) rotate(0deg);
+  }
+
+  40% {
+    transform: translateY(0%) translateX(-70%) rotate(400deg);
+  }
+
+  60% {
+    transform: translateY(-70%) translateX(-50%) rotate(560deg);
+  }
+
+  70% {
+    transform: translateY(0%) translateX(-30%) rotate(620deg);
+  }
+
+  85% {
+    transform: translateY(-30%) translateX(-20%) rotate(650deg);
+  }
+
+  100% {
+    transform: translateY(0%) translateX(0%) rotate(720deg);
+  }
+}
+
+@keyframes bone-2 {
+  0% {
+    transform: translateY(-200%) translateX(-100%) rotate(0deg);
+  }
+
+  40% {
+    transform: translateY(0%) translateX(-70%) rotate(400deg);
+  }
+
+  60% {
+    transform: translateY(-70%) translateX(-50%) rotate(560deg);
+  }
+
+  70% {
+    transform: translateY(0%) translateX(-30%) rotate(620deg);
+  }
+
+  85% {
+    transform: translateY(-30%) translateX(-20%) rotate(650deg);
+  }
+
+  100% {
+    transform: translateY(0%) translateX(0%) rotate(720deg);
   }
 }
 

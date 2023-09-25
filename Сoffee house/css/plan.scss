@@ -1,0 +1,121 @@
+$primary-color-dark: #1a1919;
+$primary-color-light: #dbdbdb;
+$font-stack-main: "Open Sans", sans-serif;
+$font-stack-add: montserrat, sans-serif;
+
+body {
+  height: 2000px;
+}
+
+.plan {
+  &__box {
+    position: relative;
+  }
+
+  &__bg-image {
+    user-select: none;
+  }
+
+  &__inner {
+    margin-top: 150px;
+  }
+
+  &__message-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: inline-block;
+    padding: 7px;
+    opacity: 0;
+
+    background-color: black;
+    border-radius: 15px;
+    color: $primary-color-light;
+
+    transition: opacity 0.3s ease-in-out;
+
+    &__active {
+      opacity: 1;
+    }
+  }
+
+  &__table {
+    position: absolute;
+
+    &#t1 {
+      bottom: 4%;
+      left: 19.5%;
+    }
+
+    &#t2 {
+      bottom: 4%;
+      left: 36.5%;
+    }
+
+    &#t3 {
+      bottom: 4%;
+      left: 52.5%;
+    }
+
+    &#t4 {
+      transform: rotate(90deg);
+
+      bottom: 20%;
+      left: 49%;
+    }
+
+    &#t5 {
+      transform: rotate(90deg);
+
+      bottom: 21%;
+      left: 76.5%;
+    }
+
+    &#t6 {
+      transform: rotate(90deg);
+
+      bottom: 21%;
+      left: 87.5%;
+    }
+
+    &#t7 {
+      bottom: 60%;
+      left: 47%;
+    }
+
+    &#t8 {
+      bottom: 83%;
+      left: 47%;
+    }
+
+    &#t9 {
+      bottom: 46%;
+      left: 9.5%;
+    }
+
+    &#t10 {
+      transform: rotate(90deg);
+      bottom: 77%;
+      left: 6%;
+    }
+
+    &#t11 {
+      bottom: 64%;
+      left: 30%;
+    }
+
+    &#t12 {
+      bottom: 91%;
+      left: 30%;
+    }
+  }
+}
+
+.busy {
+  fill: red;
+}
+
+.book {
+  fill: green;
+}

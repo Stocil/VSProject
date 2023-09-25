@@ -1,0 +1,103 @@
+body {
+  height: 2000px;
+}
+
+.plan__box {
+  position: relative;
+}
+.plan__bg-image {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.plan__inner {
+  margin-top: 150px;
+}
+.plan__message-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  padding: 7px;
+  opacity: 0;
+  background-color: black;
+  border-radius: 15px;
+  color: #dbdbdb;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.plan__message-box__active {
+  opacity: 1;
+}
+.plan__table {
+  position: absolute;
+}
+.plan__table#t1 {
+  bottom: 4%;
+  left: 19.5%;
+}
+.plan__table#t2 {
+  bottom: 4%;
+  left: 36.5%;
+}
+.plan__table#t3 {
+  bottom: 4%;
+  left: 52.5%;
+}
+.plan__table#t4 {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  bottom: 20%;
+  left: 49%;
+}
+.plan__table#t5 {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  bottom: 21%;
+  left: 76.5%;
+}
+.plan__table#t6 {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  bottom: 21%;
+  left: 87.5%;
+}
+.plan__table#t7 {
+  bottom: 60%;
+  left: 47%;
+}
+.plan__table#t8 {
+  bottom: 83%;
+  left: 47%;
+}
+.plan__table#t9 {
+  bottom: 46%;
+  left: 9.5%;
+}
+.plan__table#t10 {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  bottom: 77%;
+  left: 6%;
+}
+.plan__table#t11 {
+  bottom: 64%;
+  left: 30%;
+}
+.plan__table#t12 {
+  bottom: 91%;
+  left: 30%;
+}
+
+.busy {
+  fill: red;
+}
+
+.book {
+  fill: green;
+}

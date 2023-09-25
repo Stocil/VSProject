@@ -3,8 +3,8 @@ const body = document.body;
 const menuSelect = body.querySelector(".menu__type__list");
 const menuBox = body.querySelector(".menu__type__box");
 
-const coffeeShelf = body.querySelector(".menu__shelf__coffee");
-const teaShelf = body.querySelector(".menu__shelf__cup");
+const coffeeSection = body.querySelector(".menu__first-section");
+const dessertSection = body.querySelector(".menu__second-section");
 
 menuSelect.addEventListener("click", changeMenuType);
 
@@ -13,15 +13,15 @@ function changeMenuType(event) {
 
   let translate = 0;
   if (event.target.id === "coffe") {
-    teaShelf.classList.add("hide");
-    coffeeShelf.classList.remove("hide");
+    dessertSection.classList.add("hide");
+    coffeeSection.classList.remove("hide");
 
     menuBox.style.width = "75px";
     translate = 0;
   }
   if (event.target.id === "dessert") {
-    teaShelf.classList.remove("hide");
-    coffeeShelf.classList.add("hide");
+    dessertSection.classList.remove("hide");
+    coffeeSection.classList.add("hide");
 
     translate = 102;
     menuBox.style.width = "82px";

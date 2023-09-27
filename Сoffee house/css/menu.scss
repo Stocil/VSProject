@@ -3,6 +3,10 @@ $primary-color-light: #dbdbdb;
 $font-stack-main: "Open Sans", sans-serif;
 $font-stack-add: montserrat, sans-serif;
 
+body {
+  overflow-x: hidden;
+}
+
 .menu {
   &__inner {
     margin-top: 150px;
@@ -74,17 +78,18 @@ $font-stack-add: montserrat, sans-serif;
   }
 
   &__content {
+    position: relative;
     margin-top: 150px;
   }
 
   &__shelf {
     position: relative;
 
-    width: 1600px;
+    width: 1700px;
     height: 750px;
 
     padding-top: 150px;
-    padding-left: 21%;
+    padding-left: 18%;
 
     display: flex;
     flex-direction: column;
@@ -178,8 +183,27 @@ $font-stack-add: montserrat, sans-serif;
       padding-top: 175px;
     }
   }
+
+  &__first-section,
+  &__second-section {
+    opacity: 1;
+    transform: translateX(0%);
+
+    transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+  }
+
+  &__first-section__hide {
+    transform: translateX(-150%);
+  }
+
+  &__second-section__hide {
+    transform: translateX(150%);
+  }
 }
 
 .hide {
-  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

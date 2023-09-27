@@ -1,9 +1,8 @@
-body {
-  height: 2000px;
-}
-
 .plan__box {
+  margin-top: 30px;
   position: relative;
+  overflow: hidden;
+  width: 1260px;
 }
 .plan__bg-image {
   -webkit-user-select: none;
@@ -12,7 +11,10 @@ body {
           user-select: none;
 }
 .plan__inner {
+  padding: 0 20px;
+  margin: 0px auto;
   margin-top: 150px;
+  width: 1260px;
 }
 .plan__message-box {
   position: absolute;

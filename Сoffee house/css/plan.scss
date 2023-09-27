@@ -3,13 +3,15 @@ $primary-color-light: #dbdbdb;
 $font-stack-main: "Open Sans", sans-serif;
 $font-stack-add: montserrat, sans-serif;
 
-body {
-  height: 2000px;
-}
-
 .plan {
   &__box {
+    margin-top: 30px;
     position: relative;
+
+    overflow: hidden;
+
+    // Изменять под адаптив
+    width: 1260px;
   }
 
   &__bg-image {
@@ -17,7 +19,13 @@ body {
   }
 
   &__inner {
+    padding: 0 20px;
+    margin: 0px auto;
     margin-top: 150px;
+
+    // overflow: auto;
+
+    width: 1260px;
   }
 
   &__message-box {

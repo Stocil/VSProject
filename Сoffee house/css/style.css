@@ -542,18 +542,22 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.stocks__slider__inner {
+.stocks__content__inner {
   margin-top: 75px;
-  padding: 0;
 }
-.stocks__slider__list {
-  gap: 30px;
+.stocks__list {
   margin-top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
-.stocks__slider__item {
+.stocks__box__item {
+  height: 300px;
+  border-radius: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -566,35 +570,47 @@ body {
           justify-content: space-between;
   padding: 20px 110px 15px 15px;
   position: relative;
+  overflow: hidden;
   background-color: #dbdbdb;
 }
-.stocks__slider__title {
+.stocks__box__item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 7px;
+  height: 300px;
+  background-color: rgb(247, 99, 69);
+}
+.stocks__box__title {
   color: black;
   font-weight: 700;
   font-size: 20px;
 }
-.stocks__slider__subtitle {
+.stocks__box__subtitle {
   margin-top: 10px;
   font-size: 16px;
   color: black;
 }
-.stocks__slider__price {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 20px 10px;
-  color: white;
-  font-size: 20px;
-  font-weight: bolder;
-  background-color: rgb(247, 99, 69);
-  border-radius: 50%;
-  display: inline-block;
-}
-.stocks__slider__date {
+.stocks__box__date {
   color: grey;
   font-size: 12px;
 }
-.stocks__slider__photo {
+.stocks__box__price {
+  display: inline-block;
+  padding: 20px 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: montserrat, sans-serif;
+  background-color: rgb(247, 99, 69);
+  border-radius: 50%;
+}
+.stocks__box__photo {
   position: absolute;
   right: 10px;
   top: 90px;
@@ -604,8 +620,7 @@ body {
 }
 
 .games__inner {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin: 100px 0;
 }
 .games__subtitles {
   margin-top: 30px;
@@ -639,11 +654,23 @@ body {
 }
 
 @media (max-width: 1400px) {
+  .container {
+    padding: 0 40px;
+  }
   .welcome__inner {
     height: auto;
   }
   .welcome__text {
     padding-top: 170px;
+  }
+}
+@media (max-width: 1367px) {
+  .swiper {
+    width: 830px;
+  }
+  .games__inner {
+    max-width: 830px;
+    margin: 100px auto;
   }
 }
 @media (max-width: 1250px) {
@@ -878,6 +905,24 @@ body {
   .welcome__image:nth-child(5) {
     top: 20%;
   }
+  .stocks__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stocks__box__item {
+    margin: 0 auto;
+  }
+  .stocks__box__item:nth-child(3) {
+    grid-column: 1/3;
+  }
+}
+@media (max-width: 900px) {
+  .swiper {
+    width: 630px;
+  }
+  .games__inner {
+    max-width: none;
+  }
 }
 @media (max-width: 800px) {
   .header__navigation {
@@ -976,6 +1021,10 @@ body {
         -ms-transform: translateX(-70px);
             transform: translateX(-70px);
   }
+  .welcome__title {
+    -webkit-animation: titleShow 1.5s ease-in-out 0s 1 forwards;
+            animation: titleShow 1.5s ease-in-out 0s 1 forwards;
+  }
   .welcome__image:nth-child(1) {
     -webkit-transform: scale(0.7);
         -ms-transform: scale(0.7);
@@ -1013,6 +1062,35 @@ body {
             animation: none;
   }
 }
+@media (max-width: 750px) {
+  .stocks__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .button {
+    pointer-events: none;
+  }
+  .games__slider__button.swiper-button-prev,
+  .games__slider__button.swiper-button-next {
+    pointer-events: none;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+  }
+  .games__slider__button.swiper-button-prev::after,
+  .games__slider__button.swiper-button-next::after {
+    font-size: 50px;
+    color: black;
+  }
+  .swiper {
+    width: 400px;
+  }
+}
 @media (max-width: 600px) {
   .header__navigation {
     width: 100%;
@@ -1026,8 +1104,17 @@ body {
   .welcome__text {
     font-size: 24px;
   }
+  .stocks__button {
+    margin-top: 60px;
+  }
+  .games__subtitle {
+    font-size: 16px;
+  }
 }
 @media (max-width: 500px) {
+  .container {
+    padding: 0 20px;
+  }
   .welcome__inner {
     padding: 150px 40px 0 40px;
   }
@@ -1064,8 +1151,29 @@ body {
   .welcome__text {
     font-size: 20px;
   }
+  .stocks__subtitle {
+    font-size: 16px;
+  }
+  .games__subtitles {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 15px;
+  }
+}
+@media (max-width: 450px) {
+  .swiper {
+    width: 360px;
+  }
 }
 @media (max-width: 400px) {
+  .container {
+    padding: 0 10px;
+  }
   .header__inner {
     padding: 10px 30px;
   }
@@ -1083,6 +1191,28 @@ body {
   }
   .welcome__image:nth-child(5) {
     left: 8%;
+  }
+  .stocks__subtitles {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 15px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .stocks__box__item {
+    padding: 20px 90px 15px 15px;
+  }
+  .stocks__box__price {
+    padding: 15px 5px;
+  }
+  .stocks__box__photo {
+    width: 80px;
+  }
+  .swiper {
+    width: 330px;
   }
 }
 @media (max-width: 385px) {
@@ -1108,5 +1238,8 @@ body {
   }
   .welcome__image:nth-child(5) {
     top: 25%;
+  }
+  .swiper {
+    width: 300px;
   }
 }

@@ -403,10 +403,6 @@ body {
     height: 300px;
 
     border-radius: 30px;
-
-    // filter: opacity(50%);
-    // transform: scale(1);
-
     transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
   }
 
@@ -415,48 +411,6 @@ body {
     width: 400px;
     height: 300px;
   }
-
-  // &__button {
-  //   cursor: pointer;
-
-  //   display: flex;
-  //   justify-content: center;
-
-  //   position: absolute;
-  //   left: 10px;
-  //   top: 50%;
-
-  //   width: 70px;
-  //   height: 70px;
-
-  //   background-color: $primary-color-light;
-  //   border-radius: 50%;
-
-  //   &-line:nth-child(1) {
-  //     content: "";
-  //     position: absolute;
-  //     top: 23px;
-
-  //     width: 30px;
-  //     height: 4px;
-
-  //     background-color: black;
-
-  //     transform: rotate(315deg);
-  //   }
-  //   &-line:nth-child(2) {
-  //     content: "";
-  //     position: absolute;
-  //     bottom: 23px;
-
-  //     width: 30px;
-  //     height: 4px;
-
-  //     background-color: black;
-
-  //     transform: rotate(45deg);
-  //   }
-  // }
 
   &__button {
     width: 50px;
@@ -481,19 +435,23 @@ body {
     justify-content: space-between;
   }
 
-  &__slider {
-    &__inner {
-      margin-top: 75px;
-      padding: 0;
-    }
+  &__content__inner {
+    margin-top: 75px;
+  }
 
-    &__list {
-      gap: 30px;
-      margin-top: 0;
-      justify-content: center;
-    }
+  &__list {
+    margin-top: 0;
 
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  &__box {
     &__item {
+      height: 300px;
+      border-radius: 30px;
+
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -501,7 +459,20 @@ body {
       padding: 20px 110px 15px 15px;
       position: relative;
 
+      overflow: hidden;
       background-color: rgba($color: $primary-color-light, $alpha: 1);
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        display: block;
+        width: 7px;
+        height: 300px;
+        background-color: rgb(247, 99, 69);
+      }
     }
 
     &__title {
@@ -516,26 +487,26 @@ body {
       color: black;
     }
 
+    &__date {
+      color: grey;
+      font-size: 12px;
+    }
+
     &__price {
+      display: inline-block;
+      padding: 20px 10px;
+
       position: absolute;
       top: 20px;
       right: 20px;
 
-      padding: 20px 10px;
-
       color: white;
       font-size: 20px;
       font-weight: bolder;
+      font-family: $font-stack-add;
 
-      background-color: rgb(247 99 69);
+      background-color: rgb(247, 99, 69);
       border-radius: 50%;
-
-      display: inline-block;
-    }
-
-    &__date {
-      color: grey;
-      font-size: 12px;
     }
 
     &__photo {
@@ -552,8 +523,7 @@ body {
 
 .games {
   &__inner {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin: 100px 0;
   }
 
   &__subtitles {
@@ -564,17 +534,6 @@ body {
     justify-content: space-between;
   }
 }
-
-// .right-btn {
-//   transform: rotate(180deg);
-//   left: calc(100% - 80px);
-// }
-
-// .active {
-//   z-index: 1;
-//   transform: scale(1.25);
-//   filter: opacity(100%);
-// }
 
 .swiper {
   width: 1260px;
@@ -600,6 +559,10 @@ body {
 
 // Adaptive ------------
 @media (max-width: 1400px) {
+  .container {
+    padding: 0 40px;
+  }
+
   .welcome {
     &__inner {
       height: auto;
@@ -607,6 +570,19 @@ body {
 
     &__text {
       padding-top: 170px;
+    }
+  }
+}
+
+@media (max-width: 1367px) {
+  .swiper {
+    width: 830px;
+  }
+
+  .games {
+    &__inner {
+      max-width: 830px;
+      margin: 100px auto;
     }
   }
 }
@@ -762,6 +738,35 @@ body {
       top: 20%;
     }
   }
+
+  .stocks {
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__box {
+      &__item {
+        margin: 0 auto;
+
+        &:nth-child(3) {
+          grid-column: 1/3;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .swiper {
+    width: 630px;
+  }
+
+  .games {
+    &__inner {
+      max-width: none;
+    }
+  }
 }
 
 @media (max-width: 800px) {
@@ -850,32 +855,70 @@ body {
     }
   }
 
-  .welcome__image {
-    &:nth-child(1) {
-      transform: scale(0.7);
-      animation: none;
+  .welcome {
+    &__title {
+      animation: titleShow 1.5s ease-in-out 0s 1 forwards;
     }
 
-    &:nth-child(2) {
-      transform: scale(0.6);
-      animation: none;
-    }
+    &__image {
+      &:nth-child(1) {
+        transform: scale(0.7);
+        animation: none;
+      }
 
-    &:nth-child(3) {
-      transform: scale(0.6);
-      animation: none;
-    }
+      &:nth-child(2) {
+        transform: scale(0.6);
+        animation: none;
+      }
 
-    &:nth-child(4) {
-      transform: scale(0.6);
-      animation: none;
-    }
+      &:nth-child(3) {
+        transform: scale(0.6);
+        animation: none;
+      }
 
-    &:nth-child(5) {
-      opacity: 1;
-      transform: scale(0.6);
-      animation: none;
+      &:nth-child(4) {
+        transform: scale(0.6);
+        animation: none;
+      }
+
+      &:nth-child(5) {
+        opacity: 1;
+        transform: scale(0.6);
+        animation: none;
+      }
     }
+  }
+}
+
+@media (max-width: 750px) {
+  .stocks {
+    &__list {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .button {
+    pointer-events: none;
+  }
+
+  .games__slider__button.swiper-button-prev,
+  .games__slider__button.swiper-button-next {
+    pointer-events: none;
+
+    width: 50px;
+    height: 50px;
+
+    background-color: transparent;
+
+    &::after {
+      font-size: 50px;
+      color: black;
+    }
+  }
+
+  .swiper {
+    width: 400px;
   }
 }
 
@@ -901,9 +944,25 @@ body {
       font-size: 24px;
     }
   }
+
+  .stocks {
+    &__button {
+      margin-top: 60px;
+    }
+  }
+
+  .games {
+    &__subtitle {
+      font-size: 16px;
+    }
+  }
 }
 
 @media (max-width: 500px) {
+  .container {
+    padding: 0 20px;
+  }
+
   .welcome {
     &__inner {
       padding: 150px 40px 0 40px;
@@ -940,9 +999,33 @@ body {
       font-size: 20px;
     }
   }
+
+  .stocks {
+    &__subtitle {
+      font-size: 16px;
+    }
+  }
+
+  .games {
+    &__subtitles {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .swiper {
+    width: 360px;
+  }
 }
 
 @media (max-width: 400px) {
+  .container {
+    padding: 0 10px;
+  }
+
   .header {
     &__inner {
       padding: 10px 30px;
@@ -971,6 +1054,32 @@ body {
         left: 8%;
       }
     }
+  }
+
+  .stocks {
+    &__subtitles {
+      align-items: center;
+      gap: 15px;
+      flex-direction: column;
+    }
+
+    &__box {
+      &__item {
+        padding: 20px 90px 15px 15px;
+      }
+
+      &__price {
+        padding: 15px 5px;
+      }
+
+      &__photo {
+        width: 80px;
+      }
+    }
+  }
+
+  .swiper {
+    width: 330px;
   }
 }
 
@@ -1009,5 +1118,9 @@ body {
         top: 25%;
       }
     }
+  }
+
+  .swiper {
+    width: 300px;
   }
 }

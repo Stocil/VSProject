@@ -1022,44 +1022,48 @@ body {
             transform: translateX(-70px);
   }
   .welcome__title {
-    -webkit-animation: titleShow 1.5s ease-in-out 0s 1 forwards;
-            animation: titleShow 1.5s ease-in-out 0s 1 forwards;
+    -webkit-animation: titleShow 1.5s ease-in-out 2.5s 1 forwards;
+            animation: titleShow 1.5s ease-in-out 2.5s 1 forwards;
   }
   .welcome__image:nth-child(1) {
+    opacity: 0;
     -webkit-transform: scale(0.7);
         -ms-transform: scale(0.7);
             transform: scale(0.7);
-    -webkit-animation: none;
-            animation: none;
+    -webkit-animation: titleShow 1.5s ease-in-out 0s 1 forwards;
+            animation: titleShow 1.5s ease-in-out 0s 1 forwards;
   }
   .welcome__image:nth-child(2) {
+    opacity: 0;
     -webkit-transform: scale(0.6);
         -ms-transform: scale(0.6);
             transform: scale(0.6);
-    -webkit-animation: none;
-            animation: none;
+    -webkit-animation: titleShow 1.5s ease-in-out 2s 1 forwards;
+            animation: titleShow 1.5s ease-in-out 2s 1 forwards;
   }
   .welcome__image:nth-child(3) {
+    opacity: 0;
     -webkit-transform: scale(0.6);
         -ms-transform: scale(0.6);
             transform: scale(0.6);
-    -webkit-animation: none;
-            animation: none;
+    -webkit-animation: titleShow 1s ease-in-out 1s 1 forwards;
+            animation: titleShow 1s ease-in-out 1s 1 forwards;
   }
   .welcome__image:nth-child(4) {
+    opacity: 0;
     -webkit-transform: scale(0.6);
         -ms-transform: scale(0.6);
             transform: scale(0.6);
-    -webkit-animation: none;
-            animation: none;
+    -webkit-animation: titleShow 1s ease-in-out 1.2s 1 forwards;
+            animation: titleShow 1s ease-in-out 1.2s 1 forwards;
   }
   .welcome__image:nth-child(5) {
-    opacity: 1;
+    opacity: 0;
     -webkit-transform: scale(0.6);
         -ms-transform: scale(0.6);
             transform: scale(0.6);
-    -webkit-animation: none;
-            animation: none;
+    -webkit-animation: titleShow 1s ease-in-out 2.2s 1 forwards;
+            animation: titleShow 1s ease-in-out 2.2s 1 forwards;
   }
 }
 @media (max-width: 750px) {

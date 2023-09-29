@@ -103,3 +103,43 @@
 .book {
   fill: green;
 }
+
+@media (max-width: 1300px) {
+  .plan__inner {
+    overflow: auto;
+    width: 1000px;
+  }
+}
+@media (max-width: 1100px) {
+  .plan__inner {
+    width: 800px;
+  }
+}
+@media (max-width: 900px) {
+  .plan__inner {
+    width: 600px;
+  }
+}
+@media (max-width: 700px) {
+  .plan__inner {
+    width: 500px;
+  }
+}
+@media (max-width: 600px) {
+  .plan__inner {
+    width: 400px;
+  }
+}
+@media (max-width: 500px) {
+  .plan__title {
+    font-size: 30px;
+  }
+  .plan__inner {
+    width: 300px;
+  }
+}
+@media (max-width: 350px) {
+  .plan__inner {
+    width: 280px;
+  }
+}

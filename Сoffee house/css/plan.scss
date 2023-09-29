@@ -10,7 +10,6 @@ $font-stack-add: montserrat, sans-serif;
 
     overflow: hidden;
 
-    // Изменять под адаптив
     width: 1260px;
   }
 
@@ -22,8 +21,7 @@ $font-stack-add: montserrat, sans-serif;
     padding: 0 20px;
     margin: 0px auto;
     margin-top: 150px;
-
-    // overflow: auto;
+    margin-bottom: 50px;
 
     width: 1260px;
   }
@@ -178,6 +176,10 @@ $font-stack-add: montserrat, sans-serif;
 
     &__inner {
       width: 300px;
+    }
+
+    &__message-box {
+      font-size: 14px;
     }
   }
 }

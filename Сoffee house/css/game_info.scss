@@ -1,0 +1,146 @@
+$primary-color-dark: #1a1919;
+$primary-color-light: #dbdbdb;
+$font-stack-main: "Open Sans", sans-serif;
+$font-stack-add: montserrat, sans-serif;
+
+.game-info {
+  &__inner {
+    margin-top: 150px;
+  }
+
+  &__main {
+    margin-top: 50px;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    text-align: start;
+  }
+
+  &__subtitle {
+    margin-top: 15px;
+  }
+
+  &__image {
+    border-radius: 25px;
+    margin-right: 150px;
+  }
+
+  &__description {
+    &__title {
+      margin-top: 100px;
+    }
+
+    &__text {
+      margin-top: 15px;
+    }
+
+    &__subtitle {
+      margin-top: 15px;
+    }
+
+    &__button {
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__slider {
+    &__inner {
+      width: 300px;
+      height: 515px;
+    }
+
+    &__image {
+      border-radius: 40px;
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .game-info {
+    &__image {
+      margin-right: 50px;
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .game-info {
+    &__image {
+      width: 500px;
+    }
+
+    &__slider {
+      &__inner {
+        width: 250px;
+        height: 400px;
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .game-info {
+    &__title {
+      text-align: center;
+    }
+
+    &__subtitle {
+      text-align: center;
+    }
+
+    &__main {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    &__image {
+      width: 700px;
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .game-info {
+    &__description__text {
+      font-size: 16px;
+    }
+
+    &__description__button {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .game-info {
+    &__description__text {
+      font-size: 14px;
+    }
+
+    &__description__title {
+      margin-top: 50px;
+    }
+
+    &__description__button {
+      font-size: 16px;
+    }
+
+    &__slider {
+      &__inner {
+        width: 200px;
+        height: 330px;
+      }
+    }
+  }
+}

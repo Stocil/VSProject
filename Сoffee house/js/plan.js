@@ -1,57 +1,65 @@
 const body = document.body;
 
 const image = body.querySelector(".plan__box");
+const formTable = body.querySelector("#table");
 
 image.addEventListener("click", booking);
+formTable.addEventListener("blur", bookingViaTheForm);
+
+const tables = body.querySelectorAll(".plan__table").forEach((table) => {
+  const tableNumberBox = document.createElement("div");
+  const tableNumberText = table.id.slice("1");
+
+  tableNumberBox.innerText = tableNumberText;
+  table.append(tableNumberBox);
+});
 
 function booking(event) {
   if (!event.target.closest(".plan__table")) return;
 
-  const messageBox = document.createElement("div");
-  messageBox.classList.add("plan__message-box");
-  image.append(messageBox);
-  let message;
-
   if (event.target.closest(".plan__table").classList.contains("busy")) {
-    message = "Этот стол уже забронирован";
+    return;
   } else if (event.target.closest(".plan__table").classList.contains("book")) {
-    message = "Вы убрали бронь со стола";
     event.target.closest(".plan__table").classList.toggle("book");
   } else {
-    message = "Вы забронировали стол";
+    if (body.querySelector(".book")) {
+      body.querySelector(".book").classList.toggle("book");
+    }
+
     event.target.closest(".plan__table").classList.toggle("book");
   }
 
-  messageBox.innerText = message;
-  messageBox.style.top = getMessageCord(event.target, messageBox).top;
-  messageBox.style.left = getMessageCord(event.target, messageBox).left;
+  // Write
+  const bookTable = [];
 
-  messageBox.classList.add("plan__message-box__active");
-  setTimeout(() => {
-    messageBox.classList.remove("plan__message-box__active");
-  }, 1500);
-  setTimeout(() => {
-    messageBox.remove();
-  }, 1800);
+  body.querySelectorAll(".book").forEach((table) => {
+    bookTable.push(table.id.slice(1));
+  });
 
-  function getMessageCord(targetElem, selfBox) {
-    const cord = {};
+  const tablesNumberStr = bookTable.join(",");
+  formTable.value = tablesNumberStr;
+}
 
-    cord.left =
-      Math.round(
-        targetElem.getBoundingClientRect().left -
-          image.getBoundingClientRect().left -
-          selfBox.offsetWidth / 2
-      ) + "px";
+function bookingViaTheForm(event) {
+  if (event.target.value.length == "0") {
+    body.querySelectorAll(".book").forEach((table) => {
+      table.classList.remove("book");
+    });
 
-    cord.top =
-      Math.round(
-        targetElem.getBoundingClientRect().top -
-          image.getBoundingClientRect().top +
-          selfBox.offsetHeight
-      ) + "px";
-    return cord;
+    return;
   }
+
+  body.querySelectorAll(".book").forEach((table) => {
+    table.classList.remove("book");
+  });
+
+  const tableForBook = event.target.value.split(",").map((number) => {
+    const tableId = "t" + number;
+
+    if (body.querySelector(`#${tableId}`)) {
+      body.querySelector(`#${tableId}`).classList.add("book");
+    }
+  });
 }
 
 // Burger

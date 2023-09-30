@@ -126,6 +126,106 @@ $font-stack-add: montserrat, sans-serif;
   fill: green;
 }
 
+.form__label.text__title,
+.form__label.checkbox__title {
+  text-align: center;
+  grid-column: 1/3;
+  font-size: 30px;
+}
+
+.feedback {
+  &__inner {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    padding: 0 95px;
+
+    display: flex;
+    position: relative;
+  }
+
+  &__subtitle {
+    position: absolute;
+    left: 80px;
+    bottom: 105%;
+  }
+}
+
+// Form style
+
+.feedback__form {
+  margin: 0 auto;
+  margin-bottom: 70px;
+
+  font-family: $font-stack-add;
+
+  display: grid;
+  grid-template-columns: repeat(2, 390px);
+  gap: 40px;
+}
+
+.form {
+  &__title {
+    font-size: 25px;
+    font-weight: bold;
+
+    margin-bottom: 50px;
+
+    grid-column: 1/3;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-size: 18px;
+    line-height: 1;
+    display: inline-block;
+    margin-bottom: 9px;
+  }
+
+  &__input {
+    min-height: 42px;
+
+    font-size: 15px;
+    line-height: 1.4em;
+    font-family: $font-stack-add;
+    color: $primary-color-dark;
+
+    border: 1px solid $primary-color-light;
+    border-radius: 10px;
+
+    transition: box-shadow 0.3s ease-in-out;
+    &::placeholder {
+      color: $primary-color-dark;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__submit {
+    cursor: pointer;
+
+    padding: 10px 15px;
+    background-color: #0d6efd;
+    max-width: 150px;
+
+    border: 1px solid #0d6efd;
+    border-radius: 10px;
+
+    color: #dbdbdb;
+    font-size: 18px;
+    font-family: $font-stack-add;
+  }
+
+  &__date {
+    padding: 0 10px;
+  }
+}
+
 @media (max-width: 1300px) {
   .plan {
     &__inner {
@@ -144,11 +244,29 @@ $font-stack-add: montserrat, sans-serif;
   }
 }
 
+@media (max-width: 1000px) {
+  .feedback__form {
+    grid-template-columns: repeat(2, 1fr);
+    width: 720px;
+  }
+}
+
 @media (max-width: 900px) {
   .plan {
     &__inner {
       width: 600px;
     }
+  }
+}
+
+@media (max-width: 800px) {
+  .feedback__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form__title {
+    margin-bottom: 0;
   }
 }
 
@@ -165,6 +283,10 @@ $font-stack-add: montserrat, sans-serif;
     &__inner {
       width: 400px;
     }
+  }
+
+  .feedback__inner {
+    padding: 0 20px;
   }
 }
 

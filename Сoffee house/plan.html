@@ -236,7 +236,7 @@
               </svg>
 
               <svg
-                class="plan__table busy"
+                class="plan__table"
                 id="t4"
                 width="77"
                 height="45"
@@ -766,6 +766,50 @@
                 </defs>
               </svg>
             </div>
+          </div>
+
+          <div class="feedback__inner">
+            <form class="feedback__form">
+              <h3 class="form__title fadeInLeft">Заявка</h3>
+
+              <div class="form__group fadeInLeft">
+                <label class="form__label" for="name">Имя</label>
+                <input
+                  placeholder="Имя"
+                  type="text"
+                  class="form__input"
+                  id="name"
+                />
+              </div>
+
+              <div class="form__group fadeInLeft">
+                <label class="form__label" for="table">Номер стола(ов)</label>
+                <input
+                  placeholder="Номер стола"
+                  type="number"
+                  class="form__input"
+                  id="table"
+                  onkeypress="if (this.value.length > 1 || event.charCode == 44) return false;"
+                />
+              </div>
+
+              <div class="form__group form__group-date fadeInLeft">
+                <label class="form__label" for="date">Дата</label>
+                <input type="date" class="form__input form__date" id="dete" />
+              </div>
+
+              <div class="form__group fadeInLeft">
+                <label class="form__label" for="time">Время</label>
+                <input
+                  placeholder="Время"
+                  type="text"
+                  class="form__input"
+                  id="time"
+                />
+              </div>
+
+              <input class="form__submit fadeInLeft" type="submit" />
+            </form>
           </div>
         </div>
       </section>

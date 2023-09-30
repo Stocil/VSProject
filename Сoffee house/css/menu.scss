@@ -207,3 +207,144 @@ body {
   top: 0;
   left: 0;
 }
+
+.shelfRemove {
+  display: none;
+}
+
+@media (max-width: 1500px) {
+  .menu {
+    &__shelf {
+      width: 1200px;
+      padding-top: 55px;
+      padding-left: 10%;
+
+      background-position-x: center;
+      background-size: 104%;
+      background-repeat: no-repeat;
+
+      &__cup {
+        padding-top: 65px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .menu {
+    &__shelf {
+      width: 900px;
+      height: auto;
+      padding-left: 0;
+      padding-top: 20px;
+
+      gap: 10px;
+
+      &__photos,
+      &__prices {
+        transform: scale(0.8);
+      }
+
+      &__cup {
+        padding-top: 34px;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .menu {
+    &__shelf {
+      width: 700px;
+
+      &__shadow::after {
+        width: 130px;
+      }
+
+      &__cup {
+        padding-top: 34px;
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .menu {
+    &__type {
+      &__item {
+        width: 60px;
+        height: 60px;
+      }
+
+      &__box {
+        height: 70px;
+        width: 70px;
+      }
+
+      &__list {
+        top: 24%;
+        right: auto;
+      }
+    }
+
+    &__shelf {
+      width: 550px;
+      padding-top: 25px;
+
+      &__prices {
+        gap: 20px;
+
+        &-title {
+          font-size: 22px;
+        }
+
+        &-price {
+          font-size: 25px;
+        }
+      }
+
+      &__shadow::after {
+        width: 90px;
+      }
+
+      &__cup {
+        padding-top: 34px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .menu {
+    &__shelf {
+      width: 390px;
+      padding-top: 30px;
+
+      &__shadow::after {
+        width: 50px;
+        height: 25px;
+      }
+
+      &__prices {
+        gap: 5px;
+
+        &-box {
+          padding-left: 0px;
+        }
+
+        &-title {
+          font-size: 18px;
+        }
+
+        &-price {
+          margin-top: 5px;
+          font-size: 18px;
+        }
+      }
+
+      &__cup {
+        padding-top: 34px;
+      }
+    }
+  }
+}

@@ -6,17 +6,31 @@ const menuBox = body.querySelector(".menu__type__box");
 const coffeeSection = body.querySelector(".menu__first-section");
 const dessertSection = body.querySelector(".menu__second-section");
 
+let buttonCooldown = false;
+
 menuSelect.addEventListener("click", changeMenuType);
 
 function changeMenuType(event) {
   if (!event.target.classList.contains("menu__type__image")) return;
+  if (buttonCooldown === true) return;
+
+  resetCooldown();
 
   let translate = 0;
-  if (event.target.id === "coffe") {
-    dessertSection.classList.add("hide");
-    coffeeSection.classList.remove("hide");
 
-    menuBox.style.width = "75px";
+  if (event.target.id === "coffe") {
+    coffeeSection.classList.remove("hide");
+    coffeeSection.classList.remove("shelfRemove");
+
+    dessertSection.classList.add("hide");
+    removeShelf(dessertSection);
+
+    if (document.documentElement.offsetWidth <= 650) {
+      menuBox.style.width = "65px";
+    } else {
+      menuBox.style.width = "75px";
+    }
+
     translate = 0;
 
     coffeeSection.classList.remove("menu__first-section__hide");
@@ -24,16 +38,38 @@ function changeMenuType(event) {
   }
   if (event.target.id === "dessert") {
     dessertSection.classList.remove("hide");
-    coffeeSection.classList.add("hide");
+    dessertSection.classList.remove("shelfRemove");
 
-    translate = 102;
-    menuBox.style.width = "82px";
+    coffeeSection.classList.add("hide");
+    removeShelf(coffeeSection);
+
+    if (document.documentElement.offsetWidth <= 650) {
+      menuBox.style.width = "70px";
+      translate = 95;
+    } else {
+      menuBox.style.width = "82px";
+      translate = 102;
+    }
 
     coffeeSection.classList.add("menu__first-section__hide");
     dessertSection.classList.remove("menu__second-section__hide");
   }
 
   menuBox.style.transform = `translateX(${translate}px)`;
+
+  function resetCooldown() {
+    buttonCooldown = true;
+
+    setTimeout(() => {
+      buttonCooldown = false;
+    }, 1000);
+  }
+}
+
+function removeShelf(elem) {
+  setTimeout(() => {
+    elem.classList.toggle("shelfRemove");
+  }, 1000);
 }
 
 // Burger

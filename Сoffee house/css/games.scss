@@ -3,61 +3,26 @@ $primary-color-light: #dbdbdb;
 $font-stack-main: "Open Sans", sans-serif;
 $font-stack-add: montserrat, sans-serif;
 
-.game-info {
+.games-list {
   &__inner {
     margin-top: 150px;
-  }
+    margin-bottom: 50px;
 
-  &__main {
-    margin-top: 50px;
-
-    display: flex;
-    align-items: center;
-  }
-
-  &__title {
-    text-align: start;
-  }
-
-  &__subtitle {
-    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 
   &__image {
-    border-radius: 25px;
-    margin-right: 150px;
+    border-radius: 30px;
   }
+}
 
-  &__description {
-    &__title {
-      margin-top: 100px;
-    }
-
-    &__text {
-      margin-top: 15px;
-    }
-
-    &__subtitle {
-      margin-top: 15px;
-    }
-
-    &__button {
-      margin-top: 20px;
-      margin-bottom: 50px;
-    }
-  }
-
-  &__slider {
+@media (max-width: 800px) {
+  .games-list {
     &__inner {
-      border-radius: 50%;
-      width: 300px;
-      height: 515px;
-    }
-
-    &__image {
-      width: 300px;
-      height: 515px;
-      border-radius: 40px;
+      display: flex;
+      flex-direction: column;
     }
   }
 }

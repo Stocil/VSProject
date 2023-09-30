@@ -1,0 +1,113 @@
+$primary-color-dark: #1a1919;
+$primary-color-light: #dbdbdb;
+$font-stack-main: "Open Sans", sans-serif;
+$font-stack-add: montserrat, sans-serif;
+
+.login {
+  &__inner {
+    margin: 0 auto;
+    margin-top: 300px;
+
+    width: 550px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    background-color: white;
+    border-radius: 30px;
+  }
+
+  &__title {
+    margin-top: 50px;
+    color: $primary-color-dark;
+  }
+
+  &__form {
+    color: $primary-color-dark;
+    margin-top: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+}
+
+.form {
+  &__group {
+    position: relative;
+
+    &:nth-child(1)::after,
+    &:nth-child(2)::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      opacity: 0.7;
+
+      display: block;
+
+      width: 30px;
+      height: 30px;
+    }
+
+    &:nth-child(1)::after {
+      background-image: url("../images/man.png");
+    }
+
+    &:nth-child(2)::after {
+      background-image: url("../images/lock.png");
+    }
+  }
+
+  &__label {
+    font-size: 18px;
+    line-height: 1;
+    display: inline-block;
+  }
+
+  &__input {
+    width: 300px;
+    min-height: 42px;
+    padding-left: 40px;
+
+    font-size: 15px;
+    line-height: 1.4em;
+    font-family: $font-stack-add;
+    color: $primary-color-dark;
+
+    border: 1px solid $primary-color-light;
+    border-radius: 10px;
+
+    transition: box-shadow 0.3s ease-in-out;
+    &::placeholder {
+      color: $primary-color-dark;
+      opacity: 0.5;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: black;
+    }
+  }
+
+  &__submit {
+    cursor: pointer;
+
+    width: 100px;
+
+    padding: 20px 25px;
+    background-color: #0d6efd;
+    max-width: 150px;
+
+    border: 1px solid #0d6efd;
+    border-radius: 10px;
+
+    color: #dbdbdb;
+    font-size: 18px;
+    font-family: $font-stack-add;
+  }
+}

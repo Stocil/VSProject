@@ -1,0 +1,109 @@
+$primary-color-dark: #1a1919;
+$primary-color-light: #dbdbdb;
+$font-stack-main: "Open Sans", sans-serif;
+$font-stack-add: montserrat, sans-serif;
+
+.admin-panel {
+  &__sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 300px;
+    height: 100vh;
+    padding: 20px;
+
+    background-color: $primary-color-light;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      color: $primary-color-dark;
+    }
+
+    &__item {
+      cursor: pointer;
+      border-bottom: 1px solid $primary-color-dark;
+
+      transition: all 0.3s ease-in-out;
+    }
+
+    &__item.active {
+      padding: 10px;
+      background: $primary-color-dark;
+      color: $primary-color-light;
+      border-radius: 25px;
+    }
+  }
+
+  &__table {
+    padding-left: 200px;
+    margin-top: 50px;
+
+    display: none;
+    grid-template-columns: repeat(7, 1fr);
+
+    &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 20px;
+
+      color: $primary-color-dark;
+      height: 200px;
+
+      border: 1px solid $primary-color-dark;
+    }
+
+    &__name-row {
+      height: 150px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    &__row {
+      grid-column: 1/8;
+
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+
+      background-color: $primary-color-light;
+    }
+
+    &.show {
+      display: grid;
+    }
+  }
+}
+
+// Button
+.admin-panel {
+  &__add-button,
+  &__remove-button {
+    position: relative;
+  }
+
+  &__button-line {
+    content: "";
+    cursor: pointer;
+    position: absolute;
+    display: block;
+
+    width: 40px;
+    height: 7px;
+
+    background-color: $primary-color-dark;
+
+    &:nth-child(2) {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.home {
+  margin-top: 200px;
+  height: 28px;
+}

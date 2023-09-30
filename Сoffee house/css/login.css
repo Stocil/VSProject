@@ -1,0 +1,113 @@
+.login__inner {
+  margin: 0 auto;
+  margin-top: 300px;
+  width: 550px;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  border-radius: 30px;
+}
+.login__title {
+  margin-top: 50px;
+  color: #1a1919;
+}
+.login__form {
+  color: #1a1919;
+  margin-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+}
+
+.form__group {
+  position: relative;
+}
+.form__group:nth-child(1)::after, .form__group:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  opacity: 0.7;
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+.form__group:nth-child(1)::after {
+  background-image: url("../images/man.png");
+}
+.form__group:nth-child(2)::after {
+  background-image: url("../images/lock.png");
+}
+.form__label {
+  font-size: 18px;
+  line-height: 1;
+  display: inline-block;
+}
+.form__input {
+  width: 300px;
+  min-height: 42px;
+  padding-left: 40px;
+  font-size: 15px;
+  line-height: 1.4em;
+  font-family: montserrat, sans-serif;
+  color: #1a1919;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  -webkit-transition: -webkit-box-shadow 0.3s ease-in-out;
+  transition: -webkit-box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+}
+.form__input::-webkit-input-placeholder {
+  color: #1a1919;
+  opacity: 0.5;
+}
+.form__input::-moz-placeholder {
+  color: #1a1919;
+  opacity: 0.5;
+}
+.form__input:-ms-input-placeholder {
+  color: #1a1919;
+  opacity: 0.5;
+}
+.form__input::-ms-input-placeholder {
+  color: #1a1919;
+  opacity: 0.5;
+}
+.form__input::placeholder {
+  color: #1a1919;
+  opacity: 0.5;
+}
+.form__input:focus {
+  outline: none;
+  border-color: black;
+}
+.form__submit {
+  cursor: pointer;
+  width: 100px;
+  padding: 20px 25px;
+  background-color: #0d6efd;
+  max-width: 150px;
+  border: 1px solid #0d6efd;
+  border-radius: 10px;
+  color: #dbdbdb;
+  font-size: 18px;
+  font-family: montserrat, sans-serif;
+}

@@ -334,61 +334,87 @@ tables.addEventListener("click", createRow);
 function createRow(event) {
   if (!event.target.closest(".admin-panel__create-button")) return;
 
-  // Stock
-  if (event.target.closest("#admin-table-1")) {
-    const currentForm = body.querySelector(".admin-panel__stocks-edit-box");
+  const currentTable = event.target.closest(".admin-panel__table");
 
-    const newRow = document.createElement("div");
-    newRow.classList.add("admin-panel__table__row");
+  const newRow = document.createElement("div");
+  newRow.classList.add("admin-panel__table__row");
 
-    const tableLength =
-      event.target.closest("#admin-table-1").firstElementChild.children.length -
-      2;
+  const tableLength = currentTable.firstElementChild.children.length - 2;
 
-    for (let count = 0; count < tableLength; count++) {
-      const newColumn = document.createElement("p");
-      newColumn.classList.add("admin-panel__table__item");
-      newRow.append(newColumn);
-    }
-
-    const newAddButton = document.createElement("div");
-    const newAddButtonLine1 = document.createElement("span");
-    const newAddButtonLine2 = document.createElement("span");
-
-    newAddButton.classList.add(
-      "admin-panel__table__item",
-      "admin-panel__add-button"
-    );
-    newAddButtonLine1.classList.add("admin-panel__button-line");
-    newAddButtonLine2.classList.add("admin-panel__button-line");
-
-    const newRemoveButton = document.createElement("div");
-    const newRemoveButtonLine = document.createElement("span");
-
-    newRemoveButton.classList.add(
-      "admin-panel__table__item",
-      "admin-panel__remove-button"
-    );
-    newRemoveButtonLine.classList.add("admin-panel__button-line");
-
-    newAddButton.append(newAddButtonLine1, newAddButtonLine2);
-    newRemoveButton.append(newRemoveButtonLine);
-
-    newRow.append(newAddButton, newRemoveButton);
-
-    event.target.closest("#admin-table-1").append(newRow);
-
-    // Edit
-    const clickEvent = new CustomEvent("click");
-
-    const currentButton =
-      event.target.closest("#admin-table-1").lastElementChild.children[
-        event.target.closest("#admin-table-1").lastElementChild.children
-          .length - 2
-      ].lastElementChild;
-
-    currentButton.click();
-
-    newAddButton.dispatchEvent(clickEvent);
+  for (let count = 0; count < tableLength; count++) {
+    const newColumn = document.createElement("p");
+    newColumn.classList.add("admin-panel__table__item");
+    newRow.append(newColumn);
   }
+
+  const newAddButton = document.createElement("div");
+  const newAddButtonLine1 = document.createElement("span");
+  const newAddButtonLine2 = document.createElement("span");
+
+  newAddButton.classList.add(
+    "admin-panel__table__item",
+    "admin-panel__add-button"
+  );
+  newAddButtonLine1.classList.add("admin-panel__button-line");
+  newAddButtonLine2.classList.add("admin-panel__button-line");
+
+  const newRemoveButton = document.createElement("div");
+  const newRemoveButtonLine = document.createElement("span");
+
+  newRemoveButton.classList.add(
+    "admin-panel__table__item",
+    "admin-panel__remove-button"
+  );
+  newRemoveButtonLine.classList.add("admin-panel__button-line");
+
+  newAddButton.append(newAddButtonLine1, newAddButtonLine2);
+  newRemoveButton.append(newRemoveButtonLine);
+
+  newRow.append(newAddButton, newRemoveButton);
+
+  if (
+    event.target
+      .closest(".admin-panel__table")
+      .classList.contains("admin-panel__game-table")
+  ) {
+    newRow.classList.add("admin-panel__game-table");
+  }
+
+  if (
+    event.target
+      .closest(".admin-panel__table")
+      .classList.contains("admin-panel__menu-table")
+  ) {
+    newRow.classList.add("admin-panel__menu-table");
+  }
+
+  if (
+    event.target
+      .closest(".admin-panel__table")
+      .classList.contains("admin-panel__card-table")
+  ) {
+    newRow.classList.add("admin-panel__card-table");
+  }
+
+  if (
+    event.target
+      .closest(".admin-panel__table")
+      .classList.contains("admin-panel__book-table")
+  ) {
+    newRow.classList.add("admin-panel__book-table");
+  }
+
+  currentTable.append(newRow);
+
+  // Edit
+  const clickEvent = new CustomEvent("click");
+
+  const currentButton =
+    currentTable.lastElementChild.children[
+      currentTable.lastElementChild.children.length - 2
+    ].lastElementChild;
+
+  currentButton.click();
+
+  newAddButton.dispatchEvent(clickEvent);
 }

@@ -49,55 +49,318 @@
             </aside>
 
             <div class="admin-panel__tables">
-              <div class="admin-panel__edit-box">
+              <div class="admin-panel__edit-box admin-panel__stocks-edit-box">
                 <form class="admin-panel__form">
                   <h3 class="admin-panel__form__title">Редактирование</h3>
 
                   <div class="admin-panel__form__group">
-                    <label class="admin-panel__form__label" for="admin-id"
+                    <label class="admin-panel__form__label" for="admin-stock-id"
                       >Id</label
                     >
                     <textarea
                       placeholder="id"
                       type="text"
                       class="admin-panel__form__input"
-                      id="admin-id"
+                      id="admin-stock-id"
                     ></textarea>
                   </div>
 
                   <div class="admin-panel__form__group">
-                    <label class="admin-panel__form__label" for="admin-heading"
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-stock-heading"
                       >Heading</label
                     >
                     <textarea
                       placeholder="Heading"
                       type="text"
                       class="admin-panel__form__input"
-                      id="admin-heading"
+                      id="admin-stock-heading"
                     ></textarea>
                   </div>
 
                   <div class="admin-panel__form__group">
-                    <label class="admin-panel__form__label" for="admin-article"
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-stock-article"
                       >Article</label
                     >
                     <textarea
                       placeholder="Article"
                       type="text"
                       class="admin-panel__form__input"
-                      id="admin-article"
+                      id="admin-stock-article"
                     ></textarea>
                   </div>
 
                   <div class="admin-panel__form__group">
-                    <label class="admin-panel__form__label" for="admin-date"
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-stock-date"
                       >Date</label
                     >
                     <input
                       placeholder="Date"
                       type="text"
                       class="admin-panel__form__input"
-                      id="admin-date"
+                      id="admin-stock-date"
+                    />
+                  </div>
+
+                  <div class="admin-panel__form__buttons">
+                    <p class="admin-panel__form__save">Сохранить</p>
+                    <p class="admin-panel__form__cancel">Отменить</p>
+                  </div>
+                </form>
+              </div>
+
+              <div class="admin-panel__edit-box admin-panel__games-edit-box">
+                <form class="admin-panel__form admin-panel__games-edit-form">
+                  <h3 class="admin-panel__form__title">Редактирование</h3>
+
+                  <div class="admin-panel__form__group">
+                    <label class="admin-panel__form__label" for="admin-games-id"
+                      >Id</label
+                    >
+                    <textarea
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-games-id"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-games-name"
+                      >Name</label
+                    >
+                    <textarea
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-games-name"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-games-description"
+                      >Description</label
+                    >
+                    <textarea
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-games-description"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-games-desc"
+                      >Desc</label
+                    >
+                    <textarea
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-games-desc"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-games-about"
+                      >AboutGame</label
+                    >
+                    <textarea
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-games-about"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-games-rules"
+                      >Rules</label
+                    >
+                    <textarea
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-games-rules"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__buttons">
+                    <p class="admin-panel__form__save">Сохранить</p>
+                    <p class="admin-panel__form__cancel">Отменить</p>
+                  </div>
+                </form>
+              </div>
+
+              <div class="admin-panel__edit-box admin-panel__menu-edit-box">
+                <form class="admin-panel__form">
+                  <h3 class="admin-panel__form__title">Редактирование</h3>
+
+                  <div class="admin-panel__form__group">
+                    <label class="admin-panel__form__label" for="admin-menu-id"
+                      >Id</label
+                    >
+                    <textarea
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-menu-id"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-menu-type"
+                      >Type</label
+                    >
+                    <textarea
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-menu-type"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-menu-name"
+                      >Name</label
+                    >
+                    <textarea
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-menu-name"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-menu-price"
+                      >Price</label
+                    >
+                    <textarea
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-menu-price"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__buttons">
+                    <p class="admin-panel__form__save">Сохранить</p>
+                    <p class="admin-panel__form__cancel">Отменить</p>
+                  </div>
+                </form>
+              </div>
+
+              <div class="admin-panel__edit-box admin-panel__card-edit-box">
+                <form class="admin-panel__form">
+                  <h3 class="admin-panel__form__title">Редактирование</h3>
+
+                  <div class="admin-panel__form__group">
+                    <label class="admin-panel__form__label" for="admin-card-id"
+                      >Id</label
+                    >
+                    <textarea
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-card-id"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-card-gameId"
+                      >Game id</label
+                    >
+                    <textarea
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-card-gameId"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__buttons">
+                    <p class="admin-panel__form__save">Сохранить</p>
+                    <p class="admin-panel__form__cancel">Отменить</p>
+                  </div>
+                </form>
+              </div>
+
+              <div class="admin-panel__edit-box admin-panel__book-edit-box">
+                <form class="admin-panel__form">
+                  <h3 class="admin-panel__form__title">Редактирование</h3>
+
+                  <div class="admin-panel__form__group">
+                    <label class="admin-panel__form__label" for="admin-book-id"
+                      >Id</label
+                    >
+                    <textarea
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-book-id"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-book-name"
+                      >Name</label
+                    >
+                    <textarea
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-book-name"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-book-number"
+                      >Number</label
+                    >
+                    <input
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-book-number"
+                    />
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-book-date"
+                      >Date</label
+                    >
+                    <input
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-book-date"
+                    />
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label
+                      class="admin-panel__form__label"
+                      for="admin-book-time"
+                      >Time</label
+                    >
+                    <input
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-book-time"
                     />
                   </div>
 
@@ -155,17 +418,19 @@
                   <p class="admin-panel__table__item">1 id</p>
                   <p class="admin-panel__table__item">2 name</p>
                   <p class="admin-panel__table__item">3 description</p>
-                  <p class="admin-panel__table__item">4 aboutGame</p>
-                  <p class="admin-panel__table__item">5 rules</p>
-                  <p class="admin-panel__table__item">6 photo</p>
-                  <p class="admin-panel__table__item">7 add</p>
-                  <p class="admin-panel__table__item">8 remove</p>
+                  <p class="admin-panel__table__item">4 desc</p>
+                  <p class="admin-panel__table__item">5 aboutGame</p>
+                  <p class="admin-panel__table__item">6 rules</p>
+                  <p class="admin-panel__table__item">7 photo</p>
+                  <p class="admin-panel__table__item">8 add</p>
+                  <p class="admin-panel__table__item">9 remove</p>
                 </div>
 
                 <div class="admin-panel__table__row admin-panel__game-table">
                   <p class="admin-panel__table__item">1</p>
                   <p class="admin-panel__table__item">Дота2</p>
                   <p class="admin-panel__table__item">описание</p>
+                  <p class="admin-panel__table__item">деск</p>
                   <p class="admin-panel__table__item">про игру</p>
                   <p class="admin-panel__table__item">правила</p>
                   <p class="admin-panel__table__item">
@@ -188,25 +453,21 @@
                 id="admin-table-3"
               >
                 <div
-                  class="admin-panel__table__row admin-panel__table__name-row"
+                  class="admin-panel__table__row admin-panel__table__name-row admin-panel__menu-table"
                 >
                   <p class="admin-panel__table__item">1 id</p>
-                  <p class="admin-panel__table__item">2 heading</p>
-                  <p class="admin-panel__table__item">3 article</p>
-                  <p class="admin-panel__table__item">4 date</p>
-                  <p class="admin-panel__table__item">5 photo</p>
-                  <p class="admin-panel__table__item">6 add</p>
-                  <p class="admin-panel__table__item">7 remove</p>
+                  <p class="admin-panel__table__item">2 type</p>
+                  <p class="admin-panel__table__item">3 name</p>
+                  <p class="admin-panel__table__item">4 price</p>
+                  <p class="admin-panel__table__item">5 add</p>
+                  <p class="admin-panel__table__item">6 remove</p>
                 </div>
 
-                <div class="admin-panel__table__row">
+                <div class="admin-panel__table__row admin-panel__menu-table">
                   <p class="admin-panel__table__item">1</p>
-                  <p class="admin-panel__table__item">Новый</p>
-                  <p class="admin-panel__table__item">lxNniX8Y</p>
-                  <p class="admin-panel__table__item">30.09.23</p>
-                  <p class="admin-panel__table__item">
-                    <img src="images/stocks-1.png" alt="photo" />
-                  </p>
+                  <p class="admin-panel__table__item">Кофе</p>
+                  <p class="admin-panel__table__item">Американо</p>
+                  <p class="admin-panel__table__item">255</p>
                   <div class="admin-panel__table__item admin-panel__add-button">
                     <span class="admin-panel__button-line"></span>
                     <span class="admin-panel__button-line"></span>
@@ -224,25 +485,22 @@
                 id="admin-table-4"
               >
                 <div
-                  class="admin-panel__table__row admin-panel__table__name-row"
+                  class="admin-panel__table__row admin-panel__table__name-row admin-panel__card-table"
                 >
                   <p class="admin-panel__table__item">1 id</p>
-                  <p class="admin-panel__table__item">2 heading</p>
-                  <p class="admin-panel__table__item">3 article</p>
-                  <p class="admin-panel__table__item">4 date</p>
-                  <p class="admin-panel__table__item">5 photo</p>
-                  <p class="admin-panel__table__item">6 add</p>
-                  <p class="admin-panel__table__item">7 remove</p>
+                  <p class="admin-panel__table__item">2 gameId</p>
+                  <p class="admin-panel__table__item">3 photo</p>
+                  <p class="admin-panel__table__item">4 add</p>
+                  <p class="admin-panel__table__item">5 remove</p>
                 </div>
 
-                <div class="admin-panel__table__row">
+                <div class="admin-panel__table__row admin-panel__card-table">
                   <p class="admin-panel__table__item">1</p>
-                  <p class="admin-panel__table__item">Новый</p>
-                  <p class="admin-panel__table__item">lxNniX8Y</p>
-                  <p class="admin-panel__table__item">30.09.23</p>
+                  <p class="admin-panel__table__item">55</p>
                   <p class="admin-panel__table__item">
                     <img src="images/stocks-1.png" alt="photo" />
                   </p>
+
                   <div class="admin-panel__table__item admin-panel__add-button">
                     <span class="admin-panel__button-line"></span>
                     <span class="admin-panel__button-line"></span>
@@ -260,25 +518,23 @@
                 id="admin-table-5"
               >
                 <div
-                  class="admin-panel__table__row admin-panel__table__name-row"
+                  class="admin-panel__table__row admin-panel__table__name-row admin-panel__book-table"
                 >
                   <p class="admin-panel__table__item">1 id</p>
-                  <p class="admin-panel__table__item">2 heading</p>
-                  <p class="admin-panel__table__item">3 article</p>
+                  <p class="admin-panel__table__item">2 name</p>
+                  <p class="admin-panel__table__item">3 number</p>
                   <p class="admin-panel__table__item">4 date</p>
-                  <p class="admin-panel__table__item">5 photo</p>
+                  <p class="admin-panel__table__item">5 time</p>
                   <p class="admin-panel__table__item">6 add</p>
                   <p class="admin-panel__table__item">7 remove</p>
                 </div>
 
-                <div class="admin-panel__table__row">
+                <div class="admin-panel__table__row admin-panel__book-table">
                   <p class="admin-panel__table__item">1</p>
-                  <p class="admin-panel__table__item">Новый</p>
-                  <p class="admin-panel__table__item">lxNniX8Y</p>
+                  <p class="admin-panel__table__item">Стол</p>
+                  <p class="admin-panel__table__item">5</p>
                   <p class="admin-panel__table__item">30.09.23</p>
-                  <p class="admin-panel__table__item">
-                    <img src="images/stocks-1.png" alt="photo" />
-                  </p>
+                  <p class="admin-panel__table__item">18:00</p>
                   <div class="admin-panel__table__item admin-panel__add-button">
                     <span class="admin-panel__button-line"></span>
                     <span class="admin-panel__button-line"></span>

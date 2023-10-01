@@ -69,8 +69,20 @@
   display: grid;
 }
 .admin-panel__game-table {
-  grid-column: 1/9;
-  grid-template-columns: repeat(8, 1fr);
+  grid-column: 1/10;
+  grid-template-columns: repeat(9, 1fr);
+}
+.admin-panel__menu-table {
+  grid-column: 1/7;
+  grid-template-columns: repeat(6, 1fr);
+}
+.admin-panel__card-table {
+  grid-column: 1/6;
+  grid-template-columns: repeat(5, 1fr);
+}
+.admin-panel__book-table {
+  grid-column: 1/8;
+  grid-template-columns: repeat(7, 1fr);
 }
 .admin-panel__form {
   width: 300px;
@@ -158,6 +170,9 @@
   color: #dbdbdb;
   border: none;
   margin-left: 55px;
+}
+.admin-panel__games-edit-form {
+  margin-top: 60px;
 }
 
 .admin-panel__edit-box {

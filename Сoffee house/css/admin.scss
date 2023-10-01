@@ -84,8 +84,23 @@ $font-stack-add: montserrat, sans-serif;
   }
 
   &__game-table {
-    grid-column: 1/9;
-    grid-template-columns: repeat(8, 1fr);
+    grid-column: 1/10;
+    grid-template-columns: repeat(9, 1fr);
+  }
+
+  &__menu-table {
+    grid-column: 1/7;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  &__card-table {
+    grid-column: 1/6;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &__book-table {
+    grid-column: 1/8;
+    grid-template-columns: repeat(7, 1fr);
   }
 
   &__form {
@@ -162,6 +177,10 @@ $font-stack-add: montserrat, sans-serif;
       border: none;
       margin-left: 55px;
     }
+  }
+
+  &__games-edit-form {
+    margin-top: 60px;
   }
 }
 

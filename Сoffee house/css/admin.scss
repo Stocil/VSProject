@@ -221,6 +221,46 @@ $font-stack-add: montserrat, sans-serif;
       transform: rotate(90deg);
     }
   }
+
+  &__create-button {
+    cursor: pointer;
+
+    position: absolute;
+    right: 10%;
+    top: 5%;
+
+    background-color: $primary-color-light;
+    width: 50px;
+    height: 50px;
+
+    &::after {
+      content: "";
+      display: block;
+
+      position: absolute;
+      left: 10px;
+      top: calc(50% - 5px);
+
+      width: 30px;
+      height: 7px;
+      background-color: #1a1919;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+
+      position: absolute;
+      left: 10px;
+      top: calc(50% - 5px);
+
+      transform: rotate(90deg);
+
+      width: 30px;
+      height: 7px;
+      background-color: #1a1919;
+    }
+  }
 }
 
 .home {

@@ -49,6 +49,65 @@
             </aside>
 
             <div class="admin-panel__tables">
+              <div class="admin-panel__edit-box">
+                <form class="admin-panel__form">
+                  <h3 class="admin-panel__form__title">Редактирование</h3>
+
+                  <div class="admin-panel__form__group">
+                    <label class="admin-panel__form__label" for="admin-id"
+                      >Id</label
+                    >
+                    <textarea
+                      placeholder="id"
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-id"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label class="admin-panel__form__label" for="admin-heading"
+                      >Heading</label
+                    >
+                    <textarea
+                      placeholder="Heading"
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-heading"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label class="admin-panel__form__label" for="admin-article"
+                      >Article</label
+                    >
+                    <textarea
+                      placeholder="Article"
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-article"
+                    ></textarea>
+                  </div>
+
+                  <div class="admin-panel__form__group">
+                    <label class="admin-panel__form__label" for="admin-date"
+                      >Date</label
+                    >
+                    <input
+                      placeholder="Date"
+                      type="text"
+                      class="admin-panel__form__input"
+                      id="admin-date"
+                    />
+                  </div>
+
+                  <div class="admin-panel__form__buttons">
+                    <p class="admin-panel__form__save">Сохранить</p>
+                    <p class="admin-panel__form__cancel">Отменить</p>
+                  </div>
+                </form>
+              </div>
+
               <div
                 class="admin-panel__table admin-panel__stock-table show"
                 id="admin-table-1"
@@ -84,82 +143,6 @@
                     <span class="admin-panel__button-line"></span>
                   </div>
                 </div>
-
-                <div class="admin-panel__table__row">
-                  <p class="admin-panel__table__item">2</p>
-                  <p class="admin-panel__table__item">Новый</p>
-                  <p class="admin-panel__table__item">sfu1yqBq</p>
-                  <p class="admin-panel__table__item">25.09.23</p>
-                  <p class="admin-panel__table__item">
-                    <img src="images/stocks-2.png" alt="photo" />
-                  </p>
-                  <div class="admin-panel__table__item admin-panel__add-button">
-                    <span class="admin-panel__button-line"></span>
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                  <div
-                    class="admin-panel__table__item admin-panel__remove-button"
-                  >
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                </div>
-
-                <div class="admin-panel__table__row">
-                  <p class="admin-panel__table__item">3</p>
-                  <p class="admin-panel__table__item">Новый</p>
-                  <p class="admin-panel__table__item">Fv0r3sE1</p>
-                  <p class="admin-panel__table__item">1.09.23</p>
-                  <p class="admin-panel__table__item">
-                    <img src="images/stocks-1.png" alt="photo" />
-                  </p>
-                  <div class="admin-panel__table__item admin-panel__add-button">
-                    <span class="admin-panel__button-line"></span>
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                  <div
-                    class="admin-panel__table__item admin-panel__remove-button"
-                  >
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                </div>
-
-                <div class="admin-panel__table__row">
-                  <p class="admin-panel__table__item">4</p>
-                  <p class="admin-panel__table__item">Новый</p>
-                  <p class="admin-panel__table__item">sfu1yqBq</p>
-                  <p class="admin-panel__table__item">25.09.23</p>
-                  <p class="admin-panel__table__item">
-                    <img src="images/stocks-2.png" alt="photo" />
-                  </p>
-                  <div class="admin-panel__table__item admin-panel__add-button">
-                    <span class="admin-panel__button-line"></span>
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                  <div
-                    class="admin-panel__table__item admin-panel__remove-button"
-                  >
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                </div>
-
-                <div class="admin-panel__table__row">
-                  <p class="admin-panel__table__item">5</p>
-                  <p class="admin-panel__table__item">Новый</p>
-                  <p class="admin-panel__table__item">Fv0r3sE1</p>
-                  <p class="admin-panel__table__item">1.09.23</p>
-                  <p class="admin-panel__table__item">
-                    <img src="images/stocks-1.png" alt="photo" />
-                  </p>
-                  <div class="admin-panel__table__item admin-panel__add-button">
-                    <span class="admin-panel__button-line"></span>
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                  <div
-                    class="admin-panel__table__item admin-panel__remove-button"
-                  >
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                </div>
               </div>
 
               <div
@@ -167,81 +150,26 @@
                 id="admin-table-2"
               >
                 <div
-                  class="admin-panel__table__row admin-panel__table__name-row"
+                  class="admin-panel__table__row admin-panel__table__name-row admin-panel__game-table"
                 >
                   <p class="admin-panel__table__item">1 id</p>
-                  <p class="admin-panel__table__item">2 heading</p>
-                  <p class="admin-panel__table__item">3 article</p>
-                  <p class="admin-panel__table__item">4 date</p>
-                  <p class="admin-panel__table__item">5 photo</p>
-                  <p class="admin-panel__table__item">6 add</p>
-                  <p class="admin-panel__table__item">7 remove</p>
+                  <p class="admin-panel__table__item">2 name</p>
+                  <p class="admin-panel__table__item">3 description</p>
+                  <p class="admin-panel__table__item">4 aboutGame</p>
+                  <p class="admin-panel__table__item">5 rules</p>
+                  <p class="admin-panel__table__item">6 photo</p>
+                  <p class="admin-panel__table__item">7 add</p>
+                  <p class="admin-panel__table__item">8 remove</p>
                 </div>
 
-                <div class="admin-panel__table__row">
+                <div class="admin-panel__table__row admin-panel__game-table">
                   <p class="admin-panel__table__item">1</p>
-                  <p class="admin-panel__table__item">Новый</p>
-                  <p class="admin-panel__table__item">lxNniX8Y</p>
-                  <p class="admin-panel__table__item">30.09.23</p>
+                  <p class="admin-panel__table__item">Дота2</p>
+                  <p class="admin-panel__table__item">описание</p>
+                  <p class="admin-panel__table__item">про игру</p>
+                  <p class="admin-panel__table__item">правила</p>
                   <p class="admin-panel__table__item">
                     <img src="images/stocks-1.png" alt="photo" />
-                  </p>
-                  <div class="admin-panel__table__item admin-panel__add-button">
-                    <span class="admin-panel__button-line"></span>
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                  <div
-                    class="admin-panel__table__item admin-panel__remove-button"
-                  >
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                </div>
-
-                <div class="admin-panel__table__row">
-                  <p class="admin-panel__table__item">2</p>
-                  <p class="admin-panel__table__item">Новый</p>
-                  <p class="admin-panel__table__item">sfu1yqBq</p>
-                  <p class="admin-panel__table__item">25.09.23</p>
-                  <p class="admin-panel__table__item">
-                    <img src="images/stocks-2.png" alt="photo" />
-                  </p>
-                  <div class="admin-panel__table__item admin-panel__add-button">
-                    <span class="admin-panel__button-line"></span>
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                  <div
-                    class="admin-panel__table__item admin-panel__remove-button"
-                  >
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                </div>
-
-                <div class="admin-panel__table__row">
-                  <p class="admin-panel__table__item">3</p>
-                  <p class="admin-panel__table__item">Новый</p>
-                  <p class="admin-panel__table__item">Fv0r3sE1</p>
-                  <p class="admin-panel__table__item">1.09.23</p>
-                  <p class="admin-panel__table__item">
-                    <img src="images/stocks-1.png" alt="photo" />
-                  </p>
-                  <div class="admin-panel__table__item admin-panel__add-button">
-                    <span class="admin-panel__button-line"></span>
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                  <div
-                    class="admin-panel__table__item admin-panel__remove-button"
-                  >
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                </div>
-
-                <div class="admin-panel__table__row">
-                  <p class="admin-panel__table__item">4</p>
-                  <p class="admin-panel__table__item">Новый</p>
-                  <p class="admin-panel__table__item">sfu1yqBq</p>
-                  <p class="admin-panel__table__item">25.09.23</p>
-                  <p class="admin-panel__table__item">
-                    <img src="images/stocks-2.png" alt="photo" />
                   </p>
                   <div class="admin-panel__table__item admin-panel__add-button">
                     <span class="admin-panel__button-line"></span>
@@ -289,44 +217,6 @@
                     <span class="admin-panel__button-line"></span>
                   </div>
                 </div>
-
-                <div class="admin-panel__table__row">
-                  <p class="admin-panel__table__item">2</p>
-                  <p class="admin-panel__table__item">Новый</p>
-                  <p class="admin-panel__table__item">sfu1yqBq</p>
-                  <p class="admin-panel__table__item">25.09.23</p>
-                  <p class="admin-panel__table__item">
-                    <img src="images/stocks-2.png" alt="photo" />
-                  </p>
-                  <div class="admin-panel__table__item admin-panel__add-button">
-                    <span class="admin-panel__button-line"></span>
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                  <div
-                    class="admin-panel__table__item admin-panel__remove-button"
-                  >
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                </div>
-
-                <div class="admin-panel__table__row">
-                  <p class="admin-panel__table__item">3</p>
-                  <p class="admin-panel__table__item">Новый</p>
-                  <p class="admin-panel__table__item">Fv0r3sE1</p>
-                  <p class="admin-panel__table__item">1.09.23</p>
-                  <p class="admin-panel__table__item">
-                    <img src="images/stocks-1.png" alt="photo" />
-                  </p>
-                  <div class="admin-panel__table__item admin-panel__add-button">
-                    <span class="admin-panel__button-line"></span>
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                  <div
-                    class="admin-panel__table__item admin-panel__remove-button"
-                  >
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                </div>
               </div>
 
               <div
@@ -352,25 +242,6 @@
                   <p class="admin-panel__table__item">30.09.23</p>
                   <p class="admin-panel__table__item">
                     <img src="images/stocks-1.png" alt="photo" />
-                  </p>
-                  <div class="admin-panel__table__item admin-panel__add-button">
-                    <span class="admin-panel__button-line"></span>
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                  <div
-                    class="admin-panel__table__item admin-panel__remove-button"
-                  >
-                    <span class="admin-panel__button-line"></span>
-                  </div>
-                </div>
-
-                <div class="admin-panel__table__row">
-                  <p class="admin-panel__table__item">2</p>
-                  <p class="admin-panel__table__item">Новый</p>
-                  <p class="admin-panel__table__item">sfu1yqBq</p>
-                  <p class="admin-panel__table__item">25.09.23</p>
-                  <p class="admin-panel__table__item">
-                    <img src="images/stocks-2.png" alt="photo" />
                   </p>
                   <div class="admin-panel__table__item admin-panel__add-button">
                     <span class="admin-panel__button-line"></span>

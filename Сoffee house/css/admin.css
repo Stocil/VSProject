@@ -37,6 +37,8 @@
   grid-template-columns: repeat(7, 1fr);
 }
 .admin-panel__table__item {
+  word-break: break-all;
+  font-size: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,6 +59,7 @@
   font-weight: bold;
 }
 .admin-panel__table__row {
+  overflow: hidden;
   grid-column: 1/8;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -65,7 +68,110 @@
 .admin-panel__table.show {
   display: grid;
 }
+.admin-panel__game-table {
+  grid-column: 1/9;
+  grid-template-columns: repeat(8, 1fr);
+}
+.admin-panel__form {
+  width: 300px;
+  height: 550px;
+  margin: 125px auto;
+  color: #1a1919;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+.admin-panel__form__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+.admin-panel__form__label {
+  font-size: 18px;
+  line-height: 1;
+  display: inline-block;
+}
+.admin-panel__form__input {
+  width: 300px;
+  min-height: 42px;
+  font-size: 15px;
+  line-height: 1.4em;
+  font-family: montserrat, sans-serif;
+  color: #1a1919;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  -webkit-transition: -webkit-box-shadow 0.3s ease-in-out;
+  transition: -webkit-box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+}
+.admin-panel__form__input::-webkit-input-placeholder {
+  color: #1a1919;
+  opacity: 0.5;
+}
+.admin-panel__form__input::-moz-placeholder {
+  color: #1a1919;
+  opacity: 0.5;
+}
+.admin-panel__form__input:-ms-input-placeholder {
+  color: #1a1919;
+  opacity: 0.5;
+}
+.admin-panel__form__input::-ms-input-placeholder {
+  color: #1a1919;
+  opacity: 0.5;
+}
+.admin-panel__form__input::placeholder {
+  color: #1a1919;
+  opacity: 0.5;
+}
+.admin-panel__form__input:focus {
+  outline: none;
+  border-color: black;
+}
+.admin-panel__form__save, .admin-panel__form__cancel {
+  cursor: pointer;
+  display: inline-block;
+  width: 120px;
+  padding: 12px 5px;
+  background-color: #0d6efd;
+  max-width: 150px;
+  border: 1px solid #0d6efd;
+  border-radius: 10px;
+  color: #dbdbdb;
+  font-size: 18px;
+  font-family: montserrat, sans-serif;
+}
+.admin-panel__form__cancel {
+  background-color: gray;
+  color: #dbdbdb;
+  border: none;
+  margin-left: 55px;
+}
 
+.admin-panel__edit-box {
+  display: none;
+  position: absolute;
+  bottom: 5%;
+  left: 30%;
+  width: 1000px;
+  height: 800px;
+  background-color: #dbdbdb;
+}
+.admin-panel__edit-box.show {
+  display: block;
+}
 .admin-panel__add-button, .admin-panel__remove-button {
   position: relative;
 }

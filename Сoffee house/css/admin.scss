@@ -46,6 +46,9 @@ $font-stack-add: montserrat, sans-serif;
     grid-template-columns: repeat(7, 1fr);
 
     &__item {
+      word-break: break-all;
+      font-size: 14px;
+
       display: flex;
       justify-content: center;
       align-items: center;
@@ -65,6 +68,8 @@ $font-stack-add: montserrat, sans-serif;
     }
 
     &__row {
+      overflow: hidden;
+
       grid-column: 1/8;
 
       display: grid;
@@ -77,10 +82,106 @@ $font-stack-add: montserrat, sans-serif;
       display: grid;
     }
   }
+
+  &__game-table {
+    grid-column: 1/9;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  &__form {
+    width: 300px;
+    height: 550px;
+    margin: 125px auto;
+
+    color: $primary-color-dark;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    &__group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      position: relative;
+    }
+
+    &__label {
+      font-size: 18px;
+      line-height: 1;
+      display: inline-block;
+    }
+
+    &__input {
+      width: 300px;
+      min-height: 42px;
+
+      font-size: 15px;
+      line-height: 1.4em;
+      font-family: $font-stack-add;
+      color: $primary-color-dark;
+
+      border: 1px solid $primary-color-light;
+      border-radius: 10px;
+
+      transition: box-shadow 0.3s ease-in-out;
+      &::placeholder {
+        color: $primary-color-dark;
+        opacity: 0.5;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: black;
+      }
+    }
+
+    &__save,
+    &__cancel {
+      cursor: pointer;
+      display: inline-block;
+
+      width: 120px;
+
+      padding: 12px 5px;
+      background-color: #0d6efd;
+      max-width: 150px;
+
+      border: 1px solid #0d6efd;
+      border-radius: 10px;
+
+      color: #dbdbdb;
+      font-size: 18px;
+      font-family: $font-stack-add;
+    }
+
+    &__cancel {
+      background-color: gray;
+      color: $primary-color-light;
+      border: none;
+      margin-left: 55px;
+    }
+  }
 }
 
 // Button
 .admin-panel {
+  &__edit-box {
+    display: none;
+    position: absolute;
+    bottom: 5%;
+    left: 30%;
+    width: 1000px;
+    height: 800px;
+
+    background-color: $primary-color-light;
+
+    &.show {
+      display: block;
+    }
+  }
+
   &__add-button,
   &__remove-button {
     position: relative;

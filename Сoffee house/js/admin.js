@@ -53,6 +53,7 @@ function editRow(event) {
     const inputHeading = body.querySelector("textarea#admin-stock-heading");
     const inputArticle = body.querySelector("textarea#admin-stock-article");
     const inputDate = body.querySelector("input#admin-stock-date");
+    const inputPhoto = body.querySelector("textarea#admin-stock-photo");
 
     const form = body.querySelector(".admin-panel__stocks-edit-box");
     const formSaveButton = form.querySelector(".admin-panel__form__save");
@@ -71,11 +72,13 @@ function editRow(event) {
     const currentHeading = currentColumns[1];
     const currentArticle = currentColumns[2];
     const currentDate = currentColumns[3];
+    const currentPhoto = currentColumns[4];
 
     inputId.value = currentId.innerText;
     inputHeading.value = currentHeading.innerText;
     inputArticle.value = currentArticle.innerText;
     inputDate.value = currentDate.innerText;
+    inputPhoto.value = currentPhoto.innerText;
 
     formSaveButton.addEventListener("click", saveChanges);
     formCancelButton.addEventListener("click", cancelChanges);
@@ -85,6 +88,7 @@ function editRow(event) {
       currentHeading.innerText = inputHeading.value;
       currentArticle.innerText = inputArticle.value;
       currentDate.innerText = inputDate.value;
+      currentPhoto.innerText = inputPhoto.value;
 
       event.target.closest(".admin-panel__table").classList.add("show");
       stocksEditBox.classList.remove("show");
@@ -112,6 +116,7 @@ function editRow(event) {
     const inputDesc = body.querySelector("textarea#admin-games-desc");
     const inputAbout = body.querySelector("textarea#admin-games-about");
     const inputRules = body.querySelector("textarea#admin-games-rules");
+    const inputPhoto = body.querySelector("textarea#admin-games-photo");
 
     const form = body.querySelector(".admin-panel__games-edit-box");
     const formSaveButton = form.querySelector(".admin-panel__form__save");
@@ -132,6 +137,7 @@ function editRow(event) {
     const currentDesc = currentColumns[3];
     const currentAbout = currentColumns[4];
     const currentRules = currentColumns[5];
+    const currentPhoto = currentColumns[6];
 
     inputId.value = currentId.innerText;
     inputName.value = currentName.innerText;
@@ -139,6 +145,7 @@ function editRow(event) {
     inputDesc.value = currentDesc.innerText;
     inputAbout.value = currentAbout.innerText;
     inputRules.value = currentRules.innerText;
+    inputPhoto.value = currentPhoto.innerText;
 
     formSaveButton.addEventListener("click", saveChanges);
     formCancelButton.addEventListener("click", cancelChanges);
@@ -150,6 +157,7 @@ function editRow(event) {
       currentDesc.innerText = inputDesc.value;
       currentAbout.innerText = inputAbout.value;
       currentRules.innerText = inputRules.value;
+      currentPhoto.innerText = inputPhoto.value;
 
       event.target.closest(".admin-panel__table").classList.add("show");
       gamesEditBox.classList.remove("show");
@@ -226,6 +234,7 @@ function editRow(event) {
 
     const inputId = body.querySelector("textarea#admin-card-id");
     const inputGameId = body.querySelector("textarea#admin-card-gameId");
+    const inputPhoto = body.querySelector("textarea#admin-card-photo");
 
     const form = body.querySelector(".admin-panel__card-edit-box");
     const formSaveButton = form.querySelector(".admin-panel__form__save");
@@ -242,9 +251,11 @@ function editRow(event) {
 
     const currentId = currentColumns[0];
     const currentGameId = currentColumns[1];
+    const currentPhoto = currentColumns[2];
 
     inputId.value = currentId.innerText;
     inputGameId.value = currentGameId.innerText;
+    inputPhoto.value = currentPhoto.innerText;
 
     formSaveButton.addEventListener("click", saveChanges);
     formCancelButton.addEventListener("click", cancelChanges);
@@ -252,6 +263,7 @@ function editRow(event) {
     function saveChanges() {
       currentId.innerText = inputId.value;
       currentGameId.innerText = inputGameId.value;
+      currentPhoto.innerText = inputPhoto.value;
 
       event.target.closest(".admin-panel__table").classList.add("show");
       menuEditBox.classList.remove("show");

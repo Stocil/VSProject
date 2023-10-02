@@ -20,3 +20,10 @@
             flex-direction: column;
   }
 }
+@media (max-width: 500px) {
+  .fadeInRight {
+    -webkit-transform: translateX(5%);
+        -ms-transform: translateX(5%);
+            transform: translateX(5%);
+  }
+}

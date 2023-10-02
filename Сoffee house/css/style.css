@@ -72,6 +72,10 @@ body {
       -ms-transform: scale(1.05);
           transform: scale(1.05);
 }
+.button.fadeInLeft-show {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
 
 .title {
   text-align: center;
@@ -654,6 +658,68 @@ body {
   background-color: white;
 }
 
+.fadeInLeft {
+  opacity: 0;
+  -webkit-transform: translateX(-15%);
+      -ms-transform: translateX(-15%);
+          transform: translateX(-15%);
+  -webkit-transition: all 1.3s ease-in-out;
+  transition: all 1.3s ease-in-out;
+}
+.fadeInLeft-show {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 1.3s ease-in-out;
+  transition: all 1.3s ease-in-out;
+}
+
+.fadeInRight {
+  opacity: 0;
+  -webkit-transform: translateX(15%);
+      -ms-transform: translateX(15%);
+          transform: translateX(15%);
+  -webkit-transition: all 1.3s ease-in-out;
+  transition: all 1.3s ease-in-out;
+}
+.fadeInRight-show {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 1.3s ease-in-out;
+  transition: all 1.3s ease-in-out;
+}
+
+.fadeInDown {
+  opacity: 0;
+  -webkit-transform: translateY(15%);
+      -ms-transform: translateY(15%);
+          transform: translateY(15%);
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.fadeInDown-show {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.fadeInCenter {
+  opacity: 0;
+  -webkit-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+}
+.fadeInCenter-show {
+  opacity: 1;
+  -webkit-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+}
+
 @media (max-width: 1400px) {
   .container {
     padding: 0 40px;
@@ -1097,6 +1163,10 @@ body {
   .button {
     pointer-events: none;
   }
+  .button.fadeInLeft-show {
+    -webkit-transition: all 1.3s ease-in-out;
+    transition: all 1.3s ease-in-out;
+  }
   .games__slider__button.swiper-button-prev,
   .games__slider__button.swiper-button-next {
     pointer-events: none;
@@ -1131,6 +1201,16 @@ body {
   }
   .games__subtitle {
     font-size: 16px;
+  }
+  .fadeInLeft {
+    -webkit-transform: translateX(-10%);
+        -ms-transform: translateX(-10%);
+            transform: translateX(-10%);
+  }
+  .fadeInRight {
+    -webkit-transform: translateX(9%);
+        -ms-transform: translateX(9%);
+            transform: translateX(9%);
   }
 }
 @media (max-width: 500px) {

@@ -26,3 +26,9 @@ $font-stack-add: montserrat, sans-serif;
     }
   }
 }
+
+@media (max-width: 500px) {
+  .fadeInRight {
+    transform: translateX(5%);
+  }
+}

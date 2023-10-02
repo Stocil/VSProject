@@ -76,6 +76,10 @@ body {
     background-color: white;
     transform: scale(1.05);
   }
+
+  &.fadeInLeft-show {
+    transition: all 0.5s ease-in-out;
+  }
 }
 
 .title {
@@ -558,6 +562,52 @@ body {
   }
 }
 
+.fadeInLeft {
+  opacity: 0;
+  transform: translateX(-15%);
+  transition: all 1.3s ease-in-out;
+
+  &-show {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1.3s ease-in-out;
+  }
+}
+
+.fadeInRight {
+  opacity: 0;
+  transform: translateX(15%);
+  transition: all 1.3s ease-in-out;
+
+  &-show {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1.3s ease-in-out;
+  }
+}
+
+.fadeInDown {
+  opacity: 0;
+  transform: translateY(15%);
+  transition: all 1s ease-in-out;
+
+  &-show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1s ease-in-out;
+  }
+}
+
+.fadeInCenter {
+  opacity: 0;
+  transition: all 1.5s ease-in-out;
+
+  &-show {
+    opacity: 1;
+    transition: all 1.5s ease-in-out;
+  }
+}
+
 // Adaptive ------------
 @media (max-width: 1400px) {
   .container {
@@ -940,6 +990,10 @@ body {
 
   .button {
     pointer-events: none;
+
+    &.fadeInLeft-show {
+      transition: all 1.3s ease-in-out;
+    }
   }
 
   .games__slider__button.swiper-button-prev,
@@ -995,6 +1049,14 @@ body {
     &__subtitle {
       font-size: 16px;
     }
+  }
+
+  .fadeInLeft {
+    transform: translateX(-10%);
+  }
+
+  .fadeInRight {
+    transform: translateX(9%);
   }
 }
 

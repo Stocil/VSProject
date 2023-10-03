@@ -604,3 +604,16 @@ window.scrollTo({
   left: 0,
   behavior: "smooth",
 });
+
+// Submit
+
+const submitForm = body.querySelector(".feedback__form");
+const submitButton = body.querySelector(".form__submit");
+const submitHideMessage = body.querySelector(".label__hide");
+
+submitForm.addEventListener("submit", submitShowMessage);
+
+function submitShowMessage(event) {
+  submitHideMessage.classList.remove("label__hide");
+  submitForm.reset();
+}

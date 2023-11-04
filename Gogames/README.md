@@ -1,4 +1,4 @@
-- HTML 5
+- HTML5
 - BEM
-- CSS 3
+- CSS3
 - JS
